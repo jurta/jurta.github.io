@@ -1,0 +1,31 @@
+title: JURTA
+email: juri@jurta.org
+description: >-
+  JURTA is the home of JURI and TA
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  jurta
+repository: https://github.com/jurta/jurta.github.io
+
+collections:
+  meets:
+    output: true
+    permalink: /meets/:path/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "meets"
+    values:
+      layout: "meet"
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - .jekyll-cache/
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - COPYING

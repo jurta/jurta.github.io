@@ -1,0 +1,541 @@
+/* $Id: style.css,v 1.3 2010/05/21 08:50:32 jurta Exp jurta $ */
+
+/**
+ * jurta.org, for Drupal 6.x
+ * Juri Linkov <juri@jurta.org>
+ */
+
+/*
+** HTML elements
+*/
+body {
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  background-color: #cdc2b2;
+}
+#body {
+  width: 100%;
+}
+tr.odd td, tr.even td {
+  padding: 0.3em;
+}
+h1, h2, h3, h4, h5, h6 {
+  background-color: #c2c2c2;
+  margin-bottom: 0.5em;
+}
+h1 {
+  font-size: 1.3em;
+}
+h2 {
+  font-size: 1.2em;
+}
+h3, h4, h5, h6 {
+  font-size: 1.1em;
+}
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.9em;
+}
+/* .content p {
+  text-align: justify;
+} */
+fieldset {
+  border: 1px solid #888888;
+}
+pre {
+  background-color: #dddddd;
+  padding: 0.75em 1.5em;
+  border: 1px solid #e2e2e2;
+}
+table {
+  /* make <td> sizes relative to body size! */
+  font-size: 1em;
+}
+.form-item label {
+  font-size: 1em;
+  color: #222;
+}
+.item-list .title {
+  font-size: 1em;
+  color: #222;
+}
+.links {
+  margin-bottom: 0;
+}
+.comment .links {
+  margin-bottom: 0;
+}
+
+/*
+** Page layout blocks / IDs
+*/
+#header-left {
+  text-align: center;
+  vertical-align: middle;
+  border: 0;
+}
+#header-left img {
+  padding: 0 1em;
+  border: 0;
+}
+#header {
+  background-color: #c2c2c2;
+  padding: 0.5em 0.5em 0 0.5em; /* LTR */
+  text-align: center;
+  vertical-align: middle;
+  border: 0;
+}
+#header-right {
+  text-align: center;
+  vertical-align: middle;
+  border: 0;
+}
+#navlist {
+  font-size: 1.0em;
+  padding: 0 0.8em 1.2em 0; /* LTR */
+  color: #9cf;
+}
+#navlist a {
+  font-weight: bold;
+  color: #fff;
+}
+#subnavlist {
+  padding: 0.5em 1.2em 0.4em 0; /* LTR */
+  font-size: 0.8em;
+  color: #9cf;
+}
+#subnavlist a {
+  font-weight: bold;
+  color: #9cf;
+}
+ul.links li {
+  border-left: 1px solid #aaaaaa; /* LTR */
+}
+ul.links li.first {
+  border: none;
+}
+#search .form-text, #search .form-submit {
+  border: 1px solid #369;
+  font-size: 1.1em;
+  height: 1.5em;
+  vertical-align: middle;
+}
+#search .form-text {
+  width: 8em;
+  padding: 0 0.5em;
+}
+#mission {
+  background-color: #369;
+  padding: 1.5em 2em;
+  color: #fff;
+}
+#mission a, #mission a:visited {
+  color: #9cf;
+  font-weight: bold;
+}
+.site-name {
+  margin: 0.6em 0 0 ;
+  padding: 0;
+  font-size: 2em;
+}
+.site-name a:link, .site-name a:visited {
+  color: #000088;
+  text-decoration: none;
+}
+.site-name a:hover {
+  color: #FF0000;
+}
+.site-slogan {
+  font-size: 1em;
+  color: #eee;
+  display: block;
+  margin: 0;
+  font-style: italic;
+  font-weight: bold;
+}
+#main {
+  /* padding in px not ex because IE messes up 100% width tables otherwise */
+  /* padding: 10px 50px; -- MOVED 50px to .sidebar-filler */
+  padding: 10px 0px;
+}
+#mission, .node .content, .comment .content {
+  line-height: 1.4em;
+}
+#help {
+  font-size: 0.9em;
+  margin-bottom: 1em;
+}
+.breadcrumb {
+  margin-bottom: .5em;
+}
+.messages {
+  background-color: #eee;
+  border: 1px solid #bbbbbb;
+  padding: 0.3em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.error {
+  border-color: red;
+}
+#sidebar-left, #sidebar-right {
+  background-color: #c2c2c2;
+  width: 14em;
+  /* padding in px not ex because IE messes up 100% width tables otherwise */
+  padding: 10px;
+  vertical-align: top;
+}
+#footer-left {
+  text-align: center;
+  vertical-align: middle;
+  border: 0;
+}
+#footer {
+  background-color: #c2c2c2;
+  padding: 1em;
+  text-align: center;
+  vertical-align: middle;
+  border: 0;
+}
+#footer-right {
+  text-align: center;
+  vertical-align: middle;
+  border: 0;
+}
+
+/*
+** Common declarations for child classes of node, comment, block, box, etc.
+** If you want any of them styled differently for a specific parent, add
+** additional rules /with only the differing properties!/ to .parent .class.
+** See .comment .title for an example.
+*/
+.title {
+  font-weight: bold;
+  font-size: 1.3em;
+  background-color: #c2c2c2;
+  margin: 0 auto;  /* decrease default margins for h<x>.title */
+}
+.submitted {
+  /* color: #888888; */
+  background-color: #c2c2c2;
+  font-size: 0.8em;
+  padding-right: 0.5em;
+}
+.links {
+  color: #999;
+}
+/* .links a {
+  font-weight: bold;
+} */
+.block, .box {
+  padding: 0 0 1.5em 0; /* LTR */
+}
+.block {
+  border-bottom: 1px solid #cdc2b2;
+  padding-bottom: 0.75em;
+  margin-bottom: 1.5em;
+}
+.block .title {
+  margin-bottom: .25em;
+}
+.box .title {
+  font-size: 1.1em;
+}
+.node {
+  margin: .5em 0 2em; /* LTR */
+}
+.sticky {
+  padding: .5em;
+  border: 1px solid #bbbbbb;
+}
+.node .content, .comment .content {
+  margin: .5em 0 .5em;
+}
+.node .taxonomy {
+  color: #999;
+  font-size: 0.8em;
+  padding-left: 1.5em; /* LTR */
+}
+.node .picture {
+  border: 1px solid #dddddd;
+  float: right; /* LTR */
+  margin: 0.5em;
+}
+.comment {
+  /* border: 1px solid #aaaaaa; */
+  padding: 0 .5em .5em .5em;
+  margin-bottom: 1em;
+}
+.comment .title a {
+  font-size: 1.1em;
+  font-weight: normal;
+}
+.comment .new {
+  text-align: right; /* LTR */
+  font-weight: bold;
+  font-size: 0.8em;
+  float: right; /* LTR */
+  color: red;
+}
+.comment .picture {
+  border: 1px solid #bbbbbb;
+  float: right; /* LTR */
+  margin: 0.5em;
+}
+/* don't display comment's subject line */
+.comment h3 {
+  display: none;
+}
+
+/*
+** Module specific styles
+*/
+#aggregator .feed-source {
+  background-color: #eee;
+  border: 1px solid #bbbbbb;
+  padding: 1em;
+  margin: 1em 0;
+}
+#aggregator .news-item .categories, #aggregator .source, #aggregator .age {
+  color: #999;
+  font-style: italic;
+  font-size: 0.9em;
+}
+#aggregator .title {
+  margin-bottom: 0.5em;
+  font-size: 1em;
+}
+#aggregator h3 {
+  margin-top: 1em;
+}
+#forum table {
+  width: 100%;
+}
+#forum td {
+  padding: 0.5em;
+}
+#forum td.forum, #forum td.posts {
+  background-color: #eee;
+}
+#forum td.topics, #forum td.last-reply {
+  background-color: #ddd;
+}
+#forum td.container {
+  background-color: #bbbbbb;
+}
+#forum td.container a {
+  color: #555;
+}
+#forum td.statistics, #forum td.settings, #forum td.pager {
+  height: 1.5em;
+  border: 1px solid #bbb;
+}
+#forum td .name {
+  color: #96c;
+}
+#forum td .links {
+  padding-top: 0.7em;
+  font-size: 0.9em;
+}
+#profile .profile {
+  clear: both;
+  border: 1px solid #abc;
+  padding: .5em;
+  margin: 1em 0em;
+}
+#profile .profile .name {
+  padding-bottom: 0.5em;
+}
+.block-forum h3 {
+  margin-bottom: .5em;
+}
+div.admin-panel .description {
+  color: #000000;
+}
+div.admin-panel .body {
+  background: #c2c2c2;
+}
+div.admin-panel h3 {
+  background-color: #69c;
+  color: #fff;
+  padding: 5px 8px 5px;
+  margin: 0;
+}
+
+/* added */
+
+.sidebar-filler {
+  /* MOVED 50px here from #main */
+  width: 50px;
+}
+
+.header-filler {
+  width: 50px;
+  background-color: #c2c2c2;
+}
+
+.footer-filler {
+  width: 50px;
+  background-color: #c2c2c2;
+}
+
+img.float-left  {
+  float: left;
+  margin: 0 12px 12px 0;
+}
+
+img.float-right  {
+  float: right;
+  margin: 0 0 12px 12px;
+}
+
+.form-text, .form-textarea {
+  background-color: #ffffff;
+}
+
+a:link {
+  color:#0000AA;
+}
+
+.field-field-meetdate {
+  background-color:#C2C2C2;
+  font-weight:bold;
+}
+
+.terms {
+  background-color:#C2C2C2;
+}
+
+/* Override defaults.css */
+
+img {
+  border:1px solid #C2C2C2;
+}
+
+/* Override system.css */
+
+tbody {
+  border-top: 0;
+}
+
+ul.primary {
+  border-bottom:1px solid #888888;
+}
+
+ul.primary li a {
+  border-color:#888888;
+}
+
+ul.primary li.active a {
+  background-color:#eeeeee;
+  border-color:#888888 #888888 #eeeeee;
+}
+
+ul.secondary {
+  border-bottom:1px solid #888888;
+}
+
+ul.secondary li {
+  border-right:1px solid #888888;
+}
+
+/* Override system-menus.css */
+
+li.expanded {
+  list-style-type: circle;
+  list-style-image: url(minus.png);
+  padding: 0.2em 0.5em 0 0; /* LTR */
+  margin: 0;
+}
+li.collapsed {
+  list-style-type: disc;
+  list-style-image: url(plus.png); /* LTR */
+  padding: 0.2em 0.5em 0 0; /* LTR */
+  margin: 0;
+}
+li.leaf {
+  list-style-type: square;
+  list-style-image: url(bullet.png);
+  padding: 0.2em 0.5em 0 0; /* LTR */
+  margin: 0;
+}
+
+/* Override ../../modules/calendar/calendar.css */
+
+table .mini-day-on a {
+  background-color: #ff0000;
+}
+table .mini-day-off a {
+  color: #000000;
+}
+.calendar-calendar .month-view table {
+  border: 1px solid #c2c2c2;
+}
+.calendar-calendar tr {
+  background-color: #cdc2b2;
+}
+.calendar-calendar td.empty {
+  background-color: #cdc2b2;
+}
+.calendar-calendar table.mini td.empty {
+  background-color: #cdc2b2;
+}
+.calendar-calendar div.date-nav {
+  background-color: #c2c2c2;
+  border: 0;
+}
+.calendar-calendar th.days {
+  color: #888888;
+  background-color: #cdc2b2;
+  border: 0;
+  font-weight: normal;
+  text-align:right;
+}
+.calendar-calendar td .inner .view-field a {
+  color:#0000AA;
+  text-decoration: underline;
+}
+
+/* Override ../../modules/jquerymenu/jquerymenu.css */
+
+ul.jquerymenu li span.parent {
+  margin-top: 0.2em;
+}
+
+ul.jquerymenu li.parent span.closed {
+  background-image: url(plus.png);
+}
+ul.jquerymenu li.parent span.open {
+  background-image: url(minus.png);
+}
+
+/* Override ../../modules/tableofcontents/tableofcontents.css */
+
+/* Hide TOC in the body, but not in the block.
+   Autocreated TOC in the body is needed to create anchors. */
+.node .content #toc { display: none; }
+.toc {
+  max-width: none;
+  background: none;
+  border: none;
+  font-size: none;
+}
+.toc-title {
+  background-color: #C2C2C2;
+  text-align: left;
+}
+.toc ul {
+  list-style-type: inherit;
+}
+
+/* Module-specific styles */
+
+.block-google_cse { margin-top: 1em; }
+
+/* Remove bullets because they are displayed with
+   webkit-padding-start: 40px in Chrome. */
+.block-locale ul {
+  list-style-image: none;
+  list-style-type: none;
+}

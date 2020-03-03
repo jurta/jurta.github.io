@@ -1,14 +1,60 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="{{ site.url }}/css/style.css" />
-  <link rel="icon" type="image/x-icon" href="{{ site.url }}/favicon.png" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% seo %}
+  {% feed_meta %}
 </head>
 <body>
-<h1>{{ page.title }}</h1>
-{{ content }}
+<table border="0" cellpadding="0" cellspacing="0" id="body">
+  <tr>
+    <td id="header-left">
+      {%- include header-left.html -%}
+    </td>
+    <td class="header-filler">&nbsp;</td>
+    <td id="header">
+      {%- include header.html -%}
+    </td>
+    <td class="header-filler">&nbsp;</td>
+    <td id="header-right">
+      {%- include header-right.html -%}
+    </td>
+  </tr>
+  <tr>
+    <td id="sidebar-left">
+      {%- include sidebar-left.html -%}
+    </td>
+    <td class="sidebar-filler">&nbsp;</td>
+    <td valign="top">
+      <div id="main">
+        <div class="node sticky clear-block">
+          <div class="content">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+    </td>
+    <td class="sidebar-filler">&nbsp;</td>
+    <td id="sidebar-right">
+      {%- include sidebar-right.html -%}
+    </td>
+  </tr>
+  <tr>
+    <td id="footer-left">
+      {%- include footer-left.html -%}
+    </td>
+    <td class="footer-filler">&nbsp;</td>
+    <td id="footer">
+      {%- include footer.html -%}
+    </td>
+    <td class="footer-filler">&nbsp;</td>
+    <td id="footer-right">
+      {%- include footer-right.html -%}
+    </td>
+  </tr>
+</table>
 </body>
 </html>

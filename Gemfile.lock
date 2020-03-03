@@ -244,6 +244,9 @@ PLATFORMS
 DEPENDENCIES
   github-pages (= 204)
   jekyll-feed (~> 0.12)
+  jekyll-redirect-from
+  jekyll-seo-tag
+  jekyll-sitemap
 
 BUNDLED WITH
    2.1.4

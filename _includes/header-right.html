@@ -1,0 +1,19 @@
+{%- if page.translations -%}
+<div>
+  <div class="block block-locale">
+    <div class="content">
+      <ul>
+        {% for lang in site.data.languages %}
+        <li class="en">
+          {%- if page.lang == lang.locale -%}
+            {{ lang.label }}
+          {%- else -%}
+            <a href="{{ page.translations[lang.locale] }}" class="language-link">{{ lang.label }}</a>
+          {%- endif -%}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{%- endif -%}

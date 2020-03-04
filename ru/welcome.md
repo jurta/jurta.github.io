@@ -1,12 +1,12 @@
 ---
-permalink: /ru
-layout: page
-title: ЮРТА приветствует Вас
-lang: ru
-translations:
-  en: /en
+permalink: /ru/
 redirect_from:
   - /ru/welcome
+translations:
+  en: /en
+lang: ru
+layout: page
+title: ЮРТА приветствует Вас
 ---
 Сайт находится в стадии наполнения.  Постепенно привожу
 в презентабельный вид все материалы, которые скопились на винте, и выкладываю их на этом сайте.

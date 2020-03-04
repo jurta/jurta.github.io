@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  {% seo %}
-  {% feed_meta %}
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+{% seo %}
+{% feed_meta %}
 </head>
 <body>
 <table border="0" cellpadding="0" cellspacing="0" id="body">
@@ -30,11 +30,7 @@
     <td class="sidebar-filler">&nbsp;</td>
     <td valign="top">
       <div id="main">
-        <div class="node sticky clear-block">
-          <div class="content">
-            {{ content }}
-          </div>
-        </div>
+        {{ content }}
       </div>
     </td>
     <td class="sidebar-filler">&nbsp;</td>

@@ -1,14 +1,15 @@
+/**
+ * jurta.org, for Drupal 6.x
+ * Juri Linkov <juri@jurta.org>
+ */
 
 @import
-  // Copied from my Drupal theme.
-  "style/jurta",
-  "style/emacs",
   // Copied from default Drupal styles.
+  "style/node",
   "style/defaults",
   "style/system",
   "style/system-menus",
-  "style/node",
-  "style/comment",
-  "style/block",
-  "style/search"
+  // Copied from my Drupal theme.
+  "style/jurta",
+  "style/emacs"
 ;

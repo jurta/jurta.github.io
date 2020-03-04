@@ -1,0 +1,208 @@
+---
+permalink: /en/about
+translations:
+  ru: /ru/about
+lang: en
+layout: page
+title: About JURTA
+---
+<h2><a name="faq" id="faq">FAQ</a> (Frequently Asked Questions)</h2>
+
+<h3><a name="siteauthor" id="siteauthor">What is this site about and who is its author?</a></h3>
+
+<p>This is the personal web site
+of <a href="/en/juri">Juri Linkov</a> devoted to
+<a href="/en/prog">programming</a>, linguistics, humor
+and other creative things.</p>
+
+<h3><a name="sitename" id="sitename">What does the site name <i>JURTA</i> mean?</a></h3>
+
+<p><i>JURTA</i> has several intertwined meanings:</p>
+
+<ul>
+<li>It is the Latin transliteration of the Russian word and the exact
+spelling of the Estonian word that means a circular
+domed tent of skins or felt stretched over a collapsible
+lattice framework.  See more definitions of this word at
+<a href="http://et.wikipedia.org/wiki/Jurta">Wikipedia</a>.
+</li>
+
+<li>In Japanese the word
+<a href="http://en.wikipedia.org/wiki/Yuri_%28animation%29">Juri</a>
+(which also is my name) literally means
+
+<a href="http://en.wikipedia.org/wiki/Lily">lily</a> and the word
+<a href="http://en.wikipedia.org/wiki/Tani">Tani</a> means
+<a href="http://en.wikipedia.org/wiki/Valley">valley</a>, so the combination
+of first letters of these words makes the word <i>jurta</i> which with
+combined meanings of two words means
+<a href="http://en.wikipedia.org/wiki/Lily_of_the_valley">lily of the
+valley</a> - the English name of a very nice flower.</li>
+
+<li>The word <a href="http://et.wikipedia.org/wiki/Org">org</a> in Estonian
+means <i>valley</i> as well.  So with the combined meanings the site name
+
+<i>jurta.org</i> can be interpreted as <i>lily+valley.valley</i>, i.e. <i>lily of the
+valley that grows in the valley</i>.</li>
+
+<li>In Mongolian the word <i>tan</i> means <i>belonging to</i>,
+so <i>jur+ta</i> means <i>belonging to Juri</i>.</li>
+</ul>
+
+<p>Those are basic meanings for the site name.  The site name was carefully
+selected to have as many meanings as possible.</p>
+
+<h3><a name="copyright" id="copyright">What is the copyright policy in regard to using material from this site?</a></h3>
+
+<p>Content on this site is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-Noncommercial-Share Alike 3.0 License</a>.
+You may use any copyrighted material from this site, provided
+you either link us back and credit us as the source for the material
+(no need to ask permission in this case).
+Otherwise, you should ask permission to reproduce our material
+without linking us back or to use it for commercial purposes
+(in this case please send a request to <a href="mailto:juri@jurta.org">&lt;juri@jurta.org&gt;</a>).</p>
+
+<h3><a name="mail" id="mail">How to ask more questions?</a></h3>
+<p>Just send your questions to <a href="mailto:juri@jurta.org">&lt;juri@jurta.org&gt;</a>.</p>
+
+<h2><a name="medals" id="medals">Medals awarded to this site</a></h2>
+
+<p>The following medals, orders and ribbons were awarded to this site
+for several achievements:</p>
+
+<table width="100%">
+<tr><td width="88">
+<a href="http://www.gnu.org/">
+<img src="/files/icons/we-run-gnu.png" width="88" height="31" alt="The GNU Project" /></a></td>
+<td> - for supporting
+<a href="http://www.gnu.org/">the GNU Project</a></td></tr>
+
+<tr><td>
+<a href="/en/emacs">
+<img src="/files/icons/powered-by-gnu-emacs.png" width="88" height="31" alt="Powered by GNU Emacs" /></a></td>
+<td> - for editing this site in
+<a href="http://www.gnu.org/software/emacs/">the best editor, IDE and OS</a></td></tr>
+
+<tr><td>
+<a href="http://www.gimp.org/">
+<img src="/files/icons/gfx-by-gimp.png" width="88" height="31" alt="Graphics by Gimp" /></a></td>
+<td> - for creating images for this site in
+<a href="http://www.gimp.org/">the best image manipulation program</a></td></tr>
+
+<tr><td>
+<a href="/en/prog/drupal">
+<img src="/files/icons/powered-blue-88x31.png" width="88" height="31" alt="Powered by Drupal" /></a></td>
+<td> - for using
+<a href="http://drupal.org/">the best CMS</a></td></tr>
+
+<tr><td>
+<a href="http://httpd.apache.org/">
+<img src="/files/icons/powered-by-apache.png" width="88" height="31" alt="Powered by Apache" /></a></td>
+<td> - for running this site on
+<a href="http://httpd.apache.org/">the best web server</a></td></tr>
+
+<tr><td>
+<a href="http://www.debian.org/">
+<img src="/files/icons/debian.png" width="88" height="31" alt="Powered by GNU/Linux Debian" /></a></td>
+<td> - on
+<a href="http://www.debian.org/">the best operating system</a></td></tr>
+
+<tr><td>
+<a href="http://www.linux.org/">
+<img src="/files/icons/linux-inside.png" width="88" height="31" alt="Powered by Linux kernel" /></a></td>
+<td> - with
+<a href="http://www.kernel.org/">the best kernel</a></td></tr>
+
+<tr><td>
+<a href="http://www.dreamhost.com/r.cgi?46501">
+<img src="/files/icons/dreamhost.png" width="88" height="31" alt="Hosted by DreamHost" /></a></td>
+<td> - hosted by
+<a href="http://www.dreamhost.com/rewards.cgi?jurta">the best hosting provider</a></td></tr>
+
+<tr><td>
+<a href="http://www.dreamhost.com/green.cgi">
+<img src="/files/icons/green2.gif" width="88" height="31" alt="Green Web Hosting! This site hosted by DreamHost" /></a></td>
+<td> - with
+<a href="http://www.dreamhost.com/green.cgi">green hosting</a></td></tr>
+
+<tr><td>
+<a href="http://validator.w3.org/check?uri=referer">
+<img src="/files/icons/valid-xhtml10.png" width="88" height="31" alt="Valid XHTML 1.0!" /></a></td>
+<td> - for creating valid
+<a href="http://www.w3.org/TR/xhtml1/">XHTML</a> pages</td></tr>
+
+<tr><td>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+<img src="/files/icons/vcss.png" width="88" height="31" alt="Valid CSS!" /></a></td>
+<td> - for creating valid
+<a href="http://www.w3.org/TR/REC-CSS2/">CSS</a> style sheets</td></tr>
+
+<tr><td>
+<a href="http://www.anybrowser.org/campaign/">
+<img src="/files/icons/any.png" width="88" height="31" alt="Viewable With Any Browser" /></a></td>
+<td> - for creating web pages best viewed with
+<a href="/en/prog/firefox">any browser</a></td></tr>
+
+<tr><td>
+<a href="http://www.noframes.org/">
+<img src="/files/icons/ffgray.png" width="88" height="31" alt="Frames Free! Ribbon" /></a></td>
+<td> - for avoiding <a href="http://www.noframes.org/">HTML frames</a></td></tr>
+
+<tr><td>
+<a href="http://directory.google.com/Top/Computers/Multimedia/Development_Frameworks/Flash/Criticism/">
+<img src="/files/icons/forget-flash.png" width="88" height="31" alt="Bash Flash!" /></a></td>
+<td> - for avoiding
+<a href="http://directory.google.com/Top/Computers/Multimedia/Development_Frameworks/Flash/Criticism/">Flash</a></td></tr>
+
+<tr><td>
+<a href="http://directory.google.com/Top/Society/Activism/Anti-Corporation/Microsoft/">
+<img src="/files/icons/msfree1.png" width="88" height="31" alt="Microsoft free!" /></a></td>
+<td> - for avoiding <a href="http://directory.google.com/Top/Society/Activism/Anti-Corporation/Microsoft/">Micro$oft products</a></td></tr>
+
+<tr><td>
+<a rel="license" href="http://www.gnu.org/copyleft/gpl.html">
+<img src="/files/icons/gnugpl.png" width="88" height="31" alt="GNU GPL" /></a></td>
+<td> - for developing programs under
+<a rel="license" href="http://www.gnu.org/copyleft/gpl.html">the best program license</a></td></tr>
+
+<tr><td>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+<img src="/files/icons/cc-by-nc-sa-3.0.png" width="88" height="31" alt="Creative Commons License" /></a></td>
+<td> - for distributing content under
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">the best content license</a></td></tr>
+
+<tr><td>
+<a href="http://www.catb.org/hacker-emblem/">
+<img src="/files/icons/glider-small.png" width="35" height="35" alt="hacker emblem" /></a></td>
+<td> - for supporting
+<a href="http://www.catb.org/~esr/faqs/hacker-howto.html">hacker culture</a></td></tr>
+</table>
+
+<h2><a name="medal" id="medal">My medals</a></h2>
+
+<p>If you like this site, you could place my medals on your own site:</p>
+
+<table width="100%">
+<tr><td width="88">
+<a href="http://www.jurta.org/"><img src="/files/icons/jurta_88x31.png" width="88" height="31" alt="JURTA" /></a></td>
+<td> - jurta_88x31.png (559 bytes)</td></tr>
+
+<tr><td>
+<a href="http://www.jurta.org/"><img src="/files/icons/jurta_80x15.png" width="80" height="15" alt="JURTA" /></a></td>
+<td> - jurta_80x15.png (716 bytes)</td></tr>
+</table>
+
+<p>You can copy/paste the necessary HTML code from text fields below:</p>
+
+<p>
+<textarea cols="40" rows="3" readonly="readonly">
+<a href="http://www.jurta.org/"><img src="/files/icons/jurta_88x31.png" width="88" height="31" alt="JURTA" /></a>
+</textarea>
+</p>
+
+<p>
+<textarea cols="40" rows="3" readonly="readonly">
+<a href="http://www.jurta.org/"><img src="/files/icons/jurta_80x15.png" width="80" height="15" alt="JURTA" /></a>
+</textarea>
+</p>

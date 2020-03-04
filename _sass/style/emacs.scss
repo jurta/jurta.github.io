@@ -1,0 +1,129 @@
+/*
+ * Style sheet for emacs related pages at http://www.jurta.org/emacs/
+ * Copyright (C) 2003-2006  Juri Linkov <juri@jurta.org>
+ * Version: 2006-02-03
+ */
+
+.emacs-frame {
+}
+.emacs-window {
+  /* display: inline; */
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /* font-family: monospace; */
+  /* white-space: pre; */
+}
+.emacs-header-line {
+  margin: 0;
+}
+.emacs-mode-line {
+  display: inline;
+  /* background-color: #c2c2c2; */
+  /* font-family: monospace; */
+  /* white-space: pre; */
+  background-color:#CCCCCC;
+  border-color: #EEEEEE #AAAAAA #AAAAAA #EEEEEE;
+  border-style: solid;
+  border-width: 2px;
+  clear:left;
+  margin: 0;
+  padding: 0;
+}
+.emacs-quote {
+  text-align:right;
+}
+
+/* Font Lock faces */
+
+.emacs-builtin {
+  /* font-lock-builtin-face */
+  color: #a0522d;
+}
+.emacs-comment {
+  /* font-lock-comment-face */
+  color: #b22222;
+}
+.emacs-comment-delimiter {
+  /* font-lock-comment-delimiter-face */
+  color: #b22222;
+}
+.emacs-constant {
+  /* font-lock-constant-face */
+  color: #5f9ea0;
+}
+.emacs-doc {
+  /* font-lock-doc-face */
+  color: #006400;
+}
+.emacs-function-name {
+  /* font-lock-function-name-face */
+  color: #0000ff;
+}
+.emacs-keyword {
+  /* font-lock-keyword-face */
+  color: #a020f0;
+}
+.emacs-negation-char {
+  /* font-lock-negation-char-face */
+  color: #8b0000;
+}
+.emacs-regexp-grouping-backslash {
+  /* font-lock-regexp-grouping-backslash */
+  font-weight: bold;
+  /* text-decoration: underline; */
+}
+.emacs-regexp-grouping-construct {
+  /* font-lock-regexp-grouping-construct */
+  font-weight: bold;
+  /* text-decoration: underline; */
+}
+.emacs-string {
+  /* font-lock-string-face */
+  color: #006400; /* DarkGreen */
+  /* color: #228b22; */ /* ForestGreen */
+}
+.emacs-type {
+  /* font-lock-type-face */
+  color: #4682b4;
+}
+.emacs-variable-name {
+  /* font-lock-variable-name-face */
+  color: #0000cd; /* MediumBlue */
+  /* color: #0000ff; */ /* blue */
+}
+.emacs-warning {
+  /* font-lock-warning-face */
+  color: #ff0000;
+  font-weight: bold;
+}
+
+/* Ee faces */
+
+.emacs-ee-bookmarked, .emacs-ee-face-bookmarked {
+  /* ee-face-bookmarked-face */
+  color: #5f9ea0;
+}
+.emacs-ee-category, .emacs-ee-face-category {
+  /* ee-face-category-face */
+  color: #0000ff;
+}
+.emacs-ee-marked, .emacs-ee-face-marked {
+  /* ee-face-marked-face */
+  color: #ff0000;
+}
+.emacs-ee-omitted, .emacs-ee-face-omitted {
+  /* ee-face-omitted-face */
+  color: #bc8f8f;
+}
+.emacs-ee-shadow, .emacs-ee-face-faded {
+  /* ee-face-faded-face */
+  color: #7f7f7f;
+}
+.emacs-ee-link, .emacs-ee-face-link {
+  /* ee-face-link-face */
+  color: #0000ff;
+}
+.emacs-ee-link-visited, .emacs-ee-face-visited-link {
+  /* ee-face-visited-link-face */
+  color: #8b008b;
+}

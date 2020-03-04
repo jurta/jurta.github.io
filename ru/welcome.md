@@ -5,7 +5,7 @@ redirect_from:
 translations:
   en: /en
 lang: ru
-layout: page
+menu: none
 title: ЮРТА приветствует Вас
 ---
 Сайт находится в стадии наполнения.  Постепенно привожу

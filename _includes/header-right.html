@@ -4,7 +4,7 @@
     <div class="content">
       <ul>
         {% for lang in site.data.languages %}
-        <li class="en">
+        <li class="{{ lang.locale }}">
           {%- if page.lang == lang.locale -%}
             {{ lang.label }}
           {%- else -%}

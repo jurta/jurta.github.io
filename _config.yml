@@ -13,12 +13,15 @@ collections:
     permalink: /meets/:path/
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "meets"
     values:
       layout: "meet"
+  - scope:
+      path: ""
+    values:
+      layout: "page"
 
 plugins:
   - jekyll-redirect-from

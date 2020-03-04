@@ -3,7 +3,7 @@ permalink: /ru/about
 translations:
   en: /en/about
 lang: ru
-layout: page
+menu: О
 title: О сайте ЮРТА
 ---
 <h2><a name="faq" id="faq">ЧАВО</a> (ЧАстые Вопросы и Ответы)</h2>

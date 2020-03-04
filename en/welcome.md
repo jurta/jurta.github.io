@@ -7,7 +7,7 @@ redirect_from:
 translations:
   ru: /ru
 lang: en
-layout: page
+menu: none
 title: Welcome to JURTA
 ---
 This site is under constant development.  I'm continuously adding all

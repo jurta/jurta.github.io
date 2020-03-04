@@ -3,7 +3,7 @@ permalink: /en/about
 translations:
   ru: /ru/about
 lang: en
-layout: page
+menu: About
 title: About JURTA
 ---
 <h2><a name="faq" id="faq">FAQ</a> (Frequently Asked Questions)</h2>

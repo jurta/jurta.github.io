@@ -1,5 +1,5 @@
 <h1 class="site-name">
-  <a href="{{ '/' | relative_url }}" title="{{ site.title | escape }}">
+  <a href="{%- if page.lang == 'ru' -%}{{ '/ru' | relative_url }}{%- else -%}{{ '/' | relative_url }}{%- endif -%}" title="{{ site.title | escape }}">
     {%- if page.lang == 'ru' -%}
       ЮРТА
     {%- else -%}

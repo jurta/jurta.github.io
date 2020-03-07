@@ -7,21 +7,26 @@ description: >-
 github_username:  jurta
 repository: https://github.com/jurta/jurta.github.io
 
-collections:
-  meets:
-    output: true
-    permalink: /meets/:path/
+permalink: /:title # without :output_ext .html
+
+# collections:
+#   meets:
+#     output: true
+#     permalink: /meets/:path/
 
 defaults:
   - scope:
       path: ""
-      type: "meets"
-    values:
-      layout: "meet"
-  - scope:
-      path: ""
     values:
       layout: "page"
+  - scope:
+      path: "ru/tanja"
+    values:
+      menu: "tanja"
+  - scope:
+      path: "ru/tanja/meet"
+    values:
+      layout: "meet"
 
 plugins:
   - jekyll-redirect-from

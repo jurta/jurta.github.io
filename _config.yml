@@ -20,6 +20,14 @@ defaults:
     values:
       layout: "page"
   - scope:
+      path: "en"
+    values:
+      lang: "en"
+  - scope:
+      path: "ru"
+    values:
+      lang: "ru"
+  - scope:
       path: "ru/tanja"
     values:
       menu: "tanja"

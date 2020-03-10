@@ -9,6 +9,7 @@ gem 'github-pages', versions['github-pages']
 
 group :jekyll_plugins do
   gem 'jekyll-redirect-from'
+  gem 'jekyll-toc'
   gem 'jekyll-feed', '~> 0.12'
   gem 'jekyll-seo-tag'
   gem 'jekyll-sitemap'

@@ -20,7 +20,6 @@ defaults:
       path: ""
     values:
       layout: "page"
-      toc: true
   - scope:
       path: "en"
     values:
@@ -47,14 +46,8 @@ defaults:
   #   values:
   #     layout: "meet"
 
-# for jekyll-toc plugin:
-toc:
-  min_level: 2 # default: 1
-  max_level: 5 # default: 6
-
 plugins:
   - jekyll-redirect-from
-  - jekyll-toc
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap

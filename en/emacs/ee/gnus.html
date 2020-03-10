@@ -1,0 +1,120 @@
+---
+title: ee-gnus
+---
+<h1><a name="ee-gnus" id="ee-gnus">ee-gnus - summary and topic mode for Gnus</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>This extension provides the integration with gnus package.  It extracts
+group names from gnus internals and organizes them under different
+categories.  This extension can replace the gnus topic mode.</p>
+
+<p>Also ee could be used to implement summary mode for articles,
+where data from articles (author, date, subject, etc.) will be
+used as categories in the ee views.</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="category" id="category">By Category</a></h3>
+<p>This view categorizes gnus groups by their topic names.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">hierarchical categories extracted from 'gnus-topic-topology'</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">categories are sorted by sorting order of topics in the Gnus</td></tr>
+<tr><td class="head">r-sorter</td>
+    <td class="tail">groups are sorted by their original sorting order in the Gnus</td></tr>
+<tr><td class="head">r-counter</td>
+    <td class="tail">counts groups and postings in every group</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints the number of unread articles and group name</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- Gnus (6, 480)</span>
+<span class="emacs-ee-category"> - Emacs -- I wuw it! (4, 457)</span>
+       3: comp.emacs
+       2: alt.religion.emacs
+<span class="emacs-ee-category">  - Relief (2, 452)</span>
+     452: alt.sex.emacs
+       0: comp.talk.emacs.recovery
+<span class="emacs-ee-category"> - Misc (2, 23)</span>
+       8: comp.binaries.fractals
+      15: comp.sources.unix
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-gnus*    (ee-gnus)--L1--C0--All----------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="name" id="name">By Group Name</a></h3>
+<p>This view sorts gnus groups by group name.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts alphabetically by group name</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints the number of unread articles and group name</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+       2: alt.religion.emacs
+     452: alt.sex.emacs
+       8: comp.binaries.fractals
+       3: comp.emacs
+      15: comp.sources.unix
+       0: comp.talk.emacs.recovery
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-gnus*    (ee-gnus)--L1--C0--All----------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="unread" id="unread">By Number of Unread Articles</a></h3>
+<p>This view sorts gnus groups by number of unread articles.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts numerically by number of unread articles</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints the number of unread articles and group name</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+     452: alt.sex.emacs
+      15: comp.sources.unix
+       8: comp.binaries.fractals
+       3: comp.emacs
+       2: alt.religion.emacs
+       0: comp.talk.emacs.recovery
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-gnus*    (ee-gnus)--L1--C0--All----------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add new views</li>
+<li>Provide better integration with Gnus</li>
+<li>Implement summary mode for articles</li>
+</ul>
+
+<h2><a name="views" id="views">Planned views</a></h2>
+
+<p>Next screenshot is not real.  Displayed view is not implemented yet.</p>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- larsi@ifi.uio.no (1186)</span>
+<span class="emacs-type"> + 1997 (819)</span>
+<span class="emacs-type"> + 1996 (222)</span>
+<span class="emacs-type"> - 1995 (145)</span>
+<span class="emacs-type">  + Jan (29)</span>
+<span class="emacs-type">  - Feb (38)</span>
+<span class="emacs-type">   - 23 (9)</span>
+    So you want to use the new Gnus
+    Starting up
+    Where are all the groups, then?
+    I want to read my mail!
+    Foreign newsgroups
+    Low level changes in GNUS, or, Wrong type argument: stringp, nil
+    How do I re-scan my mail groups?
+    How do I set up virtual newsgroups?
+    Bugs & stuff
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-gnus*    (ee-gnus)--L1--C0--Top--------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>

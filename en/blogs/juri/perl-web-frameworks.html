@@ -1,0 +1,26 @@
+---
+title: Perl Web Frameworks
+---
+<p>There is a wide range of available Perl frameworks indicating that Perl is not dead. That's good. The only problem is to choose a good framework for own needs.</p>
+
+<p>An overview of the <a href="http://www.perlfoundation.org/perl5/index.cgi?web_frameworks">most Perl Web frameworks</a> helps to make a decision. I'd like to comment on the three best in my opinion. I've briefly looked at other frameworks too, but from other reviews I've read before, and from other information (that some of them are not easy to extend, opinionated, have limited applicability, and so on) I decided to narrow the set of candidates to the following three.</p>
+
+<h2><a href="http://www.perlfoundation.org/perl5/index.cgi?catalyst"><b>Catalyst</b></a></h2>
+
+<p>Catalyst is the king among other frameworks in terms of flexibility and extensibility. There are also many Web application like e.g. <a href="http://www.foorumbbs.com/">Foorum</a> built on it. So it's the natural first choice to try. That I did. And left unsatisfied. After messing with the installation of a large set of modules, I'd never like to repeat the same experience if I'll change my shared hosting provider sometime. So I was forced to evaluate other frameworks.</p>
+
+<h2><a href="http://mojolicious.org/"><b>Mojolicious (Perl on Rails)</b></a></h2>
+
+<p>I was already intrigued after reading its <a href="http://labs.kraih.com/blog/2008/10/mojo-07-released-perl-on-rails-in-150-lines-of-code.html">initial announcement from the primary author of Catalyst</a> and <a href="http://mark.stosberg.com/blog/2008/11/review-of-mojo-087-a-new-perl-web-framework.html">its first review</a> two moths ago. So now I was tempted to try it, and I must say that I'm impressed. Mojolicious and its foundation Mojo have no dependency chain like Catalyst has, no black magic, just pure Perl that means great fun again.</p>
+
+<p>The only problem is that it's still under active development, so it's not recommended to use it in production environments. From what I can see, there are problems with FastCGI support currently, and there are no enough documentation and examples.</p>
+
+<h2><a href="http://infotrope.net/blog/2007/07/22/the-mvc-colouring-book/"><b>MasonX::MiniMVC</b></a></h2>
+
+<p>MiniMVC is a very lightweight MVC framework based on <a href="http://masonhq.com/">Mason</a>. Actually it can be treated as a Controller built on top of Mason views. And this is good. Mason is a very powerful engine that from the MVC's point of view lacks controller and model parts. There are many already available Perl packages for the model part, and MiniMVC provides the missing piece for the controller part.</p>
+
+<h2>Conclusion</h2>
+
+<p>It seems the most optimal choice for the moment is to build new Web applications using MiniMVC, because for the time when Mojo will be ready for the production use it will very easy to move Mason templates to its view part since Mojo supports the HTML::Mason template engine.</p>
+
+<p>I hope Mojo will eventually provide most of the features of such powerful MVC frameworks as Ruby on Rails and its derivatives in other languages like CakePHP, etc.</p>

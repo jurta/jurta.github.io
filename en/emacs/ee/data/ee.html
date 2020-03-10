@@ -1,0 +1,91 @@
+---
+title: ee.ee
+---
+<h1><a name="ee-ee" id="ee-ee">ee.ee - index of available ee extensions</a></h1>
+
+<h2><a name="description" id="description">Data Description</a></h2>
+<p>This data file holds a list of available ee extensions.  Data are stored in
+the data file 'ee.ee' with mandatory fields 'title', 'description',
+'command' and 'categories'.  Example of data file:</p>
+
+<pre class="darkgray">
+[(meta
+  (format-version . "0.0.1")
+  (database-version . "0.0.1")
+  (data-version . "0.0.1")
+  (author "Juri Linkov")
+  (created "2003-02-15")
+  (view-data-file . "view/links.ee")
+  (fields title description command categories ())
+  (key-fields title))
+ ["ee-views" "display, edit and switch views" ee-views ("ee/internal") ()]
+ ["ee-fields" "display and edit fields of the current record" ee-fields ("ee/internal") ()]
+ ["ee-buffers" "display and manipulate Emacs buffers" ee-buffers ("ee/emacs") ()]
+ ["ee-commands" "categorized menu of Emacs commands" ee-commands ("ee/emacs") ()]
+ ...
+]
+</pre>
+<!--break-->
+<h2><a name="views" id="views">Useful Views</a></h2>
+<p>Views are described in the same view file
+<a href="/en/emacs/ee/view/links">view/links.ee</a>, which is used to organize
+links (bookmarks).</p>
+
+<p>Default view is displayed by command M-x ee.
+This command will display the view of all available ee extensions,
+which you can select by typing `RET'.</p>
+
+<h3><a name="category" id="category">By Category</a></h3>
+<p>This view displays a list of available ee extensions and after typing
+`RET' calls the corresponding ee extension.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the parent buffer,
+    where it calls the corresponding command</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- ee (27)</span>
+<span class="emacs-ee-category"> - emacs (18)</span>
+  ee-buffers<span class="emacs-ee-shadow"> display and manipulate Emacs buffers</span>
+  ee-commands<span class="emacs-ee-shadow"> categorized menu of Emacs commands</span>
+  ee-customize<span class="emacs-ee-shadow"> browse Emacs customization groups</span>
+  ee-finder<span class="emacs-ee-shadow"> keyword-based Emacs code finder</span>
+  ee-info<span class="emacs-ee-shadow"> browse Info documentation</span>
+  ee-menubar<span class="emacs-ee-shadow"> categorized access to Emacs menu-bar</span>
+  ee-processes<span class="emacs-ee-shadow"> display and manipulate Emacs processes</span>
+  ee-tags<span class="emacs-ee-shadow"> etags facility for ee</span>
+  ee-windows<span class="emacs-ee-shadow"> display and switch Emacs window configurations</span>
+<span class="emacs-ee-category">  - buffer (3)</span>
+  ee-imenu<span class="emacs-ee-shadow"> categorized mode-specific buffer indexes</span>
+  ee-marks<span class="emacs-ee-shadow"> display and go to marked lines in the current Emacs buffer</span>
+  ee-outline<span class="emacs-ee-shadow"> manipulate outlines collected from outline-mode</span>
+<span class="emacs-ee-category">  - history (3)</span>
+  ee-history-command<span class="emacs-ee-shadow"> Display list from Emacs variable command-history</span>
+  ee-history-extended-command<span class="emacs-ee-shadow"> Display list from Emacs variable extended-command-history</span>
+  ee-history-shell-command<span class="emacs-ee-shadow"> Display list from Emacs variable shell-command-history</span>
+<span class="emacs-ee-category">  - packages (3)</span>
+  ee-bbdb<span class="emacs-ee-shadow"> summary mode for BBDB</span>
+  ee-edb<span class="emacs-ee-shadow"> summary mode for EDB</span>
+  ee-gnus<span class="emacs-ee-shadow"> summary and topic mode for Gnus</span>
+<span class="emacs-ee-category"> - external (4)</span>
+  ee-dired<span class="emacs-ee-shadow"> categorized directory listings</span>
+  ee-dselect<span class="emacs-ee-shadow"> Debian package handling frontend</span>
+  ee-programs<span class="emacs-ee-shadow"> categorized program menu</span>
+  ee-ps<span class="emacs-ee-shadow"> display CPU processes</span>
+<span class="emacs-ee-category"> - internal (3)</span>
+  ee-example<span class="emacs-ee-shadow"> accompanying example for demonstration of ee capabilities</span>
+  ee-fields<span class="emacs-ee-shadow"> display and edit fields of the current record</span>
+  ee-views<span class="emacs-ee-shadow"> display, edit and switch views</span>
+<span class="emacs-ee-category"> - textfile (2)</span>
+  ee-textfile-apachelog<span class="emacs-ee-shadow"> organize information from Apache log files</span>
+  ee-textfile-changelog<span class="emacs-ee-shadow"> organize information from ChangeLog files</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-datafile*/ee.ee (ee-datafile)--L1--C0--All---------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+</ul>

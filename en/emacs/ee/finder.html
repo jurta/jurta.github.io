@@ -1,0 +1,116 @@
+---
+title: ee-finder
+---
+<h1><a name="ee-finder" id="ee-finder">ee-finder - keyword-based Emacs code finder</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>This extension is the replacement for original finder user interface.
+It is more usable and flexible than original finder.
+But ee-finder still uses finder's internal structures created by parsing of source files.</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="keyword" id="keyword">By Keyword</a></h3>
+<p>This view displays a sorted list of Emacs package file names
+grouped by keywords extracted by finder-compile-keywords
+from Emacs Lisp source files.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">uses the keywords from finder-package-info.
+    Packages with unknown keywords are placed under &quot;(Unknown keywords)&quot; category.
+    Packages without keywords are placed under &quot;(Uncategorized)&quot; category.
+    </td></tr>
+<tr><td class="head">c-printer</td>
+    <td class="tail">prints the keyword name
+    and keyword description from finder-known-keywords if any</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints the file name and synopsis (summary)</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">visits the selected source file</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">+ (Uncategorized) (145)</span>
+<span class="emacs-ee-category">+ (Unknown keywords) (418)</span>
+<span class="emacs-ee-category">+ abbrev - abbreviation handling, typing shortcuts, macros (13)</span>
+<span class="emacs-ee-category">+ bib - code related to the `bib' bibliography processor (3)</span>
+<span class="emacs-ee-category">+ c - support for the C language and related languages (19)</span>
+<span class="emacs-ee-category">+ calendar - calendar and time management support (22)</span>
+<span class="emacs-ee-category">+ comm - communications, networking, remote access to files (31)</span>
+<span class="emacs-ee-category">+ convenience - convenience features for faster editing (49)</span>
+<span class="emacs-ee-category">+ data - support editing files of data (8)</span>
+<span class="emacs-ee-category">+ docs - support for Emacs documentation (7)</span>
+<span class="emacs-ee-category">+ emulations - emulations of other editors (23)</span>
+<span class="emacs-ee-category">+ extensions - Emacs Lisp language extensions (40)</span>
+<span class="emacs-ee-category">+ faces - support for multiple fonts (21)</span>
+<span class="emacs-ee-category">- files - support for editing and manipulating files (14)</span>
+  compare-w.el<span class="emacs-ee-shadow"> compare text between windows for Emacs</span>
+  dired-aux.el<span class="emacs-ee-shadow"> less commonly used parts of dired</span>
+  dired-x.el<span class="emacs-ee-shadow"> extra Dired functionality</span>
+  dired.el<span class="emacs-ee-shadow"> directory-browsing commands</span>
+  fast-lock.el<span class="emacs-ee-shadow"> automagic text properties caching for fast Font Lock mode</span>
+  ffap.el<span class="emacs-ee-shadow"> find file (or url) at point</span>
+  jit-lock.el<span class="emacs-ee-shadow"> just-in-time fontification</span>
+  lazy-lock.el<span class="emacs-ee-shadow"> lazy demand-driven fontification for fast Font Lock mode</span>
+  locate.el<span class="emacs-ee-shadow"> interface to the locate command</span>
+  po.el<span class="emacs-ee-shadow"> basic support of PO translation files</span>
+  recentf.el<span class="emacs-ee-shadow"> setup a menu of recently opened files</span>
+  shadowfile.el<span class="emacs-ee-shadow"> automatic file copying</span>
+  uniquify.el<span class="emacs-ee-shadow"> unique buffer names dependent on file name</span>
+  view.el<span class="emacs-ee-shadow"> peruse file or buffer without editing</span>
+<span class="emacs-ee-category">+ frames - support for Emacs frames and window systems (5)</span>
+<span class="emacs-ee-category">+ games - games, jokes and amusements (26)</span>
+<span class="emacs-ee-category">+ hardware - support for interfacing with exotic hardware (5)</span>
+<span class="emacs-ee-category">+ help - support for on-line help systems (21)</span>
+<span class="emacs-ee-category">+ hypermedia - support for links between text or other media types (5)</span>
+<span class="emacs-ee-category">+ i18n - internationalization and alternate character-set support (38)</span>
+<span class="emacs-ee-category">+ internal - code for Emacs internals, build process, defaults (37)</span>
+<span class="emacs-ee-category">+ languages - specialized modes for editing programming languages (62)</span>
+<span class="emacs-ee-category">+ lisp - Lisp support, including Emacs Lisp (31)</span>
+<span class="emacs-ee-category">+ mail - modes for electronic-mail handling (79)</span>
+<span class="emacs-ee-category">+ maint - maintenance aids for the Emacs development group (12)</span>
+<span class="emacs-ee-category">+ matching - various sorts of searching and matching (8)</span>
+<span class="emacs-ee-category">+ mouse - mouse support (17)</span>
+<span class="emacs-ee-category">+ multimedia - images and sound support (6)</span>
+<span class="emacs-ee-category">+ news - support for netnews reading and posting (80)</span>
+<span class="emacs-ee-category">+ oop - support for object-oriented programming (12)</span>
+<span class="emacs-ee-category">+ outlines - support for hierarchical outlining (7)</span>
+<span class="emacs-ee-category">+ processes - process, subshell, compilation, and job control support (26)</span>
+<span class="emacs-ee-category">+ terminals - support for terminal types (6)</span>
+<span class="emacs-ee-category">+ tex - code related to the TeX formatter (10)</span>
+<span class="emacs-ee-category">+ tools - programming tools (39)</span>
+<span class="emacs-ee-category">+ unix - front-ends/assistants for, or emulators of, UNIX features (22)</span>
+<span class="emacs-ee-category">+ wp - word processing (27)</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-finder*    (ee-finder)--L1--C0--All--------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="alphabetical" id="alphabetical">Alphabetical</a></h3>
+<p>This view displays the alphabetically sorted list of Emacs package file names
+with summary.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints the file names and synopsis (summary)</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">visits the selected source file</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+  advice.el<span class="emacs-ee-shadow"> an overloading mechanism for Emacs Lisp functions</span>
+  align.el<span class="emacs-ee-shadow"> align text to a specific column, by regexp</span>
+  allout.el<span class="emacs-ee-shadow"> extensive outline mode for use alone and with other modes</span>
+  ange-ftp.el<span class="emacs-ee-shadow"> transparent FTP support for GNU Emacs</span>
+  animate.el<span class="emacs-ee-shadow"> make text dance</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-finder*    (ee-finder)--L1--C0--All--------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views (e.g. alphabetical)</li>
+</ul>
+
+<h2><a name="links" id="links">Links</a></h2>
+<p>See also <a href="/en/emacs/ee/data/ell">ell.ee</a> with the similar functionality.</p>

@@ -1,0 +1,82 @@
+---
+title: ee-tags
+---
+<h1><a name="ee-tags" id="ee-tags">ee-tags - etags facility</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>This extension is the replacement for etags user interface.
+It is more usable and flexible than original etags listings.
+But ee-tags still uses some etags functions.</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="sorted" id="sorted">By File Name/Sorted by Tag</a></h3>
+<p>This view displays the alphabetically sorted list of tags
+grouped by file names.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">groups by file name</td></tr>
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts alphabetically by tag name</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints the tag name</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the tag location</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">+ ee-programs.el (14)</span>
+<span class="emacs-ee-category">- ee-tags.el (8)</span>
+  ee-tags
+  ee-tags-data
+  ee-tags-data-collect
+  ee-tags-data-collect-tags
+  ee-tags-keymap
+  ee-tags-keymap-make-default
+  ee-tags-mode-name
+<span class="emacs-ee-link-visited">  ee-tags-select</span>
+<span class="emacs-ee-category">+ ee-textfile.el (25)</span>
+<span class="emacs-ee-category">+ ee-views.el (9)</span>
+<span class="emacs-ee-category">+ ee-windows.el (11)</span>
+<span class="emacs-ee-category">+ ee.el (176)</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-tags*    (ee-tags)--L1--C0--All----------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="unsorted" id="unsorted">By File Name/Unsorted</a></h3>
+<p>This view displays the unsorted list of tags
+grouped by file names.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">groups by file name</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints tag name</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the tag location</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">+ ee-programs.el (14)</span>
+<span class="emacs-ee-category">- ee-tags.el (8)</span>
+  ee-tags-mode-name
+  ee-tags-data
+  ee-tags-data-collect
+  ee-tags-data-collect-tags
+<span class="emacs-ee-link-visited">  ee-tags-select</span>
+  ee-tags-keymap
+  ee-tags-keymap-make-default
+  ee-tags
+<span class="emacs-ee-category">+ ee-textfile.el (25)</span>
+<span class="emacs-ee-category">+ ee-views.el (9)</span>
+<span class="emacs-ee-category">+ ee-windows.el (11)</span>
+<span class="emacs-ee-category">+ ee.el (176)</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-tags*    (ee-tags)--L1--C0--All----------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+</ul>

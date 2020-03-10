@@ -1,0 +1,267 @@
+---
+title: ee-buffers
+---
+<h1><a name="ee-buffers" id="ee-buffers">ee-buffers - display and manipulate Emacs buffers</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>This extension displays a categorized list of Emacs buffers with different
+buffer attributes, and allows to perform different operations on separate
+buffer or on groups of buffers.</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="list-buffers" id="list-buffers">list-buffers</a></h3>
+<p>This view emulates the default display of function 'list-buffers'.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-filter</td>
+    <td class="tail">filters out the buffers whose names begin with space.
+    The *ee-buffers* buffer itself is filtered out as well.</td></tr>
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">no categories in this view</td></tr>
+<tr><td class="head">r-sorter</td>
+    <td class="tail">unsorted, i.e. buffers are sorted by recency</td></tr>
+<tr><td class="head">r-title-printer</td>
+    <td class="tail">emulates the title printed by 'list-buffers'</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">emulates the rows printed by 'list-buffers'</td></tr>
+<tr><td class="head">post-update</td>
+    <td class="tail">moves point to previously visited buffer</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the selected buffer</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+ MR Buffer           Size Mode             File
+ -- ------           ---- ----             ----
+    ee-buffers.el   32822 Emacs-Lisp       /home/juri/emacs/ee/ee-buffers.el
+    ee.el           92569 Emacs-Lisp       /home/juri/emacs/ee/ee.el
+*   ee.texi         10848 Texinfo          /home/juri/emacs/ee/ee.texi
+    *scratch*           0 Lisp Interaction ~/
+ *  *Messages*      38599 Fundamental      /home/juri/
+ *  *grep*          54447 grep             /usr/share/emacs/21.2/lisp/
+D % *info*          52033 Info             /usr/share/info/emacs-21/
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-buffers*    (ee-buffers)--L1--C0--All----------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="dired" id="dired">Dired-like</a></h3>
+<p>This view categorizes the file buffers by their directory names.
+Buffers not visiting a file are categorized under their mode name.
+Inside every category the buffers are sorted alphabetically (and sorting
+them by recency could be also useful).  Every buffer row is printed in
+format very similar to the output of function 'dired', where the buffer
+attributes replace the file attributes: inode is replaced by
+buffer-display-count, user name - by mode name, file modification time
+- by buffer-display-time, and file name - by buffer name.  Typing
+`M-o' will disable/enable filter very much like dired-omit-toggle does
+with dired-omit-files.  Toggled buffer names are displayed in the same
+color as in the dired mode.  Buffers not visited some time amount are
+"faded away" and displayed in gray color instead of black.</p>
+
+<p>Categorizing the buffers by their directory names is the most useful
+way to group buffers, because often an user simultaneouly works only
+with files located in one or very few directories, so other groups of
+ununsed buffers can be easily hidden from view by collapsing their
+directory category.  This is my favorite ee-buffers view.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-filter</td>
+    <td class="tail">filters out the buffers whose names begin with
+    space character, some buffers whose names are surrounded by
+    asterisks, buffers in dired mode except the buffer *Find*, and the
+    *ee-buffers* buffer itself.</td></tr>
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by buffer directory name</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts alphabetically</td></tr>
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts alphabetically by buffer name</td></tr>
+<tr><td class="head">c-printer</td>
+    <td class="tail">shows in parentheses the amount of buffers in
+    a category, and amount of marked buffers (alternatively, useful
+    could be total size of buffers)</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">columns are mark, modified, read-only, display-count,
+    mode-name, size, buffer display time and buffer name</td></tr>
+<tr><td class="head">post-update</td>
+    <td class="tail">moves point to the previously visited buffer</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the selected buffer</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+ MR Cnt Mode                 Size    Display Time  Buffer Name
+<span class="emacs-ee-category">- /home/juri/ (1)</span>
+      2 Emacs-Lisp         119408 2003-02-15 19:52 <span class="emacs-ee-shadow">.emacs</span>
+<span class="emacs-ee-category">- /home/juri/emacs/ee/ (8, </span><span class="emacs-ee-marked">2</span><span class="emacs-ee-category">)</span>
+      1 Makefile             2114 2003-02-15 18:45 <span class="emacs-ee-shadow">Makefile&lt;ee&gt;</span>
+      1 Fundamental          2803 2003-02-15 18:45 <span class="emacs-ee-shadow">README&lt;ee&gt;</span>
+      1 Emacs-Lisp           5287 2003-02-15 18:45 <span class="emacs-ee-shadow">ee-autoloads.el</span>
+     56 Emacs-Lisp          32019 2003-02-15 21:42 ee-buffers.el
+     27 Emacs-Lisp          92569 2003-02-15 19:54 <span class="emacs-ee-shadow">ee.el</span>
+      4 Texinfo             10848 2003-02-15 19:52 <span class="emacs-ee-shadow">ee.texi</span>
+<span class="emacs-ee-bookmarked">*</span>     4 Emacs-Lisp            544 2003-02-15 19:55 <span class="emacs-ee-marked">ee.ee</span>
+<span class="emacs-ee-bookmarked">*</span>     1 Emacs-Lisp            532 2003-02-15 18:45 <span class="emacs-ee-marked">ee.views.ee</span>
+<span class="emacs-ee-category">- /home/juri/.emacs-ee/ (3)</span>
+  %   1 Dired by name         223 2003-02-15 18:45 <span class="emacs-ee-omitted">/home/juri/.emacs-ee/</span>
+      1 Emacs-Lisp          11680 2003-02-15 18:45 <span class="emacs-ee-shadow">view.ee</span>
+      1 Emacs-Lisp          44011 2003-02-15 18:45 <span class="emacs-ee-shadow">programs-debian.ee</span>
+<span class="emacs-ee-category">+ /home/juri/.emacs-ee/info-emacs-21/ (3)</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-buffers*    (ee-buffers)--L1--C0--All--------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<p>Alternatively, directory paths can be splitted into a directory
+trees.  To do this, in the c-path-finder the property function 'list'
+should be replaced by 'ee-split-string' with argument "/".
+Also buffer sizes can be summed up on the category lines.</p>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+ MR Cnt Mode                 Size    Display Time  Buffer Name
+<span class="emacs-ee-category">- home (3, 245242)</span>
+<span class="emacs-ee-category"> - juri (3, 245242)</span>
+      1 Emacs-Lisp         116908 2003-02-15 18:45 <span class="emacs-ee-shadow">.emacs</span>
+<span class="emacs-ee-category">  - emacs (2, 128334)</span>
+<span class="emacs-ee-category">   - ee (2, 128334)</span>
+     93 Emacs-Lisp          35765 2003-02-15 23:09 ee-buffers.el
+     28 Emacs-Lisp          92569 2003-02-15 22:17 <span class="emacs-ee-shadow">ee.el</span>
+<span class="emacs-ee-category">- usr (2, 202569)</span>
+<span class="emacs-ee-category"> - share (2, 202569)</span>
+<span class="emacs-ee-category">  - emacs (1, 150523)</span>
+<span class="emacs-ee-category">   - lisp (1, 150523)</span>
+  %   1 Emacs-Lisp         150523 2003-02-15 23:06 <span class="emacs-ee-shadow">files.el</span>
+<span class="emacs-ee-category">  - info (1, 52046)</span>
+<span class="emacs-ee-category">   + emacs-21 (1, 52046)</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-buffers*    (ee-buffers)--L1--C0--All-------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<p>The variables 'ee-buffer-directory-name-regexp-alist' and
+'ee-buffer-file-name-regexp-alist' can be used to specify
+the mappings between directory or file names and project names.
+For example, the next value of 'ee-buffer-directory-name-regexp-alist'</p>
+
+<pre>
+(("ee" . "ee")
+ ("emacs" . "emacs")
+ ("html\\|www" . "www"))
+</pre>
+
+<p>will place the files with the directory names matching the keys
+of this association list under the associated project names.</p>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+ MR Cnt Mode                 Size    Display Time  Buffer Name
+<span class="emacs-ee-category">- Project (15)</span>
+<span class="emacs-ee-category"> - ee (14)</span>
+<span class="emacs-type">  - /home/juri/emacs/ee/ (8)</span>
+      1 Makefile             2114 2003-02-15 18:45 <span class="emacs-ee-shadow">Makefile&lt;ee&gt;</span>
+      1 Fundamental          2803 2003-02-15 18:45 <span class="emacs-ee-shadow">README&lt;ee&gt;</span>
+      1 Emacs-Lisp           5287 2003-02-15 18:45 <span class="emacs-ee-shadow">ee-autoloads.el</span>
+     56 Emacs-Lisp          32019 2003-02-15 21:42 ee-buffers.el
+     27 Emacs-Lisp          92569 2003-02-15 19:54 ee.el
+      4 Texinfo             10848 2003-02-15 19:52 ee.texi
+      4 Emacs-Lisp            544 2003-02-15 19:55 <span class="emacs-ee-shadow">ee.ee</span>
+      1 Emacs-Lisp            532 2003-02-15 18:45 <span class="emacs-ee-shadow">ee.views.ee</span>
+<span class="emacs-type">  - /home/juri/.emacs-ee/ (3)</span>
+  %   1 Dired by name         223 2003-02-15 18:45 <span class="emacs-ee-omitted">/home/juri/.emacs-ee/</span>
+      1 Emacs-Lisp          11680 2003-02-15 18:45 <span class="emacs-ee-shadow">view.ee</span>
+      1 Emacs-Lisp          44011 2003-02-15 18:45 <span class="emacs-ee-shadow">programs-debian.ee</span>
+<span class="emacs-type">  + /home/juri/.emacs-ee/info-emacs-21/ (3)</span>
+<span class="emacs-ee-category"> - emacs (1)</span>
+<span class="emacs-type">  - /home/juri/ (1)</span>
+      2 Emacs-Lisp         119408 2003-02-15 19:52 <span class="emacs-ee-shadow">.emacs</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-buffers*    (ee-buffers)--L1--C0--All--------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="modetype" id="modetype">By Mode or Type</a></h3>
+<p>Buffers in this view are categorized by mode names and additionally
+by buffer "types", such as modified, read-only, invisible, etc.
+In this view every buffer can appear under several categories.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-filter</td>
+    <td class="tail">filters out the *ee-buffers* buffer</td></tr>
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by mode name and by buffer "type"</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">first level sorted alphabetically, second level is unsorted</td></tr>
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts alphabetically by buffer name</td></tr>
+<tr><td class="head">c-printer</td>
+    <td class="tail">shows in parentheses the amount of buffers in
+    a category, and amount of marked buffers (alternatively, useful
+    could be total size of buffers)</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">columns are mark, modified, read-only, display-count,
+    mode-name, size, buffer display time and buffer name</td></tr>
+<tr><td class="head">post-update</td>
+    <td class="tail">moves point to the previously visited buffer</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the selected buffer</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+ MR Cnt Mode                 Size    Display Time  Buffer Name
+<span class="emacs-ee-category">- Dired (2)</span>
+<span class="emacs-type"> - Dired by date (1)</span>
+  %   8 Dired by date        2728 2003-02-15 22:15 <span class="emacs-ee-shadow">/home/juri/</span>
+<span class="emacs-type"> - Dired by name (1)</span>
+  %   3 Dired by name        5297 2003-02-15 21:42 <span class="emacs-ee-shadow">/home/juri/emacs/ee/</span>
+<span class="emacs-ee-category">- Emacs-Lisp (2)</span>
+    102 Emacs-Lisp          35254 2003-02-15 23:33 ee-buffers.el
+     28 Emacs-Lisp          92569 2003-02-15 22:17 <span class="emacs-ee-shadow">ee.el</span>
+<span class="emacs-ee-category">- Fundamental (2)</span>
+ *    1 Fundamental             0 2003-02-15 19:56 <span class="emacs-ee-shadow">  *info tag table*</span>
+ *    0 Fundamental         84049 2003-02-15 23:33 *Messages*
+<span class="emacs-ee-category">- Invisible (1)</span>
+ *    1 Fundamental             0 2003-02-15 19:56 <span class="emacs-ee-shadow">  *info tag table*</span>
+<span class="emacs-ee-category">- Lisp Interaction (1)</span>
+      5 Lisp Interaction        0 2003-02-15 18:45 <span class="emacs-ee-shadow">*scratch*</span>
+<span class="emacs-ee-category">- Modified (2)</span>
+ *    1 Fundamental             0 2003-02-15 19:56 <span class="emacs-ee-shadow">  *info tag table*</span>
+ *    0 Fundamental         84049 2003-02-15 23:33 *Messages*
+<span class="emacs-ee-category">- Read-only (2)</span>
+  %   8 Dired by date        2728 2003-02-15 22:15 <span class="emacs-ee-shadow">/home/juri/</span>
+  %   3 Dired by name        5297 2003-02-15 21:42 <span class="emacs-ee-shadow">/home/juri/emacs/ee/</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-buffers*    (ee-buffers)--L1--C0--All-----------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="modetype" id="modetype">By Coding</a></h3>
+<p>Buffers in this view are categorized by buffer file coding system.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-filter</td>
+    <td class="tail">filters out buffers not visiting files</td></tr>
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by field file-coding-system</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints buffer file name</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the selected buffer</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- iso-2022-7bit-unix (1)</span>
+  /usr/share/emacs/21.3/etc/HELLO
+<span class="emacs-ee-category">- undecided-unix (2)</span>
+  /dos/c/home/juri/prog/gnu/emacs/ee/ee-buffers.el
+  /dos/c/home/juri/prog/gnu/emacs/ee/ee.ee
+<span class="emacs-ee-category">- utf-8-unix (1)</span>
+  /usr/share/emacs/21.3/lisp/textmodes/tex-mode.el
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-buffers*    (ee-buffers)--L1--C0--All-----------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+</ul>
+
+<h2><a name="changelog" id="changelog">ChangeLog</a></h2>
+<ul>
+<li>2003-08-09 - Added view &quot;by Coding&quot;</li>
+</ul>

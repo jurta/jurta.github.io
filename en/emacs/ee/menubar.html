@@ -1,0 +1,155 @@
+---
+title: ee-menubar
+---
+<h1><a name="ee-menubar" id="ee-menubar">ee-menubar - categorized access to Emacs menu-bar</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>This extension builds a categorized menu of Emacs commands from Emacs
+menu bar, where submenus are transformed into hierarchical categories,
+and menu elements - into records.</p>
+<!--break-->
+<p>Actually, this extension replaces the graphical menus (i.e. X Window
+menu bar and other menu types in other graphical environments).
+Browsing the menu items in the Emacs text buffer is much more convenient
+than in the graphical menus.  Functionality and extensibility of
+graphical menus are very limited.  But in the text-mode menus displayed in
+regular Emacs buffers all Emacs standard functionality is available for
+operating on menu items: all standard key bindings are available for
+working with menu items in text mode, menu items can be searched in
+the Emacs buffer, text of menu items can be easily copied into
+clipboard, all standard point movement commands are available in the
+Emacs buffer and so on.  And text menus work also on text-only terminals
+with no mouse.</p>
+
+<p>Some Emacs packages already provide text mode menus.  For
+example, package tmm has the same goal to replace graphical menus by
+text mode menus, but ee-menubar provides more capabilities: it can
+collapse and expand parts of menus and save their state between
+successive menu invocations; it can mark recently selected menu items
+by different colors to help to more quickly locate them among the other menu
+items; it can mark frequently used menu items by another mark or
+color; menu items can be categorized by different criteria, etc.
+Read also <a href="http://mail.gnu.org/archive/html/emacs-devel/2002-09/msg00587.html">why tmm is "broken"</a>,
+ee-menubar fixes all of the mentioned shortcomings of tmm.</p>
+
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="category" id="category">By Category</a></h3>
+<p>This view extracts menu tree from Emacs internals and transforms it
+into category tree.  Menu items in every submenu retain the same
+sorting order at which they appear in the graphical menu.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-tree-builder</td>
+    <td class="tail">builds category tree from menu tree extracted
+    from Emacs internals</td></tr>
+<tr><td class="head">c-printer</td>
+    <td class="tail">prints submenu title</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints menu item title</td></tr>
+<tr><td class="head">post-generate</td>
+    <td class="tail">hides submenus</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">calls the command bound to menu item</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- File</span>
+   Open File...
+   Open Directory...
+   Insert File...
+   Close (current buffer)
+   --
+   Save (current buffer)
+   Save Buffer As...
+   Revert Buffer
+   Recover Crashed Session...
+   --
+   Print Buffer
+   Print Region
+   Postscript Print Buffer
+   Postscript Print Region
+   Postscript Print Buffer (B+W)
+   Postscript Print Region (B+W)
+   --
+   Split Window
+   Unsplit Windows
+   New Frame
+   New Frame on Display...
+   Delete Frame
+   --
+   Exit Emacs
+<span class="emacs-ee-category">+ Edit</span>
+<span class="emacs-ee-category">+ Options</span>
+<span class="emacs-ee-category">+ Buffers</span>
+<span class="emacs-ee-category">+ Tools</span>
+<span class="emacs-ee-category">- Help</span>
+   Emacs Tutorial
+   Emacs Tutorial (choose language)...
+   Emacs FAQ
+   Emacs News
+   Emacs Known Problems
+   Read the Emacs Manual
+   Ordering Manuals
+   Send Bug Report...
+   --
+<span class="emacs-ee-category"> - Manuals</span>
+    Find Key in Manual
+    Find Command in Manual
+    Browse Manuals with Info
+    --
+    Read Man Page...
+<span class="emacs-ee-category"> + Describe</span>
+   Find Emacs Packages...
+   --
+<span class="emacs-ee-link-visited">   Show Emacs Version</span>
+<span class="emacs-ee-link-visited">   Find Extra Packages</span>
+   Getting New Versions
+   Copying Conditions
+   (Non)Warranty
+   --
+   Emacs Psychiatrist
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-menubar*    (ee-menubar)--L1--C0--All--------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="alphabetical" id="alphabetical">Alphabetical</a></h3>
+<p>This view alphabetically sorts menu items collected from all submenus.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts alphabetically by menu item name</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints menu item title</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">calls a command bound to menu item</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+  Advanced Search/Replace
+  Adventure
+  Alphabetical
+  Annotate
+  Apply Patch
+  Apropos Commands...
+  Apropos Variables...
+  Background Color
+  Bookmarks
+  Browse Customization Groups
+  Browse Manuals with Info
+  Buffers
+  Case-Insensitive Search
+  Center
+  Change Dictionary...
+  Check In/Out
+  Checkout Module
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-menubar*    (ee-menubar)--L1--C0--Top--------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+<li>Show keybindings in the view</li>
+<li>Use :enable, :visible and other keywords</li>
+</ul>

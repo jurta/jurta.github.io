@@ -1,0 +1,186 @@
+---
+title: 15 - число Тани
+---
+<h2><a name="15asm" id="15asm">15 - любимое число Тани</a></h2>
+
+<p><a href="/ru/tanja/meet/1991-12-19">В 1991 году</a> Таня должна
+была делать курсовую работу по программированию на ассемблере,
+и я предложил Тане найти компьютер для этого, так как в то время
+найти свободный компьютер в институте было непросто.  Мы с Таней
+договорились встретиться в фойе вычислительного центра.  После неудачной
+попытки делать курсовую на ЕС-1841, мы перешли на другой этаж на IBM-PC.
+Там Таня сама без моей помощи написала программу на ассемблере,
+и для её тестирования стала вводить случайные числа:</p>
+
+<!-- Created by htmlize-1.27 in css mode. -->
+<pre>
+        <span class="emacs-keyword">assume</span>  ds:dseg,cs:cseg
+<span class="emacs-function-name">dseg</span>    <span class="emacs-keyword">segment</span> byte
+<span class="emacs-function-name">mas</span>     <span class="emacs-keyword">db</span>      01,02,03,04,05,06,07,08,09,10,11,12,13
+        <span class="emacs-keyword">db</span>      23,22,21,20,19,18,17,16,<b><u>15</u></b>,14,27,28,26
+        <span class="emacs-keyword">db</span>      65,84,97,34,33,77,08,75,12,97,<b><u>15</u></b>,24,35
+        <span class="emacs-keyword">db</span>      36,35,10,57,29,80,16,25,37,19,17,37,64
+        <span class="emacs-keyword">db</span>      38,46,52,10,60,23,51,35,29,68,50,<b><u>15</u></b>,27
+        <span class="emacs-keyword">db</span>      87,88,89,86,85,81,80,83,89,84,08,38,<b><u>15</u></b>
+        <span class="emacs-keyword">db</span>      91,97,94,98,95,96,93,92,90,28,17,39,50
+        <span class="emacs-keyword">db</span>      74,85,95,72,76,73,70,78,71,54,56,58,59
+        <span class="emacs-keyword">db</span>      57,58,59,54,55,56,52,51,53,50,46,37,28
+        <span class="emacs-keyword">db</span>      47,48,42,41,49,43,46,45,44,40,27,19,32
+        <span class="emacs-keyword">db</span>      14,<b><u>15</u></b>,16,12,11,13,19,18,17,10,31,61,91
+        <span class="emacs-keyword">db</span>      20,21,24,27,28,25,22,29,26,23,31,64,97
+        <span class="emacs-keyword">db</span>      36,35,05,01,02,09,08,07,03,60,50,40,10
+        <span class="emacs-keyword">db</span>      61,62,63,64,66,65,66,68,69,62,245,7,21
+        <span class="emacs-keyword">db</span>      187,154,187,245,<b><u>15</u></b>,1,2,5,8,90,25,35,65
+        <span class="emacs-keyword">db</span>      52,64,98,84,51,62,63,68,75,95,84,75,24
+        <span class="emacs-keyword">db</span>      <b><u>15</u></b>,68,98,97,54,65,32,01,14,47,58,52,02
+        <span class="emacs-keyword">db</span>      32,21,65,54,98,87,78,89,45,56,12,32,21
+        <span class="emacs-keyword">db</span>      14,17,47,25,28,58,39,36,69,63,52,41,50
+<span class="emacs-function-name">mess</span>    <span class="emacs-keyword">db</span>      'Result: '
+<span class="emacs-function-name">res</span>     <span class="emacs-keyword">db</span>      ?
+<span class="emacs-function-name">mess1</span>   <span class="emacs-keyword">db</span>      '$'
+<span class="emacs-function-name">dseg</span>    <span class="emacs-keyword">ends</span>
+
+<span class="emacs-function-name">cseg</span>    <span class="emacs-keyword">segment</span>
+<span class="emacs-function-name">start</span>:  <span class="emacs-keyword">mov</span>     ax,dseg
+        <span class="emacs-keyword">mov</span>     ds,ax
+
+        <span class="emacs-keyword">mov</span>     cx,20                   <span class="emacs-comment-delimiter">; </span><span class="emacs-comment">&#1091;&#1089;&#1090;&#1072;&#1085;&#1086;&#1074;&#1082;&#1072; &#1089;&#1095;&#1077;&#1090;&#1095;&#1080;&#1082;&#1072;
+</span>        <span class="emacs-keyword">mov</span>     bx,2                    <span class="emacs-comment-delimiter">; </span><span class="emacs-comment">&#1091;&#1089;&#1090;&#1072;&#1085;&#1086;&#1074;&#1082;&#1072; &#1085;&#1072;&#1095;&#1072;&#1083;&#1100;&#1085;&#1086;&#1075;&#1086; &#1089;&#1084;&#1077;&#1097;&#1077;&#1085;&#1080;&#1103;
+</span>        <span class="emacs-keyword">mov</span>     dx,14                   <span class="emacs-comment-delimiter">; </span><span class="emacs-comment">&#1091;&#1089;&#1090;&#1072;&#1085;&#1086;&#1074;&#1082;&#1072; &#1089;&#1084;&#1077;&#1097;&#1077;&#1085;&#1080;&#1103;
+</span>        <span class="emacs-keyword">mov</span>     al,byte ptr mas[bx]     <span class="emacs-comment-delimiter">; </span><span class="emacs-comment">&#1091;&#1089;&#1090;&#1072;&#1085;&#1086;&#1074;&#1082;&#1072; &#1084;&#1072;&#1082;&#1089;&#1080;&#1084;&#1072;&#1083;&#1100;&#1085;&#1086;&#1075;&#1086; &#1101;&#1083;&#1077;&#1084;&#1077;&#1085;&#1090;&#1072;
+</span><span class="emacs-function-name">cikl</span>:   <span class="emacs-keyword">add</span>     bx,dx
+        <span class="emacs-keyword">cmp</span>     al,byte ptr mas[bx]     <span class="emacs-comment-delimiter">; </span><span class="emacs-comment">&#1089;&#1088;&#1072;&#1074;&#1085;&#1077;&#1085;&#1080;&#1077; &#1101;&#1083;&#1077;&#1084;&#1077;&#1085;&#1090;&#1086;&#1074;
+</span>        <span class="emacs-keyword">jge</span>     cikl1
+        <span class="emacs-keyword">mov</span>     al,byte ptr mas[bx]
+<span class="emacs-function-name">cikl1</span>:  <span class="emacs-keyword">cmp</span>     cx,11
+        <span class="emacs-keyword">jne</span>     cikl2
+        <span class="emacs-keyword">sub</span>     bx,26                   <span class="emacs-comment-delimiter">; </span><span class="emacs-comment">&#1080;&#1079;&#1084;&#1077;&#1085;&#1077;&#1085;&#1080;&#1077; &#1076;&#1080;&#1072;&#1075;&#1086;&#1085;&#1072;&#1083;&#1080;
+</span>        <span class="emacs-keyword">mov</span>     dx,12
+<span class="emacs-function-name">cikl2</span>:  <span class="emacs-keyword">loop</span>    cikl
+
+        <span class="emacs-keyword">mov</span>     res,al                  <span class="emacs-comment-delimiter">; </span><span class="emacs-comment">&#1074;&#1099;&#1074;&#1086;&#1076; &#1088;&#1077;&#1079;&#1091;&#1083;&#1100;&#1090;&#1072;&#1090;&#1072;
+</span>        <span class="emacs-keyword">mov</span>     ah,09h
+        <span class="emacs-keyword">mov</span>     dx,offset mess
+        <span class="emacs-keyword">int</span>     21h
+
+        <span class="emacs-keyword">mov</span>     ax,4C00h                <span class="emacs-comment-delimiter">; </span><span class="emacs-comment">&#1086;&#1082;&#1086;&#1085;&#1095;&#1072;&#1085;&#1080;&#1077; &#1088;&#1072;&#1073;&#1086;&#1090;&#1099;
+</span>        <span class="emacs-keyword">int</span>     21h
+<span class="emacs-function-name">cseg</span>    <span class="emacs-keyword">ends</span>
+        <span class="emacs-keyword">end</span>     start
+</pre>
+
+<p>Потом я сохранил эту программу на дискете, и когда через несколько лет
+я просматривал файловые архивы, меня заинтересовало, какие числа Таня
+вводила чаще других.  Для того, чтобы найти эти числа, я сначала составил
+следующую команду для сортировки всех введённых 247 чисел по частоте:</p>
+
+<pre>
+    unzip -p lab.zip LAB.ASM
+    | grep db.*[0-9] | expand | cut -c 17-54 | tr , '\n'
+    | sed 's/^0//' | sort | uniq -c | sort -k 1nr -k 2n
+</pre>
+
+<p>а также эквивалентную ей другую команду:</p>
+
+<pre>
+    unzip -p lab.zip LAB.ASM
+    | sed -n '/db.*[0-9]/s/^[^0-9]*//p' | tr , '\n' | tr -d '\r'
+    | sed 's/^0//' | sort | uniq -c | sort -k 1nr -k 2n
+</pre>
+
+<p>Но мне не очень нравится такой конвейерный стиль обработки текстов,
+потому что часто нужно добавлять такие операции, для которых нет
+необходимой утилиты.  Поэтому я переписал эти команды на Перле, и теперь
+те же самые операции получились легко усложняемыми и более понятными:</p>
+
+<pre>
+    unzip -p lab.zip LAB.ASM |
+    perl -lne '<span class="emacs-function-name">map</span>{<span class="emacs-function-name">$f</span>{$_+0}++}<span class="emacs-function-name">split</span>(<span class="emacs-constant">/</span><span class="emacs-string">,</span><span class="emacs-constant">/</span>,$1)<span class="emacs-keyword">if</span>(<span class="emacs-constant">/</span><span class="emacs-string">db.*?([\d,]+)</span><span class="emacs-constant">/</span>);END{
+    <span class="emacs-keyword">for</span>(<span class="emacs-function-name">sort</span>{<span class="emacs-function-name">$f</span>{$b}&lt;=&gt;<span class="emacs-function-name">$f</span>{$a}||$a&lt;=&gt;$b}<span class="emacs-function-name">keys</span> <span class="emacs-function-name">%f</span>){<span class="emacs-function-name">printf</span> <span class="emacs-string">"%7s\t%s\n"</span>,<span class="emacs-function-name">$f</span>{$_},$_}}'
+</pre>
+
+<p>Когда я запустил эту команду на программе со случайными числами,
+которые ввела Таня, меня ждал сюрприз: единственное число, которое Таня
+ввела намного чаще других чисел, оказалось число <b><u>15</u></b>!</p>
+
+<h2><a name="15life" id="15life">15 и Таня</a></h2>
+
+<p>Я думаю, нет ничего удивительного в том, что среди всех случайных чисел,
+введённых Таней, самым частым оказалось число 15.  В жизни Тани это число
+встречается чаще других чисел, поэтому подсознательно Таня и вспоминает его
+чаще других чисел.</p>
+
+<p>Самые значительные факты, где число 15 связано с Таней:</p>
+
+<ul>
+<li>день рождения Тани - 15 февраля 1970 года</li>
+<li>день рождения сестры Тани - 15 февраля 1970 года</li>
+<li>номер квартиры - 115</li>
+<li>номер дома ВЦ ТПИ, где мы с Таней учились - Raja 15 (Department of Computer Science)</li>
+<li>номер дома ВЦ ЦСУ, где мы с Таней работали - Endla 15 (ул. Эндла 15)</li>
+</ul>
+
+<!-- TODO: ??? make map images from downloaded http://www.tallinn.ee/kaart -->
+
+<img src="/home/juri/.thumbnails/normal/85917fb1a39229d1024b201478588171.png" />
+<img src="/home/juri/.thumbnails/normal/fb94a983b208d5ae8d27cda9a3e4b264.png" />
+<img src="/home/juri/.thumbnails/normal/a3ac62be489c871dd260c33bc0c4c16f.png" />
+<img src="/home/juri/.thumbnails/normal/bc165b302e0fc242cc1c49ad96759731.png" />
+
+<!-- TODO: upload summer foto of Arvutikeskus_TPI and try to zoom thumbnails -->
+
+<h2><a name="15angel" id="15angel">15 - число ангела</a></h2>
+
+<p>Можно доказать, что <a href="http://en.wikipedia.org/wiki/15_(number)">число 15</a>
+- это число ангела.  Известно, что
+<a href="http://ru.wikipedia.org/wiki/666_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">число 666</a>
+- это <a href="http://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%BE_%D0%B7%D0%B2%D0%B5%D1%80%D1%8F">число зверя</a>
+(<a href="http://en.wikipedia.org/wiki/Number_of_the_Beast">the Number of the Beast</a>),
+которое олицетворяет зло.
+Противоположность зла - добро, олицетворяемое ангелом.  Чтобы найти число,
+противоположное числу зверя 666, нужно найти его обратное число.
+В математике обратное число находится делением единицы на заданное число.
+Если разделить 1 на 666, то в результате обратным числом будет бесконечный
+ряд чисел 15.  Так как 15 - число Тани, и в то же время 15 - число ангела,
+значит, Таня - ангел добра, а так как получаемый ряд чисел 15 бесконечен,
+это значит, что Таня - бесконечный ангел добра.</p>
+
+<pre>
+        1 / зло = добро
+        1 / 666 = 0.0015015015015015(015)
+</pre>
+
+<p>Интересный результат получается также, если умножить 15 на 666.
+Результат 9990 значит, что 15 побеждает число 666, переворачивает его
+и добавляет 0 в его конец, т.е. добро побеждает зло.</p>
+
+<pre>
+        15 * 666 = 9990
+</pre>
+
+<h2><a name="tangel" id="tangel">Святая Таня</a></h2>
+
+<p>Есть и другие доказательства того, что Таня - священная.<!-- корова --></p>
+
+<p>У индийских женщин принято приклеивать на лбу между глаз маленькую
+точку, называемую <a href="http://en.wikipedia.org/wiki/Tilak">тилака</a>
+или <a href="http://en.wikipedia.org/wiki/Bindi_%28decoration%29">бинди</a>
+- священный символ, предназначенный для защиты
+<a href="http://en.wikipedia.org/wiki/Mind%27s_eye">третьего глаза</a>.
+Тот, у кого он развит, обладает бесконечной интуицией, разумом
+и способностью видеть всё насквозь.
+<a href="http://ru.wikipedia.org/wiki/%D0%A7%D0%B0%D0%BA%D1%80%D0%B0#.D0.A2.D1.80.D0.B5.D1.82.D0.B8.D0.B9_.D0.B3.D0.BB.D0.B0.D0.B7">Чакра</a>,
+соответствующая третьему глазу, называется
+<a href="http://en.wikipedia.org/wiki/Ajna">ajna</a> и
+является центром духовной энергии человека.
+Каждый, кто носит точку на месте третьего глаза,
+тот не только сам становится более одухотворённым,
+но также может влиять на мысли других, кто смотрит на него,
+и делает их тоже более одухотворёнными.</p>
+
+<p>А у Тани точно на этом месте врождённая большая родинка!</p>
+
+<h2><a name="15other" id="15other">Другие свойства числа 15</a></h2>
+
+<p>Другие свойства числа 15
+в <a href="http://en.wikipedia.org/wiki/15_(number)">Википедии</a>.</p>

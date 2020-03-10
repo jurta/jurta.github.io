@@ -1,0 +1,70 @@
+---
+title: ee-edb
+---
+<h1><a name="ee-edb" id="ee-edb">ee-edb - summary mode for EDB</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>This extension provides integration with edb package.  It extracts
+records from edb internals and organizes them under different
+categories.  This extension can replace edb summary mode.</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="category" id="category">By Category</a></h3>
+<p>This view categorizes edb records by specified category.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">extracts category from internal link record</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">uses edb format function to print records</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the edb buffer and jumpes to the
+    selected record</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- comp.sources.unix (4)</span>
+  getty-enable - Getty on/off programs for 4.[23] BSD
+     [1 parts]
+  syslog - Development version of syslog(3), for ATT, too
+     [1 parts]
+  less3 - The 'less' pager
+     [3 parts]
+  test.el - Test system for GNU Emacs
+     [3 parts]
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-edb*    (ee-edb)--L1--C0--Top--------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<p>Or, categorising by date and counting the parts:</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">extracts category and date from internal link record</td></tr>
+<tr><td class="head">r-counter</td>
+    <td class="tail">uses the parts field</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- comp.sources.unix (8)</span>
+<span class="emacs-type"> - 10/09/1987 (3)</span>
+  test.el - Test system for GNU Emacs
+     [3 parts]
+<span class="emacs-type"> - 02/09/1987 (3)</span>
+  less3 - The 'less' pager
+     [3 parts]
+<span class="emacs-type"> - 28/08/1987 (1)</span>
+  syslog - Development version of syslog(3), for ATT, too
+     [1 parts]
+<span class="emacs-type"> - 890505 (1)</span>
+  getty-enable - Getty on/off programs for 4.[23] BSD
+     [1 parts]
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-edb*    (ee-edb)--L1--C0--Top--------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Needs more work to provide better integration with edb.</li>
+</ul>

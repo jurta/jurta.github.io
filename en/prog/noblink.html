@@ -1,0 +1,734 @@
+---
+title: No blinking
+---
+<h1>How to disable blinking cursors</h1>
+
+<!--img src="/files/prog/noblink/watertort.jpg" width="102" height="160" alt="Chinese water torture" class="float-right" /-->
+
+<div><img src="/files/prog/noblink/crt.png" alt="BLINKING CURSOR FOR CRT DISPLAY" class="float-right" /><small>Illustration by courtesy <a href="https://docs.google.com/viewer?url=patentimages.storage.googleapis.com/pdfs/US3531796.pdf">of</a></small></div>
+
+<p>One of the most famous methods of torture is
+<a href="http://en.wikipedia.org/wiki/Chinese_water_torture">Chinese
+water torture</a>.  In this torture a tied person is placed under
+a bucket filled with water with a tiny hole in the bottom.  Water is
+slowly dripped on to a person's forehead, eventually driving the
+victim insane.</p>
+
+<p>Software development is not an easy task, and often after a painful
+process of writing a program developers feel they should share their
+pains with users, so they put a part of own sufferings onto the
+shoulders of users in a method similar to the Chinese water torture -
+blinking cursors.</p>
+
+<p>Fortunately, programmers are not insensitive torturers, and
+sometimes they provide an option in their programs to turn blinking
+cursers off.  Often these options are not documented, and are not
+easily accessible, but many users can't stand the blinking cursor
+for a long time, because blinking cursors are very distracting.</p>
+
+<p>This page was created with the aim to collect in one place all
+methods to disable the blinking cursor in the most popular operating
+systems and programs.  If you know how to turn blinking off in
+a program not listed here, please add precise instructions as a comment
+at the bottom of this page.</p>
+
+<h2>GNU Emacs</h2>
+
+<p>Turning the blinking cursor off in GNU Emacs is easy.  Just type:</p>
+
+<pre>
+  M-x blink-cursor-mode RET
+</pre>
+
+where <i>M-x</i> means hold ALT and type `x'.
+
+<p>Note that this command is effective only when Emacs
+displays through a window system, because then Emacs does its own
+cursor display.  On a text-only terminal, this doesn't work.
+You should look for separate settings of your terminal.</p>
+
+<p>If you want to turn blink OFF permanently in GNU Emacs,
+put in your <i>~/.emacs</i> the following line:</p>
+
+<pre>
+  (blink-cursor-mode (- (*) (*) (*)))
+</pre>
+
+<p>where <i>(*) (*) (*)</i> depicts the blinking cursor,
+and the minus sign negates it. :)</p>
+
+<p>To achieve the same result, you can modify the command line to run Emacs with the following command line arguments
+<i>-nbc</i> or
+<i>--no-blinking-cursor</i>
+that will disable the blinking cursor on graphical displays.
+</p>
+
+<p>Alternatively, if your X resource file (usually named
+<i>~/.Xdefaults</i> or <i>~/.Xresources</i>) contains the X resource name
+<i>cursorBlink</i> (class <i>CursorBlink</i>)
+then if the value of this resource is <i>off</i> or <i>false</i> or <i>0</i> at
+startup, Emacs disables Blink Cursor mode. Examples:
+</p>
+
+<pre>
+*cursorBlink: off
+*CursorBlink: off
+</pre>
+
+<p>Note that this doesn't work on a text-only terminal.
+You have to look for separate settings of your
+terminal to configure the terminal's cursor style.
+
+Even when the terminal default cursor is configured
+to be non-blinking, some terminals (such as Urxvt)
+interpret the cvvis ("cursor very visible") terminfo sequence
+as a request to start blinking the cursor again.
+Sending this sequence can be disabled in Emacs by adding
+to your .emacs configuration:</p>
+
+<pre>
+  (setq visible-cursor nil)
+</pre>
+
+<h2>XEmacs</h2>
+
+<p>The development of XEmacs was easier than the development of GNU
+Emacs, because XEmacs developers don't have to sign legal papers to be
+able to borrow existing code from GNU Emacs to XEmacs.  Since the
+development of XEmacs was easier, XEmacs developers decided not to
+share their pains with users, and turned the blinking cursor off by
+default.</p>
+
+<h2>Vi</h2>
+
+<p>Another proof Vi is not better than Emacs is that
+GVIM (a GTK version of Vi IMproved) blinks the cursor by default too.
+If you for some reason prefer using Vi instead of Emacs,
+you can disable the blinking cursor in GVIM by putting
+the following line in <i>~/.gvimrc</i>:</p>
+
+<pre>
+  set guicursor=a:blinkon0
+</pre>
+
+<p>In Neovim (“improved Vi IMproved”) version 0.2 and later, put in <i>init.vim</i>:</p>
+
+<pre>
+  set guicursor=
+</pre>
+
+<h2>GTK applications in Gnome</h2>
+
+<p>To disable blinking cursors in fields and text boxes in Gnome and
+GTK applications, run one of the following programs:</p>
+
+<pre>
+  gnome-control-center
+  gnome-keyboard-properties
+</pre>
+
+<p>and select the option to disable the cursor to blink.
+This will create the file ~/desktop/gnome/interface/cursor_blink
+in your home directory.</p>
+
+<p>From the command line, you can do it with the following command:</p>
+
+<pre>
+  gconftool-2 --set "/desktop/gnome/interface/cursor_blink"
+              --type boolean "False"
+</pre>
+
+<p>In GNOME 3 cursor blinking can be disabled with gsettings:</p>
+
+<pre>
+  gsettings set org.gnome.desktop.interface cursor-blink false
+</pre>
+
+<p>Make sure you run gnome-settings-daemon. In GNOME 3
+this is no longer in $PATH, it's here:</p>
+
+<pre>
+  /usr/lib/gnome-settings-daemon/gnome-settings-daemon
+</pre>
+
+<p>Running this is necessary if you're not using a full GNOME
+installation, e.g. with gnome-session or gnome-display-manager.</p>
+
+<p><i>Update 10 July 2017:</i> Note that in Gnome 3.24, <i>gnome-settings-daemon</i>
+has been split into 27 different executables. The one you need to run
+to get the caret settings to take effect is now called
+<i>gsd-xsettings</i>, e.g. <i>/usr/lib/gnome-settings-daemon/gsd-xsettings</i>.</p>
+
+<p>Alternatively, you can put some text in a local <i>settings.ini</i> file.
+This allows you to get good behavior from GTK applications even
+without running a daemon. It could look something like this:</p>
+
+<pre>
+  $ cat ~/.config/gtk-3.0/settings.ini
+  [Settings]
+  gtk-cursor-blink = false
+</pre>
+
+<h2>GNOME Terminal</h2>
+
+<p>GNOME Terminal used to provide a special option
+to disable the blinking cursor.
+In older versions you could run <i>gnome-terminal</i>
+and select the <i>Edit -&gt; Current Profile</i> menu.
+To configure another profile that you set up choose
+<i>Edit -&gt; Profiles</i>, select the profile you want to edit,
+then click <i>Edit</i>.
+The Editing Profile dialog contains the following tabbed
+sections that you can use to configure GNOME Terminal:</p>
+
+<pre>
+  Cursor blinks
+</pre>
+
+<p>Select this option to display a cursor that blinks.  You can do it
+from the command line with the following command:</p>
+
+<pre>
+  gconftool-2 --set "/apps/gnome-terminal/profiles/Default/cursor_blink"
+              --type boolean "False"
+</pre>
+
+<p>
+Or do it through <i>gconf-editor</i> in <i>apps/gnome-terminal/profiles/Default</i>.
+</p>
+
+<p>Unfortunately, in <a href="http://bugzilla.gnome.org/show_bug.cgi?id=342921">the latest version</a> gnome-terminal 2.21.90,
+there is no option to disable the blinking of the cursor
+in the terminal anymore. You can only disable it in all Gnome
+applications at once by running <i>gnome-keyboard-properties</i> and
+changing it on the <i>General</i> tab.</p>
+
+<p>However, this is now fixed in 2.23 and later versions where
+you can run <i>gconf-editor</i> and set the key
+<i>/apps/gnome-terminal/profiles/Default/cursor_blink_mode</i>
+from the default value to the value <i>off</i>. You can change this setting with a short one-line command:</p>
+
+<pre>
+  gconftool-2 -s /apps/gnome-terminal/profiles/Default/cursor_blink_mode
+              -t string off
+</pre>
+
+<p>In GNOME 3 cursor blinking can be disabled with gsettings:</p>
+
+<pre>
+  gsettings set org.gnome.desktop.interface cursor-blink false
+</pre>
+
+<h2>GIMP</h2>
+
+<p>Put the following line in <i>~/.gimp-<b>version.number</b>/gtkrc</i>
+where <b>version.number</b> is a GIMP version number
+(for example, <i>~/.gimp-<b>2.2</b>/gtkrc</i>):</p>
+
+<pre>
+  gtk-cursor-blink = 0
+</pre>
+
+<p>See <a href="http://developer.gnome.org/doc/API/2.0/gtk/GtkSettings.html#GtkSettings--gtk-cursor-blink">GTK+ Reference Manual</a>
+for more information.</p>
+
+<h2>GTK applications in KDE</h2>
+
+<p>To fix the blinking cursor issue for GTK-based Kubuntu applications (e.g. Eclipse, Gedit, Chrome) that run under the KDE desktop, put the line</p>
+
+<pre>
+  gtk-cursor-blink = 0
+</pre>
+
+<p>to the file <i>~/.gtkrc-<b>GTK-version.number</b>-kde<b>KDE-major-version-number-or-empty</b></i>
+depending on used versions of GTK and KDE
+(for example, <i>~/.gtkrc-2.0-kde</i> or <i>~/.gtkrc-2.2-kde4</i>).
+</p>
+
+<p>For GTK3 under KDE in the file <i>~/.config/gtk-3.0/settings.ini</i> add the following line:</p>
+
+<pre>
+gtk-cursor-blink = 0
+</pre>
+
+<h2>Qt applications in KDE</h2>
+
+<p>In KDE applications the cursor blink rate is not set by KDE,
+but by the underlying Qt libraries.
+To disable the flashing cursor,
+you can perform the following steps:</p>
+
+<ol>
+<li>Install the package <i>qtconfig</i>.  Depending on the version number,
+the package name can be <i>qt3-qtconfig</i> or <i>qt4-qtconfig</i>.</li>
+<li>Run the program <i>qtconfig</i>, or one of its aliases <i>qtconfig-qt3</i>, <i>qtconfig-qt4</i>.</li>
+<li>On the <i>Interface</i> tab scroll the field <i>Cursor Flash Time</i> down to
+the value <i>No blinking</i>.  You can use the <i>PageDown</i> key to scroll down faster in large increments.
+</li>
+<li>Save this config with Ctrl+s.</li>
+</ol>
+
+<p>Alternatively, you can do this with the command line arguments:</p>
+
+<pre>
+  qtconfig -&gt; Interface -&gt; CursorFlashTime -&gt; 0
+</pre>
+
+<p>This puts the following section in <i>~/.qt/qtrc</i>:</p>
+
+<pre>
+  [General]
+  cursorFlashTime=0
+</pre>
+
+<p>or depending on you version, it can put the following section
+in <i>~/.config/Trolltech.conf</i> or <i>~/.config/QtProject.conf</i>:</p>
+
+<pre>
+  [Qt]
+  cursorFlashTime=0
+</pre>
+
+<p>
+For Qt5 apps you can use <a href="https://github.com/igogo/qt5noblink">qt5noblink</a> utility.
+</p>
+
+<h2>KDE</h2>
+
+<p>On KDE5 starting from Fedora 27 you can disable cursor blinking by doing this:</p>
+
+<p>Edit <i>~/.config/kdeglobals</i>, set in the <i>[KDE]</i> section.</p>
+
+<pre>
+CursorBlinkRate=0
+</pre>
+
+<h2>KDE5 applications under Gnome/GTK</h2>
+
+<p>Add the below variable in <i>/etc/environment</i>, and install <i>qt5ct</i> (confirmed to work in Fedora, running Mate 1.22):</p>
+
+<pre>
+export QT_QPA_PLATFORMTHEME=qt5ct
+</pre>
+
+<p>Reboot your machine; then use <i>qt5ct</i>, change QT theme/cursor blink (cursor flash time in interface tab) for KDE5 apps under GTK environments.</p>
+
+<h2>Lubuntu LXDE</h2>
+
+<p>Here's how to stop the blinking in Lubuntu LXDE. Edit the file <i>~/.config/lxsession/Lubuntu/desktop.conf</i> and under <i>[GTK]</i> add the line:</p>
+
+<pre>
+iNet/CursorBlink=no
+</pre>
+
+<h2>Xfce</h2>
+
+<p>You can disable cursor blinking on Xfce by
+running the program <i>xfce4-keyboard-settings</i> and
+on the tab <i>Behavior</i> in the <i>Cursor</i> section
+check the box named <i>Show blinking</i>.</p>
+
+<p>Alternatively, you can do this with the command line on Xfce 4.8 and older versions:</p>
+
+<pre>
+  xfconf-query -c xsettings -p /Net/CursorBlink -s false
+</pre>
+
+<p>or with this command line on Xfce 4.10 and later versions
+where a new option -T (--toggle) to invert an existing boolean property
+was added:</p>
+
+<pre>
+  xfconf-query -c xsettings -p /Net/CursorBlink -T
+</pre>
+
+<h2>Xfce Terminal</h2>
+
+<p>In Xubuntu <a href="http://docs.xfce.org/apps/terminal/advanced">xfce4-terminal</a> to stop cursor blinking edit the file <i><b>${XDG_CONFIG_HOME}</b>/xfce4/terminal/terminalrc</i> or <i>~/.config/Terminal/terminalrc</i> to:</p>
+
+<pre>
+  [Configuration]
+  MiscCursorBlinks=FALSE
+</pre>
+
+<h2>Fox toolkit</h2>
+
+<p>In X File Explorer (Xfe) and on all programs that use Fox Toolkit
+to get rid of cursor blink add the following entry to the configuration file <i>~/.config/xfe/xferc</i>:
+
+<pre>
+  blinkspeed=-1
+</pre>
+
+<h2>MATE desktop</h2>
+
+<pre>
+  gsettings set org.mate.interface cursor-blink false
+</pre>
+
+<p>Or just navigate to Preferences / Keyboard and uncheck "Cursor blinks in text fields".
+</p>
+
+<h2>Cinnamon desktop</h2>
+
+<pre>
+  gsettings set org.cinnamon.desktop.interface cursor-blink false
+</pre>
+
+<h2>LessTif applications</h2>
+
+<p>Put the following lines in your .Xdefaults or .Xresources file:</p>
+
+<pre>
+  ! Blink rate of the text insertion cursor in milliseconds.
+  ! Set to zero to stop blinking.
+  *blinkRate: 0
+</pre>
+
+<h2>HTML</h2>
+
+<p>You can disable the non-standard &lt;blink&gt; tag in Firefox by entering <i>about:config</i> on the address bar and changing the value of <i>browser.blink_allowed</i> to <i>false</i>.</p>
+
+<h2>Mozilla Firefox (IceCat, Iceweasel)</h2>
+
+<!-- FROM http://gentoo-wiki.com/HOWTO_Xorg_and_Fonts -->
+<p>Make sure you have started Firefox at least once, so that you have a profile in ~/.mozilla/firefox/default.xxx/.
+Go to about:config in your browser, or alternatively, edit the prefs.js file in ~/.mozilla/firefox/default.xxx/, where xxx are letters or numbers.
+Throughout the about:config dialog, or in the prefs.js file you have to insert / edit the following lines as shown below:</p>
+
+<pre>
+  about:config, New -&gt; Integer, ui.caretBlinkTime 0
+</pre>
+
+<p>or put in your user.js:</p>
+
+<pre>
+  user_pref("ui.caretBlinkTime", 0);
+</pre>
+
+<p>See <a href="http://www.mozilla.org/unix/customizing.html">Mozilla Customization</a>
+
+for more information.</p>
+
+<h2>Mozilla Thunderbird (Icedove)</h2>
+
+<p>Since this mail client shares the codebase with Mozilla Firefox, configuring it to not blink the cursor is very like doing it in Mozilla Firefox. In the preferences window invoked from the menu <i>Edit-&gt;Preferences</i> go to the tab <i>Advanced-&gt;General</i> and on the last option <i>Advanced Configuration</i> click on the button <i>Config Editor</i>. In the <i>about:config</i> window find the preference name <i>ui.caretBlinkTime</i> using the filter, or create a new parameter by clicking the right mouse button somewhere in this window, and selecting from the popup-menu <i>New-&gt;Integer</i>. Enter the parameter name <i>ui.caretBlinkTime</i>, and set its value to 0.</p>
+
+<p>Alternatively, you can edit the prefs.js file in ~/.mozilla-thunderbird/<i>profile.default</i>/, where <i>profile.default</i> is a directory name generated by Thunderbird, and add this line to it:</p>
+
+<pre>
+  user_pref("ui.caretBlinkTime", 0);
+</pre>
+
+<h2>Netscape</h2>
+
+<p>Put the following lines in your .Xdefaults or .Xresources file:</p>
+
+<!-- FROM /usr/share/doc/HOWTO/en-txt/XWindow-User-HOWTO.gz (works only for Netscape) -->
+<pre>
+  ! Set this to false to disable the &lt;BLINK&gt; tag.
+  *blinkingEnabled: False
+</pre>
+
+<!-- FROM http://www.leidinger.net/X/xresources/de/app-defaults/Netscape -->
+<pre>
+  ! How quickly (in milliseconds) the run light and/or logo should animate.
+  *busyBlinkRate: 0
+</pre>
+
+<h2>Electron</h2>
+
+<p>
+Closed issue <a href="https://github.com/electron/electron/issues/10668">here</a>
+</p>
+
+<h2>Blink / Brave</h2>
+
+<p>
+Closed issue <a href="https://github.com/brave/browser-laptop/issues/8123">here</a>
+</p>
+
+<h2>Google Chrome / Chromium</h2>
+
+<p>Google Chrome used to respect the GTK settings described above in
+the section about the configuration of GTK applications in Gnome or KDE.
+But in latest versions Chrome no longer honors GTK settings.
+Please vote up
+<a href="https://bugs.chromium.org/p/chromium/issues/detail?id=500168">this report</a>
+if you want the developers to implement optional cursor blinking in Chrome.
+</p>
+
+<h2>Google Docs</h2>
+
+<p>For Google Docs, simply add the following rule:</p>
+
+<pre>
+.kix-cursor {
+  -webkit-animation-iteration-count: 0;
+}
+</pre>
+
+<a href="http://stackoverflow.com/a/28400474/508831">Source</a>. Note: May break if Google change their stylesheets.
+
+<p>The userstyle code above for deactivating the blinking cursor on Google Docs does not work anymore, and was Chrome-specific anyway. This one works:</p>
+
+<pre>
+@-moz-document domain(docs.google.com) {
+  .docs-text-ui-cursor-blink {
+    animation-duration: 0s;
+  }
+}
+</pre>
+
+<p>Here is another userstyle for deactivating the blinking on sharelatex:</p>
+
+<pre>
+@-moz-document domain("www.sharelatex.com") {
+  .ace_cursor {
+    visibility: visible !important;
+  }
+}
+</pre>
+
+<p>This code seems to work for both Google Docs and Google Slides:</p>
+
+<pre>
+.docs-text-ui-cursor-blink {
+  animation-name: none;
+}
+</pre>
+
+<p>Initially found on: <a href="https://userstyles.org/styles/125112/google-docs-disable-cursor-blink">userstyles.org</a></p>
+
+<h2>Tcl/Tk</h2>
+
+<p>Put the following line in your .Xdefaults or .Xresources file:</p>
+
+<pre>
+  *insertOffTime: 0
+</pre>
+
+<p>or add a specific Tcl/Tk application prefix (e.g. Tkinfo)</p>
+
+<pre>
+  Tkinfo*insertOffTime: 0
+</pre>
+
+<p>You can create a global file /usr/lib/X11/app-defaults/tkinfo
+with that line that will apply to all users of your site.</p>
+
+<p>To have the new options take effect, restart your X server or use the
+program xrdb.</p>
+
+<pre>
+  xrdb -remove
+  xrdb -merge ~/.Xresources
+    or
+  xrdb -merge ~/.Xdefaults
+
+</pre>
+
+<p>and check it with</p>
+
+<pre>
+  xrdb -query
+</pre>
+
+<p>Look at other standard Tk toolkit options
+<a href="http://tcllib.sourceforge.net/BWman/options.htm">here</a> or
+<a href="http://tcltk.free.fr/showmantcltk.php3?man=1">here</a>.</p>
+
+<p>Tcl/Tk Wish console:</p>
+
+<p>Put these lines in your .wishrc or wishrc.tcl for a non-blinking block cursor:</p>
+
+<pre>
+    console eval { .console config -insertofftime 0 }
+    console eval { .console config -insertwidth 10 }
+</pre>
+
+<p>and fr'ex  for a non-squinty font:</p>
+
+<pre>
+    console eval { .console config -font { {Consolas} 12}}
+</pre>
+
+<h2>URxvt</h2>
+
+<p>In URxvt v9.21, the cursorBlink resource is no longer
+strictly honored. You have to do something like this:</p>
+
+<pre>
+  T=~/.terminfo/rxvt-unicode-noblink.terminfo; infocmp rxvt-unicode | sed 's/rxvt-unicode/rxvt-unicode-noblink/g' > $T
+  echo "   cvvis=," >> $T
+  tic $T
+</pre>
+
+<p>To test it, try <i>TERM=rxvt-unicode-noblink vi foo</i>. You'll have to set:</p>
+
+<pre>
+  URxvt*termName: rxvt-unicode-noblink
+</pre>
+
+<p>in <i>.Xdefaults</i> to make this permanent. You can edit the terminfo file
+to do other things, e.g. append <i>blink=,</i> to turn off text blinking.
+(You can also append <i>rmcup=,smcup=,</i> to turn off screen clearing
+when closing an editor - idea from shallowsky.com.)
+
+Ignoring the <i>cursorBlink</i> resource is apparently intentional and the
+change is described <a href="http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.7.pod#Why_is_the_cursor_now_blinking_in_em">here</a>.
+</p>
+
+<h2>Linux Console</h2>
+
+<p>Put the following line in your command shell startup file:</p>
+
+<pre>
+  echo -e '\033[?17;0;127c'
+</pre>
+
+<p>Or run this command once:</p>
+
+<pre>
+  sudo sh -c '/bin/echo -ne "\033[?17;0;255c"' >> /etc/issue
+</pre>
+
+<p>Then you won't even see a blinking cursor at login.</p>
+
+<p>Also you can put the following in <i>/etc/rc.local</i> (and if you use systemd,
+follow various instructions to create and enable an rc-local service):</p>
+
+<pre>
+  echo 0 > /sys/class/graphics/fbcon/cursor_blink
+  for i in $(seq 1 8); do
+    TERM=linux setterm --foreground white --bold on -store > /dev/tty$i
+  done
+</pre>
+
+<p>The first line prevents another application from overriding your terminal setting.
+The last 3 lines are just to not squint at gray text, the default.</p>
+
+<p>See also <a href="http://www.emacswiki.org/emacs/CursorOnLinuxConsole">CursorOnLinuxConsole</a> and <a href="http://linuxgazette.net/137/anonymous.html">Cursor Appearance in the Linux Console</a>.</p>
+
+<!-- FROM /usr/share/doc/HOWTO/en-txt/Framebuffer-HOWTO.gz -->
+<!-- (qv also zgrep -ainH -e "blink" "/usr/share/doc/HOWTO/en-txt/*.gz") -->
+
+<h2>Linux Kernel</h2>
+
+<p>You can apply <a href="ftp://ftp.ibiblio.org/pub/Linux/kernel/patches/console/noblink-1.7.tar.gz">the noblink patch</a>
+to your local Linux kernel source tree, and recompile the kernel.</p>
+
+<h2>Java</h2>
+
+<p>The caret is rendered as a vertical line in the color specified by the
+CaretColor property of the associated JTextComponent. It can blink at
+the rate specified by the BlinkRate property.</p>
+
+<h2>Java Desktop System</h2>
+
+<p>To stop the cursor blinking in text boxes and fields, perform the following steps:</p>
+<ol>
+<li>Click Launch, then choose Preferences > Desktop Preferences > Keyboard >
+Behavior to start the Keyboard Behavior preference tool.</li>
+<li>In the Keyboard tabbed section, deselect the Cursor blinks in text boxes and fields
+option.</li>
+</ol>
+
+<h2>CodeMirror</h2>
+
+<p>To disable blinking in the JavaScript-based text editor <a href="http://codemirror.net/">CodeMirror</a>, execute this JavaScript code:</p>
+
+<pre>
+  CodeMirror.defaults.cursorBlinkRate=0
+</pre>
+
+<h2>Code::Blocks IDE</h2>
+
+<p>For Code::Blocks (based on wxWidgets) you can edit the file <i>~/.codeblocks/default.conf</i>, where at the node <i>caret -&gt; PERIOD</i> set the attribute <i>int</i> to "0".</p>
+
+<p>Or you can open the menu <i>Settings -&gt; Editor -&gt; Margins and caret</i> and set the caret's period to 0.</p>
+
+<h2>Notepad++</h2>
+
+<p>Slide <i>Settings -&gt; Style Configurator -&gt; Caret Settings -&gt; Blinkrate</i> all the way to the right.</p>
+
+<p>In newer versions of Notepad++ open <i>Settings, Preferences, Editing</i>, and drag the <i>Blink rate</i> slider all the way to the right.</p>
+
+<h2>IntelliJ IDEA and Android Studio</h2>
+
+<p>Unset <i>Settings -&gt; Editor -&gt; General -&gt; Appearance -&gt; Caret blinking</i>, or insert 0 ms.</p>
+
+<h2>NetBeans IDE</h2>
+
+<p>It's easy to turn the blinking off in NetBeans 6.8 by editing
+<i>.netbeans/6.8/config/Editors/text/x-java/Preferences/org-netbeans-modules-editor-settings-CustomPreferences.xml</i>
+and adding:</p>
+
+<pre>
+  &lt;entry name="caret-blink-rate" xml:space="preserve"&gt;
+    &lt;value&gt;&lt;![CDATA[0]]&gt;&lt;/value&gt;
+  &lt;/entry&gt;
+</pre>
+
+<p>See more <a href="http://blogs.sun.com/geertjan/entry/bye_blinking_cursor">here</a>
+and <a href="http://michaelandrews.typepad.com/the_technical_times/2010/08/stopping-the-blinking-cursor-in-netbeans.html">here</a>.</p>
+
+<h2>Processing 3.x</h2>
+
+<p>Put these lines in your preferences.txt for a non-blinking block cursor:</p>
+
+<pre>
+    editor.caret.blink=false
+    editor.caret.block=true
+</pre>
+
+<h2>Visual Studio Code</h2>
+
+<p>Add the following to your settings.json (accessible through preferences, or directly):</p>
+
+<pre>
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "block",
+</pre>
+
+<h2>Linux Wine (Windows emulator)</h2>
+
+<p>Open up <i>~/.wine/drive_c/windows/win.ini</i>. Once open, add the line</p>
+
+<pre>
+CursorBlinkRate=-1
+</pre>
+
+<p>to the <i>[Windows]</i> section of the INI file. This works in recent versions. The regedit trick doesn't seem to work at all.</p>
+
+<h2>PlayOnLinux (for Windows emulator Wine)</h2>
+
+<p>For PlayOnLinux (a graphical front-end for the Windows emulator Wine) open up the <i>~/.PlayOnLinux/wineprefix/<b>(Program)</b>/drive_c/windows/win.ini</i>, where <i><b>(Program)</b></i> is the name of the application or game installation, and do the same thing as above. This applies to any custom wine environment.</p>
+
+<h2>Microsoft Windows</h2>
+
+<p>To stop the cursor from blinking in Micro$oft Windows applications:</p>
+
+<ol>
+<li>Start Regedit</li>
+<li>Go to HKEY_CURRENT_USER/Control Panel/Desktop</li>
+<li>Add a String Value with the name CursorBlinkRate</li>
+<li>Set its value to -1</li>
+</ol>
+
+<p>Or just navigate to Control Panel / Keyboard, and under "Cursor blink rate" move the slider all the way to the left.
+</p>
+
+<h2>Mac OS X</h2>
+
+<p>Set values in the terminal:
+
+<pre>
+defaults write -g NSTextInsertionPointBlinkPeriodOn -float 99999999
+defaults write -g NSTextInsertionPointBlinkPeriodOff -float 99999999
+</pre>
+</p>
+
+<p>
+See more for example <a href="https://discussions.apple.com/thread/7689487">this</a> and <a href="http://www.macissues.com/2014/12/08/how-to-change-your-macs-text-cursor-blink-rate/">here</a>.
+</p>

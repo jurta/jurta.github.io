@@ -1,0 +1,91 @@
+---
+title: NEWS.ee
+---
+<h1><a name="news-ee" id="news-ee">NEWS.ee - news list</a></h1>
+
+<h2><a name="description" id="description">Data Description</a></h2>
+<p>This data file contains a list of news items with their descriptions
+and corresponding package versions.  An example of the data file:</p>
+
+<pre class="darkgray">
+[(meta
+  (format-version . "0.0.1")
+  (database-version . "0.0.1")
+  (view-data-file . "view/NEWS.ee")
+  (fields categories version title ())
+  (key-fields title))
+ [("ee") "0.0.1" "Released" ((date . "2003-07-21"))]]
+</pre>
+<!--break-->
+<h2><a name="views" id="views">Useful Views</a></h2>
+
+<h3><a name="category" id="category">By Version/by Category</a></h3>
+<p>This view categorizes the news list by version and by category.
+Views are stored in the view file view/NEWS.ee and have the
+following properties:</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by version and categories</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">at first category level (version) sorts in the
+    reverse alphabetical order; at the second level (category name)
+    sorts alphabetically in ascending order</td></tr>
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts by title</td></tr>
+<tr><td class="head">c-printer</td>
+    <td class="tail">prints version and category</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints the title of news item</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- 0.0.2 (6)</span>
+  Released 2003-08-09
+<span class="emacs-type"> - Makefile (1)</span>
+   Removed all compiled *.elc files from the package
+<span class="emacs-type"> - ee-textfile.el (1)</span>
+   Added custom variables for ee-textfile-apachelog
+<span class="emacs-type"> - view (3)</span>
+<span class="emacs-type">  - NEWS.ee (1)</span>
+    Improved views &quot;by Version/by Category&quot;, &quot;by Category/by Version&quot;
+<span class="emacs-type">  - apachelog.ee (1)</span>
+    Added views &quot;by Reversed Hostname&quot;, &quot;by Request&quot;, &quot;by Referer&quot;,
+                &quot;by User Agent&quot;, &quot;by Date&quot;, &quot;by Size&quot;, &quot;by Status&quot;
+<span class="emacs-type">  - buffers.ee (1)</span>
+    Added view &quot;by Coding&quot;
+<span class="emacs-ee-category">- 0.0.1 (1)</span>
+  Released 2003-07-21
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-datafile*/NEWS.ee (ee-datafile)--L1--C0--All---------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="version" id="version">By Category/by Version</a></h3>
+<p>This view categorizes the news list by category and then by version.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by categories and version</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">at first level (categories) sorts alphabetically
+     in ascending order; at the second level (version) sorts in the
+     reverse alphabetical order</td></tr>
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts by title</td></tr>
+<tr><td class="head">c-printer</td>
+    <td class="tail">prints category and version</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints the title of news item</td></tr>
+</table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+</ul>
+
+<h2><a name="changelog" id="changelog">ChangeLog</a></h2>
+<ul>
+<li>2003-08-09 - Updated screenshot of the view &quot;By Version/by Category&quot;</li>
+<li>2003-08-09 - Removed screenshot of the view &quot;By Category/by Version&quot;
+    because it's too much work to update both screenshots after every release.</li>
+</ul>

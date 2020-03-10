@@ -1,0 +1,98 @@
+---
+title: ee-commands
+---
+<h1><a name="ee-commands" id="ee-commands">ee-commands - categorized menu of Emacs commands</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>This extension displays a list of available Emacs commands categorized
+under different groups along with their documentation strings.
+After typing &lt;RET&gt; on the selected command it invokes this command (with
+possible argument keys) on the parent buffer (i.e. on the buffer where
+ee-commands was called).</p>
+<!--break-->
+<p>Note that ee-commands is NOT replacement for executing the commands by M-x.
+But it is intended to be a replacement for browsing the command completion lists
+(invoked by &lt;TAB&gt;), because ee-commands is more usable for inspecting
+what commands are available under certain categories.</p>
+
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="prefix" id="prefix">By Prefix</a></h3>
+<p>This view categorizes Emacs commands by first part of command name.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">category is the first part of command name separated by hypen</td></tr>
+<tr><td class="head">r-sorter</td>
+    <td class="tail">unsorted, i.e. sorted as they are comes from Emacs internals</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints the command name and the first line of documentation string.
+    Marks previously invoked commands by different colors.</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">calls the selected command interactively on the parent buffer</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">+ 2C (4)</span>
+<span class="emacs-ee-category">+ Buffer (21)</span>
+<span class="emacs-ee-category">+ Helper (2)</span>
+<span class="emacs-ee-category">- Info (42)</span>
+   Info-directory                Go to the Info directory node.
+   Info-edit                     Edit the contents of this Info node.
+   Info-follow-nearest-node      Follow a node reference near point.
+   Info-help                     Enter the Info tutorial.
+   Info-mode-menu                Menu for info files.
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-commands*    (ee-commands)--L1--C0--Top--------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="suffix" id="suffix">By Suffix</a></h3>
+<p>This view categorizes Emacs commands by last part of command name.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">category is the last part of command name separated by hypen</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts categories by the amount of commands under category</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints the command name and the first line of documentation string.
+    Marks previously invoked commands by different colors.</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">calls the selected command interactively on the parent buffer</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- mode (255)</span>
+   awk-mode                      Major mode for editing AWK code.
+   c++-mode                      Major mode for editing C++ code.
+   c-mode                        Major mode for editing K&amp;R and ANSI C code.
+   change-log-mode               Major mode for editing change logs.
+   [skipped...]
+<span class="emacs-ee-category">- region (118)</span>
+   base64-decode-region          Base64-decode the region between BEG and END.
+   base64-encode-region          Base64-encode the region between BEG and END.
+   capitalize-region             Convert the region to capitalized form.
+   comment-region                Comment or uncomment each line in the region.
+   [skipped...]
+   write-region                  Write current region into specified file.
+<span class="emacs-ee-category">- buffer (109)</span>
+   append-to-buffer              Append to specified buffer the region.
+   beginning-of-buffer           Move point to the beginning of the buffer.
+   [skipped...]
+<span class="emacs-ee-category">- file (72)</span>
+   append-to-file                Append the contents of the region to the file.
+   find-alternate-file           Find file FILENAME, select its buffer.
+   find-file                     Edit file FILENAME.
+   format-find-file              Find the file FILENAME using data format FORMAT.
+   [skipped...]
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-commands*    (ee-commands)--L1--C0--Top-------------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+<li>Make submenu of recently called commands</li>
+<li>Get command category name from Info documentation</li>
+<li>Make the separate view for functions, variables, options</li>
+</ul>

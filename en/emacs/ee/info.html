@@ -1,0 +1,167 @@
+---
+title: ee-info
+---
+<h1><a name="ee-info" id="ee-info">ee-info - browse Info documentation</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>This extension has two sub-modes:</p>
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">info-dir</td>
+    <td class="tail">displays the index of all Info documents from 'dir' file buffer</td></tr>
+<tr><td class="head">info</td>
+    <td class="tail">for every Info document displays the index of its Info nodes</td></tr>
+</table>
+<!--break-->
+<h2><a name="views-dir" id="views-dir">Default views for info-dir</a></h2>
+
+<h3><a name="category" id="category">By Category</a></h3>
+<p>This view categorizes Info documents by section name
+they have in the 'dir' file.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-filter</td>
+    <td class="tail">filters documents whose node name in the 'dir' is not "Top"</td></tr>
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">category is Info document section name in the 'dir'</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">categories are sorted alphabetically</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints Info document names and file names</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">invokes the ee-info extension for browsing selected Info document</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- Development (3)</span>
+  Gdb                              gdb
+  Gdb-Internals                    gdbint
+  Make                             make
+<span class="emacs-ee-category">- Emacs (5)</span>
+  CL                               emacs-21/cl
+  Dired-X                          emacs-21/dired-x
+  Elisp                            elisp
+  Emacs                            emacs-21/emacs
+  Info                             emacs-21/info
+<span class="emacs-ee-category">- GNU Libraries (1)</span>
+  Libc                             libc
+<span class="emacs-ee-category">+ General Commands (12)</span>
+<span class="emacs-ee-category">+ Miscellaneous (2)</span>
+<span class="emacs-ee-category">- The Algorithmic Language Scheme (3)</span>
+  Guile                            guile
+  guile-tutorial                   guile-tut
+  Slib                             slib
+<span class="emacs-ee-category">- Window Manager (1)</span>
+  sawfish                          sawfish
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-info*/dir    (ee-info)--L1--C0--Top-------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="views" id="views">Default views for info</a></h2>
+
+<h3><a name="nodetree" id="nodetree">Node Tree</a></h3>
+<p>This view displays the tree of nodes from Info document.  Additional
+categories collected from section names from the 'Top' node are
+displayed at the top of tree.  Any part of node tree can be collapsed
+and expanded.  Visited nodes are marked by different color - magenta
+(which is the default color for visited links in most WWW browers).  A
+bookmarks can be assigned to any node. Bookmarks are displayed
+in the ee-info by another color.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categories collected from section names from the 'Top' node</td></tr>
+<tr><td class="head">r-parent-child-key-fields</td>
+    <td class="tail">builds node tree from relational table using
+    fields 'nodename' and 'menulist' to relate different nodes</td></tr>
+<tr><td class="head">r-calculator</td>
+    <td class="tail">counts amount of subnodes in the "cumulative"
+    mode, i.e. all descendant nodes are counted</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints node name and amount of subnodes if any</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">displays content of Info node in the new window</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- Advanced Features (284)</span>
+  - Major Modes (1)
+    . Choosing Modes
+  - Indentation (3)
+    . Indentation Commands
+    . Tab Stops
+    . Just Spaces
+  - Text (12)
+    . Words
+    . Sentences
+    . Paragraphs
+    . Pages
+    - Filling (5)
+      . Auto Fill
+      . Refill
+      . Fill Commands
+      . Fill Prefix
+      . Adaptive Fill
+    . Case
+<span class="emacs-ee-link-visited">    . Text Mode</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-info*/emacs    (ee-info)--L115--C0--15%-----------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<p>This view displays the amount of subnodes in the "cumulative" mode,
+i.e. all descendant nodes are counted.  However, the "non-cumulative"
+mode is also possible, where only node's immediate children nodes are counted:</p>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- Advanced Features (29)</span>
+  + Major Modes (1)
+  + Indentation (3)
+  - Text (7)
+    . Words
+    . Sentences
+    . Paragraphs
+    . Pages
+    - Filling (5)
+      . Auto Fill
+      . Refill
+      . Fill Commands
+      . Fill Prefix
+      . Adaptive Fill
+    . Case
+<span class="emacs-ee-link-visited">    . Text Mode</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-info*/emacs    (ee-info)--L115--C0--15%-----------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="alphabetical" id="alphabetical">Alphabetical</a></h3>
+<p>This view alphabetically sorts all node names collected from Info document.
+Visited, marked and bookmarked nodes are shown in different colors.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts node name alphabetically</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints node name</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">shows the content of Info node in the new window</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+Acknowledgments
+<span class="emacs-ee-link-visited">Action Arguments</span>
+<span class="emacs-ee-marked">Adaptive Fill</span>
+<span class="emacs-ee-bookmarked">Adding to Diary</span>
+Amusements
+Antinews
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-info*/emacs    (ee-info)--L1--C0--Top-----------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+<li>Update persistent data files when content of files named `dir' changes</li>
+<li>Add index node names to view tree</li>
+<li>Maintain history (of select actions) in ee-info buffer, like Info-history, implement in ee.el, because useful for others (e.g. for menu), cycle history by e.g. ","(prev), "."(next), "/"(top)</li>
+<li>Create separate *info* buffer for every visited info file.  Own buffer for every info file is very good thing.  Low-priority, because info file index already in own buffer</li>
+<li>Make index of references in info files</li>
+</ul>

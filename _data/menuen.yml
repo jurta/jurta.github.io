@@ -1,0 +1,113 @@
+- title: About
+  url: /en/about
+- title: JUR
+  url: /en/juri/
+  menu:
+    - title: I, Robot
+      url: /en/juri/robot
+- title: Prog
+  url: /en/prog/
+  menu:
+    - title: Babel Mobile
+      url: /en/blogs/juri/babel-mobile
+    - title: Drupal
+      url: /en/prog/drupal
+    - title: Firefox
+      url: /en/prog/firefox
+    - title: No blinking
+      url: /en/prog/noblink
+- title: Emacs
+  url: /en/emacs/
+  menu:
+    - title: .emacs
+      url: /en/emacs/dotemacs
+    - title: ee
+      url: /en/emacs/ee/
+      expanded: true
+      menu:
+        - title: ee-bbdb
+          url: /en/emacs/ee/bbdb
+        - title: ee-buffers
+          url: /en/emacs/ee/buffers
+        - title: ee-commands
+          url: /en/emacs/ee/commands
+        - title: ee-customize
+          url: /en/emacs/ee/customize
+        - title: ee-dired
+          url: /en/emacs/ee/dired
+        - title: ee-dselect
+          url: /en/emacs/ee/dselect
+        - title: ee-edb
+          url: /en/emacs/ee/edb
+        - title: ee-example
+          url: /en/emacs/ee/example
+        - title: ee-fields
+          url: /en/emacs/ee/fields
+        - title: ee-finder
+          url: /en/emacs/ee/finder
+        - title: ee-gnus
+          url: /en/emacs/ee/gnus
+        - title: ee-history
+          url: /en/emacs/ee/history
+        - title: ee-imenu
+          url: /en/emacs/ee/imenu
+        - title: ee-info
+          url: /en/emacs/ee/info
+        - title: ee-marks
+          url: /en/emacs/ee/marks
+        - title: ee-menubar
+          url: /en/emacs/ee/menubar
+        - title: ee-outline
+          url: /en/emacs/ee/outline
+        - title: ee-processes
+          url: /en/emacs/ee/processes
+        - title: ee-programs
+          url: /en/emacs/ee/programs
+        - title: ee-ps
+          url: /en/emacs/ee/ps
+        - title: ee-tags
+          url: /en/emacs/ee/tags
+        - title: ee-views
+          url: /en/emacs/ee/views
+        - title: ee-windows
+          url: /en/emacs/ee/windows
+        - title: ee-datafile
+          url: /en/emacs/ee/data/
+          expanded: true
+          menu:
+            - title: NEWS.ee
+              url: /en/emacs/ee/data/news
+            - title: TODO.ee
+              url: /en/emacs/ee/data/todo
+            - title: ee.ee
+              url: /en/emacs/ee/data/ee
+            - title: ell.ee
+              url: /en/emacs/ee/data/ell
+            # - title: gimp-proc-db.ee
+            #   url: /en/emacs/ee/data/gimp-proc-db
+            # - title: gimp-wishlist.ee
+            #   url: /en/emacs/ee/data/gimp-wishlist
+        - title: ee-textfile
+          url: /en/emacs/ee/text/
+          expanded: true
+          menu:
+            - title: ee-apachelog
+              url: /en/emacs/ee/text/apachelog
+            - title: ee-changelog
+              url: /en/emacs/ee/text/changelog
+        - title: ee-viewfile
+          url: /en/emacs/ee/view/
+          expanded: true
+          menu:
+            - title: view/links.ee
+              url: /en/emacs/ee/view/links
+- title: Travel
+  url: /en/travel/
+  menu:
+    - title: Animals
+      url: /en/animals
+    - title: Estonia
+      url: /en/travel/estonia/
+      menu:
+        - title: Hamlet
+          url: /en/travel/estonia/hamlet

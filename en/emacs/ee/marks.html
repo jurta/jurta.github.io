@@ -1,0 +1,62 @@
+---
+title: ee-marks
+---
+<h1><a name="ee-marks" id="ee-marks">ee-marks - display and go to marked lines in the current Emacs buffer</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>The command `ee-marks' displays a list of all lines,
+where marks were placed by Emacs commands.
+Typing the selection key &lt;RET&gt; will navigate to the selected line.</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="recency" id="recency">Sorted by Recency</a></h3>
+<p>This view displays a list of lines,
+which have markers from mark-ring and global-mark-ring
+in the current buffer.  Marks are displayed in the same order,
+as they have in the mark-ring, i.e. by recency.
+</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints buffer lines with marks and line numbers</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">locates the selected line</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+   163: (defun ee-marks (&optional arg)
+    78: (defun ee-marks-data-collect (data)
+    69:                      (insert (format "%6d: %s"
+    89:                       ((eq field-name 'line-number)
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-marks*/ee.el    (ee-marks)--L1--C0--All----------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="line-number" id="line-number">Sorted by Line Number</a></h3>
+<p>This view displays a list of lines,
+which have markers from mark-ring and global-mark-ring
+in the current buffer.  Marks are sorted by line number.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts by line numbers</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints buffer lines with marks and line numbers</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">locates the selected line</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+    69:                      (insert (format "%6d: %s"
+    78: (defun ee-marks-data-collect (data)
+    89:                       ((eq field-name 'line-number)
+   163: (defun ee-marks (&optional arg)
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-marks*/ee.el    (ee-marks)--L1--C0--All----------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+</ul>

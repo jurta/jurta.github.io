@@ -1,0 +1,35 @@
+---
+title: ee-processes
+---
+<h1><a name="ee-processes" id="ee-processes">ee-processes - display and manipulate Emacs processes</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>The command `ee-processes' displays the list of all processes,
+invoked from Emacs.</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="name" id="name">By Name</a></h3>
+<p>This view presents an unsorted list of process names.
+Processes selected by key 'd' can be deleted by key 'x'.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints process names</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the associated buffer</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+  Proc         Status   Tty         Command
+  ----         ------   ---         -------
+  Snd          run      /dev/pts/2  /usr/bin/snd
+  The GIMP     run      /dev/pts/3  /usr/bin/gimp
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-processes*    (ee-processes)--L1--C0--All----------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+</ul>

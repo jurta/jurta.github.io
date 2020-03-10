@@ -1,16 +1,7 @@
 <div class="block block-jquerymenu">
-  <h2>Site Map</h2>
-
+  <h2>{{ page.menu_title }}</h2>
   <div class="content">
-    <ul class="menu jquerymenu jquerymenu-processed">
-      {% assign menu_pages = site.pages | where: 'lang', page.lang | sort: 'url' %}
-      {% for pg in menu_pages %}
-        {%- if pg.menu != 'none' -%}
-          <li>
-            <a href="{{ pg.url }}">{{ pg.menu | default: pg.title }}</a>
-          </li>
-        {%- endif -%}
-      {% endfor %}
-    </ul>
+    {% assign menu = site.data[page.menu] %}
+    {% include menu.html menu=menu level=0 %}
   </div>
 </div>

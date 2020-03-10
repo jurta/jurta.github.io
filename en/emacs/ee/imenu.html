@@ -1,0 +1,119 @@
+---
+title: ee-imenu
+---
+<h1><a name="ee-imenu" id="ee-imenu">ee-imenu - categorized mode-specific buffer indexes</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>This extension is the replacement for imenu user interface.
+It is more usable and flexible than original imenu.
+But ee-imenu still uses imenu's internal structures created by buffer parsing.</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="unsorted" id="unsorted">Unsorted</a></h3>
+<p>This view emulates the default display of original imenu.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">shows category names extracted from imenu internal structures</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">at top shows "Types" category, then "Variables", functions have no category</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints imenu index headings</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the corresponding imenu index in the parent buffer</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- Types (1)</span>
+   ee-imenu
+<span class="emacs-ee-category">- Variables (4)</span>
+   ee-imenu-mode-name
+   ee-imenu-data
+   ee-imenu-keymap
+  ee-imenu-data-collect
+  ee-imenu-data-collect-internal
+  ee-imenu-switch-to-buffer
+  ee-imenu-switch-to-buffer-other-window
+<span class="emacs-ee-link-visited">  ee-imenu-display-buffer</span>
+  ee-imenu-execute
+  ee-imenu-keymap-make-default
+  ee-imenu
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-imenu*/ee-imenu.el  (ee-imenu)--L1--C0--All----------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="alphabetical" id="alphabetical">Alphabetical</a></h3>
+<p>This view sorts the imenu index names alphabetically under each
+index category (types, variables, functions).</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">shows category names extracted from imenu internal structures</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">at top shows "Types" category, then "Variables", functions have no category</td></tr>
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts imenu index headings alphabetically</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints imenu index headings</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the corresponding imenu index in the parent buffer</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- Types (1)</span>
+   ee-imenu
+<span class="emacs-ee-category">- Variables (4)</span>
+   ee-imenu-data
+   ee-imenu-keymap
+   ee-imenu-mode-name
+  ee-imenu
+  ee-imenu-data-collect
+  ee-imenu-data-collect-internal
+<span class="emacs-ee-link-visited">  ee-imenu-display-buffer</span>
+  ee-imenu-execute
+  ee-imenu-keymap-make-default
+  ee-imenu-switch-to-buffer
+  ee-imenu-switch-to-buffer-other-window
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-imenu*/ee-imenu.el  (ee-imenu)--L1--C0--All----------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="hierarchical" id="hierarchical">Hierarchical</a></h3>
+<p>This view splits index names by "-", and shows them hierarchically.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">splits index names by "-"</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">at top shows "Types" category, then "Variables", functions have no category</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints imenu index headings</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the corresponding imenu index in the parent buffer</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">+ Types (1)</span>
+<span class="emacs-ee-category">+ Variables (4)</span>
+<span class="emacs-ee-category">- ee (8)</span>
+<span class="emacs-ee-category"> - imenu (8)</span>
+    ee-imenu
+<span class="emacs-ee-category">  - data (2)</span>
+<span class="emacs-ee-category">   - collect (2)</span>
+      ee-imenu-data-collect
+<span class="emacs-ee-category">    - internal (1)</span>
+       ee-imenu-data-collect-internal
+<span class="emacs-ee-category">  + display (1)</span>
+<span class="emacs-ee-category">  + execute (1)</span>
+<span class="emacs-ee-category">  + keymap (1)</span>
+<span class="emacs-ee-category">  + switch (2)</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-imenu*/ee-imenu.el  (ee-imenu)--L1--C0--All----------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+<li>Distinguish functions, variables and types with the same names</li>
+</ul>

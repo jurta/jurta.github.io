@@ -1,0 +1,316 @@
+---
+title: ee-dselect
+---
+<h1><a name="ee-dselect" id="ee-dselect">ee-dselect - Debian package handling frontend</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>ee-dselect is the Emacs user interface for managing Debian
+GNU/Linux packages.  It is the front-end to dpkg and apt-get.
+However, currently it yet can't do anything
+beyond browsing a categorozed listings of Debian packages.</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="section" id="section">By Section/by Priority</a></h3>
+<p>Packages in this view are categorized under the same section names
+as they have in the Debian packaging system.  In every section they
+are grouped by priority.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-filter</td>
+    <td class="tail">filters out packages with architectures not equal
+    to "all" or "i386"</td></tr>
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by section name and then by priority</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts the categories at first level (section names)
+    alphabetically; at second level (priorities) sorts in the
+    pre-defined order: "required", "important", "standard", "optional", "extra"</td></tr>
+<tr><td class="head">r-sorter</td>
+    <td class="tail">package records are sorted alphabetically by package name</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints package name and first line of package description</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">creates separate window with package full description</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">+ admin (392)</span>
+<span class="emacs-ee-category">- base (97)</span>
+<span class="emacs-type"> + required (39)</span>
+<span class="emacs-type"> + important (12)</span>
+<span class="emacs-type"> + standard (6)</span>
+<span class="emacs-type"> + optional (37)</span>
+<span class="emacs-type"> + extra (3)</span>
+<span class="emacs-ee-category">+ comm (46)</span>
+<span class="emacs-ee-category">- devel (1364)</span>
+<span class="emacs-type"> - standard (15)</span>
+    bin86<span class="emacs-ee-shadow"> 16-bit assembler and loader</span>
+    binutils<span class="emacs-ee-shadow"> The GNU assembler, linker and binary utilities.</span>
+    bison<span class="emacs-ee-shadow"> A parser generator that is compatible with YACC.</span>
+    flex<span class="emacs-ee-shadow"> A fast lexical analyzer generator.</span>
+    g++<span class="emacs-ee-shadow"> The GNU C++ compiler.</span>
+    g++-2.95<span class="emacs-ee-shadow"> The GNU C++ compiler.</span>
+    gcc<span class="emacs-ee-shadow"> The GNU C compiler.</span>
+    gcc-2.95<span class="emacs-ee-shadow"> The GNU C compiler.</span>
+    gcc-3.0<span class="emacs-ee-shadow"> The GNU C compiler.</span>
+    gcc-3.0-base<span class="emacs-ee-shadow"> The GNU Compiler Collection (base package).</span>
+    gdb<span class="emacs-ee-shadow"> The GNU Debugger</span>
+    libc6-dev<span class="emacs-ee-shadow"> GNU C Library: Development Libraries and Header Files.</span>
+    libstdc++2.10-dev<span class="emacs-ee-shadow"> The GNU stdc++ library (development files)</span>
+    make<span class="emacs-ee-shadow"> The GNU version of the &quot;make&quot; utility.</span>
+    rcs<span class="emacs-ee-shadow"> The GNU Revision Control System</span>
+<span class="emacs-type"> + optional (1042)</span>
+<span class="emacs-type"> + extra (307)</span>
+<span class="emacs-ee-category">+ doc (496)</span>
+<span class="emacs-ee-category">+ editors (159)</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-dselect*  (ee-dselect)--L1--C0--Top----------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="priority" id="priority">By Priority/by Section</a></h3>
+<p>Packages in this view are categorized by priority.  In every
+priority category they are categorized under the same section names as
+they have in the Debian packaging system.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-filter</td>
+    <td class="tail">filters out packages with architectures not equal
+    to "all" or "i386"</td></tr>
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by priority and then by section name</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts the categories at first level (priorities) in the
+    pre-defined order: "required", "important", "standard", "optional", "extra";
+    at second level (section names) sorts alphabetically</td></tr>
+<tr><td class="head">r-sorter</td>
+    <td class="tail">package records are sorted alphabetically by package name</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints package name and first line of package description</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">creates separate window with package full description</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">+ required (42)</span>
+<span class="emacs-ee-category">+ important (39)</span>
+<span class="emacs-ee-category">- standard (83)</span>
+<span class="emacs-type"> + admin (2)</span>
+<span class="emacs-type"> + base (6)</span>
+<span class="emacs-type"> - devel (15)</span>
+    bin86<span class="emacs-ee-shadow"> 16-bit assembler and loader</span>
+    binutils<span class="emacs-ee-shadow"> The GNU assembler, linker and binary utilities.</span>
+    bison<span class="emacs-ee-shadow"> A parser generator that is compatible with YACC.</span>
+    flex<span class="emacs-ee-shadow"> A fast lexical analyzer generator.</span>
+    g++<span class="emacs-ee-shadow"> The GNU C++ compiler.</span>
+    g++-2.95<span class="emacs-ee-shadow"> The GNU C++ compiler.</span>
+    gcc<span class="emacs-ee-shadow"> The GNU C compiler.</span>
+    gcc-2.95<span class="emacs-ee-shadow"> The GNU C compiler.</span>
+    gcc-3.0<span class="emacs-ee-shadow"> The GNU C compiler.</span>
+    gcc-3.0-base<span class="emacs-ee-shadow"> The GNU Compiler Collection (base package).</span>
+    gdb<span class="emacs-ee-shadow"> The GNU Debugger</span>
+    libc6-dev<span class="emacs-ee-shadow"> GNU C Library: Development Libraries and Header Files.</span>
+    libstdc++2.10-dev<span class="emacs-ee-shadow"> The GNU stdc++ library (development files)</span>
+    make<span class="emacs-ee-shadow"> The GNU version of the &quot;make&quot; utility.</span>
+    rcs<span class="emacs-ee-shadow"> The GNU Revision Control System</span>
+<span class="emacs-type"> + doc (4)</span>
+<span class="emacs-type"> + interpreters (9)</span>
+<span class="emacs-type"> + libs (5)</span>
+<span class="emacs-type"> + mail (5)</span>
+<span class="emacs-type"> + math (2)</span>
+<span class="emacs-type"> + net (17)</span>
+<span class="emacs-type"> + otherosfs (1)</span>
+<span class="emacs-type"> + shells (1)</span>
+<span class="emacs-type"> + text (6)</span>
+<span class="emacs-type"> + utils (9)</span>
+<span class="emacs-type"> + web (1)</span>
+<span class="emacs-ee-category">+ optional (7056)</span>
+<span class="emacs-ee-category">+ extra (1532)</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-dselect*  (ee-dselect)--L1--C0--All----------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="emacs" id="emacs">Emacs-related packages</a></h3>
+<p>This view displays only packages, whose name or description
+contains the word "Emacs".  Packages are categorized under their
+section names.  This view shows how poorly Debian packages are
+categorized into sections in the Debian packaging system:
+Emacs-related packages can be found under many different arbitrary
+sections.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-filter</td>
+    <td class="tail">filters out packages whose name or description
+    don't match the string "emacs"</td></tr>
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes packages by section name</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints package name and first line of package description</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">creates separate window with package full description</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- devel (15)</span>
+   cvs-pcl<span class="emacs-ee-shadow"> Concurrent Versions System Emacs extension (pcl-cvs)</span>
+   doxymacs<span class="emacs-ee-shadow"> E-lisp package for making doxygen usage easier under Emacs.</span>
+   eieio<span class="emacs-ee-shadow"> Enhanced Implementation of Emacs Interpreted Objects</span>
+   emacs20-dl-dev<span class="emacs-ee-shadow"> Dynamic Loading GNU Emacs header files.</span>
+   erlang-mode<span class="emacs-ee-shadow"> A major mode for editing Erlang in Emacs</span>
+   gettext-el<span class="emacs-ee-shadow"> Emacs po-mode for editing .po files.</span>
+   gnats<span class="emacs-ee-shadow"> The GNU problem report management system (central database)</span>
+   gnats-user<span class="emacs-ee-shadow"> The GNU problem report management system (client tools)</span>
+   haskell-mode<span class="emacs-ee-shadow"> A major mode for editing Haskell in Emacs</span>
+   ocaml-core<span class="emacs-ee-shadow"> Objective CAML (metapackage)</span>
+   oo-browser<span class="emacs-ee-shadow"> (Emacs) Object Oriented Class Browser</span>
+   prcs<span class="emacs-ee-shadow"> The Project Revision Control System</span>
+   prcs-el<span class="emacs-ee-shadow"> ELisp support for the Project Revision Control System</span>
+   semantic<span class="emacs-ee-shadow"> A lexer, parser-generator, and parser written in elisp</span>
+   tuareg-mode<span class="emacs-ee-shadow"> An emacs-mode for ocaml programs.</span>
+<span class="emacs-ee-category">- doc (5)</span>
+   elisp-manual<span class="emacs-ee-shadow"> Emacs Lisp Reference Manual</span>
+   elisp-manual-ja<span class="emacs-ee-shadow"> Japanese version of Emacs Lisp Reference Manual</span>
+   emacs-lisp-intro<span class="emacs-ee-shadow"> An Introduction to Programming in Emacs Lisp</span>
+   emacs-lisp-intro-ja<span class="emacs-ee-shadow"> Japanese version of &quot;Programming in Emacs Lisp&quot;</span>
+   emacs-manual-ja<span class="emacs-ee-shadow"> Japanese version of the GNU Emacs Manual</span>
+<span class="emacs-ee-category">- editors (35)</span>
+   ada-mode<span class="emacs-ee-shadow"> Ada mode for Emacs and XEmacs</span>
+   aleph-emacs<span class="emacs-ee-shadow"> The Aleph programming language - emacs mode</span>
+   apel<span class="emacs-ee-shadow"> Portable Emacs Library</span>
+   asn1-mode<span class="emacs-ee-shadow"> Emacs mode for editing ASN.1 specification files</span>
+   bitmap-mule<span class="emacs-ee-shadow"> package to use bitmap in MULE or Emacs/mule.</span>
+   crypt++el<span class="emacs-ee-shadow"> Emacs-Lisp Code for handling encrypted files</span>
+   css-mode<span class="emacs-ee-shadow"> A Cascading Style Sheets (CSS) editing mode for Emacs</span>
+   debview<span class="emacs-ee-shadow"> Emacs mode for viewing Debian packages</span>
+   elib<span class="emacs-ee-shadow"> Library of commonly-used Emacs functions</span>
+   emacs-dl-canna<span class="emacs-ee-shadow"> Canna DL module for emacs20-dl</span>
+   emacs-dl-wnn<span class="emacs-ee-shadow"> Wnn DL module for emacs20-dl</span>
+   emacs-goodies-el<span class="emacs-ee-shadow"> Miscellaneous add-ons for Emacs</span>
+   emacs20<span class="emacs-ee-shadow"> The GNU Emacs editor.</span>
+   emacs20-dl<span class="emacs-ee-shadow"> The GNU Emacs editor. (Dynamic Loading supported)</span>
+   emacs20-dl-el<span class="emacs-ee-shadow"> GNU Emacs LISP (.el) files. (for emacs20-dl)</span>
+   emacs20-el<span class="emacs-ee-shadow"> GNU Emacs LISP (.el) files.</span>
+   emacs21<span class="emacs-ee-shadow"> The GNU Emacs editor.</span>
+   emacs21-el<span class="emacs-ee-shadow"> GNU Emacs LISP (.el) files.</span>
+   emacsen-common<span class="emacs-ee-shadow"> Common facilities for all emacsen.</span>
+   emacspeak<span class="emacs-ee-shadow"> speech output interface to Emacs</span>
+   emacspeak-ss<span class="emacs-ee-shadow"> Emacspeak speech server for several synthesizers</span>
+   etalk<span class="emacs-ee-shadow"> talk client for the Emacs editor</span>
+   gnuserv<span class="emacs-ee-shadow"> Allows you to attach to an already running Emacs</span>
+   html-helper-mode<span class="emacs-ee-shadow"> A popular HTML editing mode for emacs</span>
+   inform-mode<span class="emacs-ee-shadow"> Emacs mode for editing Inform files</span>
+   initz<span class="emacs-ee-shadow"> Handles the switching of initialization files of emacsen.</span>
+   mmm-mode<span class="emacs-ee-shadow"> Multiple Major Mode for Emacs</span>
+   mule-ucs<span class="emacs-ee-shadow"> character code translator system on Emacs</span>
+   sml-mode<span class="emacs-ee-shadow"> A major Emacs mode for editing Standard ML.</span>
+   speedbar<span class="emacs-ee-shadow"> Dired on steroids</span>
+   texmacs<span class="emacs-ee-shadow"> WYSIWYG emacs-ish mathematical text editor</span>
+   tramp<span class="emacs-ee-shadow"> Remote file access in emacs.</span>
+   ttcn-el<span class="emacs-ee-shadow"> GNU Emacs modes for TTCN-3/protocol testing languages.</span>
+   xae<span class="emacs-ee-shadow"> XML Authoring Environment for Emacs</span>
+   yc-el<span class="emacs-ee-shadow"> Yet another Canna client for Emacsen.</span>
+<span class="emacs-ee-category">- electronics (1)</span>
+   verilog-mode<span class="emacs-ee-shadow"> Emacs mode for verilog language</span>
+<span class="emacs-ee-category">- games (1)</span>
+   trr19<span class="emacs-ee-shadow"> A type training software on GNU Emacs.</span>
+<span class="emacs-ee-category">- interpreters (3)</span>
+   ri-cs-el<span class="emacs-ee-shadow"> an emacs interface for ri</span>
+   ri-db-el<span class="emacs-ee-shadow"> an emacs interface for ri</span>
+   ruby-elisp<span class="emacs-ee-shadow"> Emacs-lisp ruby-mode for Ruby</span>
+<span class="emacs-ee-category">- mail (12)</span>
+   bbdb<span class="emacs-ee-shadow"> The Insidious Big Brother Database (email rolodex) for Emacs</span>
+   c-sig<span class="emacs-ee-shadow"> A signature tool for GNU Emacs</span>
+   flim<span class="emacs-ee-shadow"> Library to provide basic features about message for Emacsen</span>
+   mew<span class="emacs-ee-shadow"> Messaging in the Emacs World</span>
+   mh-e<span class="emacs-ee-shadow"> the GNU Emacs front end for MH and nmh mail user agents.</span>
+   mu-cite<span class="emacs-ee-shadow"> Message Utilities for emacsen.</span>
+   post-el<span class="emacs-ee-shadow"> emacs major mode for editing mail</span>
+   prom-mew<span class="emacs-ee-shadow"> procmail reader for Mew</span>
+   semi<span class="emacs-ee-shadow"> Library to provide MIME feature for GNU Emacs.</span>
+   vm<span class="emacs-ee-shadow"> A mail user agent for Emacs</span>
+   wl<span class="emacs-ee-shadow"> Yet Another Message Interface On Emacsen.</span>
+   wl-beta<span class="emacs-ee-shadow"> Yet Another Message Interface On Emacsen. (beta branch)</span>
+<span class="emacs-ee-category">- math (5)</span>
+   calc<span class="emacs-ee-shadow"> An advanced calculator and mathematical tool for Emacs</span>
+   ess<span class="emacs-ee-shadow"> Emacs statistics mode, supporting R,S and others</span>
+   gnuplot-mode<span class="emacs-ee-shadow"> Yet another GnuPlot mode for Emacs.</span>
+   octave2.0-emacsen<span class="emacs-ee-shadow"> Emacs support for the GNU Octave language</span>
+   octave2.1-emacsen<span class="emacs-ee-shadow"> Emacs support for the GNU Octave language</span>
+<span class="emacs-ee-category">- misc (4)</span>
+   edb<span class="emacs-ee-shadow"> A database program for GNU Emacs</span>
+   planner-el<span class="emacs-ee-shadow"> The Emacs Planner</span>
+   remembrance-agent<span class="emacs-ee-shadow"> Emacs mode to help find relevant texts</span>
+   x-face-el<span class="emacs-ee-shadow"> XFace utility for GNU Emacs.</span>
+<span class="emacs-ee-category">- net (6)</span>
+   erc<span class="emacs-ee-shadow"> an Emacs IRC client</span>
+   eudc<span class="emacs-ee-shadow"> Emacs Unified Directory Client</span>
+   liece<span class="emacs-ee-shadow"> IRC (Internet Relay Chat) client for Emacs.</span>
+   liece-dcc<span class="emacs-ee-shadow"> DCC program for liece.</span>
+   lyskom-elisp-client<span class="emacs-ee-shadow"> Emacs client for LysKOM.</span>
+   zenirc<span class="emacs-ee-shadow"> Major mode for wasting time</span>
+<span class="emacs-ee-category">- news (2)</span>
+   gnus<span class="emacs-ee-shadow"> A versatile News and mailing list reader for Emacsen</span>
+   gnus-bonus-el<span class="emacs-ee-shadow"> Miscellaneous add-ons for Gnus</span>
+<span class="emacs-ee-category">- science (1)</span>
+   biomode<span class="emacs-ee-shadow"> [Biology] An Emacs mode to edit genetic data</span>
+<span class="emacs-ee-category">- shells (2)</span>
+   eshell<span class="emacs-ee-shadow"> An Emacs command shell</span>
+   pcomplete<span class="emacs-ee-shadow"> Programmable completion for Emacs</span>
+<span class="emacs-ee-category">- sound (2)</span>
+   mpg123-el<span class="emacs-ee-shadow"> a front-end program to mpg123 audio player on Emacsen.</span>
+   timidity-el<span class="emacs-ee-shadow"> An Emacs front end to the timidity MIDI sequencer.</span>
+<span class="emacs-ee-category">- tex (5)</span>
+   auctex<span class="emacs-ee-shadow"> An integrated environment for writing TeX/LaTeX documents.</span>
+   chktex<span class="emacs-ee-shadow"> Finds typographic errors in LaTeX</span>
+   preview-latex<span class="emacs-ee-shadow"> Render LaTeX equations etc. in an emacs buffer</span>
+   whizzytex<span class="emacs-ee-shadow"> a WYSIWIG environment for LaTeX</span>
+   yatex<span class="emacs-ee-shadow"> Yet Another LaTeX mode</span>
+<span class="emacs-ee-category">- text (10)</span>
+   lookup-el<span class="emacs-ee-shadow"> Search interface to electronic dictionaries by Emacs.</span>
+   manued-el<span class="emacs-ee-shadow"> Minor mode for manued proofreading method</span>
+   php-elisp<span class="emacs-ee-shadow"> Emacs support for php files.</span>
+   psgml<span class="emacs-ee-shadow"> An Emacs major mode for editing SGML documents.</span>
+   rdtool-elisp<span class="emacs-ee-shadow"> Emacs-lisp rd-mode for writing RD document</span>
+   records-common<span class="emacs-ee-shadow"> Save and index notes in Emacs environment</span>
+   records-gnuemacs<span class="emacs-ee-shadow"> Save and index notes in Emacs environment</span>
+   records-xemacs<span class="emacs-ee-shadow"> Save and index notes in Emacs environment</span>
+   tdtd<span class="emacs-ee-shadow"> Emacs major mode for editing SGML and XML DTDs</span>
+   xslide<span class="emacs-ee-shadow"> XSL editing mode for Emacs.</span>
+<span class="emacs-ee-category">- utils (9)</span>
+   artist<span class="emacs-ee-shadow"> Emacs Lisp drawing package</span>
+   debbugs-el<span class="emacs-ee-shadow"> Access the Debian BTS from within Emacs</span>
+   dpkg-dev-el<span class="emacs-ee-shadow"> Emacs-related Debian development helpers</span>
+   egg<span class="emacs-ee-shadow"> Tamago V.4 -- EGG Input Method Architecture for Emacs</span>
+   idl-font-lock-el<span class="emacs-ee-shadow"> OMG IDL font-locking for Emacs</span>
+   migemo<span class="emacs-ee-shadow"> Japanese incremental search with Romaji on Emacsen</span>
+   migemo-perl<span class="emacs-ee-shadow"> Japanese incremental search with Romaji on Emacsen</span>
+   skk<span class="emacs-ee-shadow"> Simple Kana to Kanji conversion program</span>
+   windows-el<span class="emacs-ee-shadow"> Window manager for GNU Emacs</span>
+<span class="emacs-ee-category">- web (14)</span>
+   elserv<span class="emacs-ee-shadow"> HTTP server that runs on Emacsen.</span>
+   emacs-wiki<span class="emacs-ee-shadow"> Maintain a local Wiki using Emacs-friendly markup</span>
+   hns2-tools<span class="emacs-ee-shadow"> Hyper Nikki System tools for editing diary.</span>
+   latte<span class="emacs-ee-shadow"> The Language for Transforming Text (currently to html)</span>
+   onshore-timesheet-el<span class="emacs-ee-shadow"> Emacs Lisp onShore Timesheet Client</span>
+   w3-doc-e20<span class="emacs-ee-shadow"> Documentation for w3-el.</span>
+   w3-doc-e21<span class="emacs-ee-shadow"> Documentation for w3-el-e21.</span>
+   w3-el-e20<span class="emacs-ee-shadow"> Web browser for GNU Emacs 20</span>
+   w3-el-e21<span class="emacs-ee-shadow"> Web browser for GNU Emacs 21</span>
+   w3-lisp-e20<span class="emacs-ee-shadow"> Elisp source for w3-el web browser</span>
+   w3-lisp-e21<span class="emacs-ee-shadow"> Elisp source for w3-el web browser</span>
+   w3-url-e21<span class="emacs-ee-shadow"> URL library for use by w3-el-e21</span>
+   w3-url-lisp<span class="emacs-ee-shadow"> URL library for use by w3-el-e21 (Lisp source)</span>
+   w3m-el<span class="emacs-ee-shadow"> a simple Emacs interface of w3m</span>
+<span class="emacs-ee-category">- x11 (2)</span>
+   elpoint<span class="emacs-ee-shadow"> Yet another presentation tool on Emacsen</span>
+   xfonts-bitmap-mule<span class="emacs-ee-shadow"> ETL 16dot bitmap font for X</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-dselect*  (ee-dselect)--L1--C0--All-------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+<li>Rename ee-dselect to ee-dpkg or make alias</li>
+<li>Add full functionaly of the dselect program</li>
+</ul>

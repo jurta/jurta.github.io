@@ -1,0 +1,63 @@
+---
+title: ee-example
+---
+<h1><a name="ee-example" id="ee-example">ee-example - accompanying example for demonstration of ee capabilities</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>This extension demonstrates the capabilities of ee package.
+It defines a simple data structure and displays it under different categories.</p>
+<!--break-->
+<pre class="darkgray">
+   [["ri-101" "c-1" nil "c-4" () ((price . 3.15) (amount . 9))]
+    ["ri-102" "c-1/s-1" "c-2/s-2" "c-4" () ((price . 3) (amount . 5))]
+    ["ri-103" "c-1" "c-3" "c-4" ((children "ri-104" "ri-105")) ((price . 5) (amount . 7))]
+    ["ri-104" nil nil nil ((parent . "ri-103")) ()]
+    ["ri-105" nil nil nil ((parent . "ri-104")) ()]]
+</pre>
+
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="category" id="category">By Category</a></h3>
+<p>This view categorizes sample records by three different fields.
+It also shows how ee can be used as a calculator in a way similar to a spreadsheets.
+Numeric fields of records in every category are calculated and their sums
+are shown on the category lines.</p>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- c-1 (5, 78.35)</span>
+   ri-101           3.15 * 9 = 28.35
+<span class="emacs-ee-category"> - s-1 (1, 15.00)</span>
+<span class="emacs-type">  - c-2 (1, 15.00)</span>
+<span class="emacs-type">   - s-2 (1, 15.00)</span>
+   ri-102           3.00 * 5 = 15.00
+<span class="emacs-type"> - c-3 (3, 35.00)</span>
+ - ri-103           5.00 * 7 = 35.00
+  - ri-104          0.00 * 0 = 0.00
+     ri-105         0.00 * 0 = 0.00
+<span class="emacs-ee-category">- c-4 (5, 78.35)</span>
+   ri-101           3.15 * 9 = 28.35
+   ri-102           3.00 * 5 = 15.00
+ - ri-103           5.00 * 7 = 35.00
+  - ri-104          0.00 * 0 = 0.00
+     ri-105         0.00 * 0 = 0.00
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-example*    (ee-example)--L1--C0--All----------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="name" id="name">By Name</a></h3>
+<p>This view sorts sample records by name field.</p>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+   ri-101
+   ri-102
+   ri-103
+   ri-104
+   ri-105
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-example*    (ee-example)--L1--C0--All----------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more examples of more capabilities</li>
+</ul>

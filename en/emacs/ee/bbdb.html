@@ -1,0 +1,44 @@
+---
+title: ee-bbdb
+---
+<h1><a name="ee-bbdb" id="ee-bbdb">ee-bbdb - summary mode for BBDB</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>This extension provides the integration with bbdb package.  It extracts
+records from bbdb internals and organizes them under different
+categories.  This extension can replace "bbdb elided display".</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="name" id="name">By first letter of last word of name</a></h3>
+<p>This view categorizes bbdb records by first letter of last word of name.
+Alternative could be the first letter of lastname, but this has
+different purpose in the bbdb.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">extracts first letter of last word of record name</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts first letters alphabetically</td></tr>
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts names alphabetically</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints record name and net address</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">+ E (3)</span>
+<span class="emacs-ee-category">- L (1)</span>
+  Juri Linkov (juri@jurta.org)
+<span class="emacs-ee-category">+ O (2)</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-bbdb*    (ee-bbdb)--L1--C0--Top----------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>New views can be easily added.  I think useful could be the views
+categorized by company, by country, by suffix of net-address.</li>
+<li>Make all used variables buffer-local in the bbdb-mode, see buffer-local-variables in bbdb-records</li>
+<li>Invoke send-mail on the category line to send mail to all (or every) category members</li>
+</ul>

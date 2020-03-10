@@ -1,0 +1,41 @@
+---
+title: gimp-proc-db.ee
+---
+<h1><a name="gimp-proc-db-ee" id="gimp-proc-db-ee">gimp-proc-db.ee - GIMP procedural database</a></h1>
+
+<h2><a name="description" id="description">Data Description</a></h2>
+<p>This data file holds a list of GIMP procedures
+extracted from output of GIMP's function 'gimp-procedural-db-dump'
+by Emacs-Lisp program <a href="gimp-proc-db.el">gimp-proc-db.el</a>
+to ee data file gimp-proc-db.ee.</p>
+<!--break-->
+<h2><a name="views" id="views">Useful Views</a></h2>
+<p>Views are described in the view file
+<a href="../view/gimp-proc-db.ee">view/gimp-proc-db.ee</a>.</p>
+
+<h3><a name="type" id="type">By Type</a></h3>
+<p>This view displays a list of GIMP procedures, grouped by procedure type.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by procedure type</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints procedure name and blurb</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">prints full information</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">+ GIMP Extension (97)</span>
+<span class="emacs-ee-category">+ GIMP Plug-In (224)</span>
+<span class="emacs-ee-category">- Internal GIMP procedure (325)</span>
+  gimp_airbrush<span class="emacs-ee-shadow"> Paint in the current brush with varying pressure.</span>
+  gimp_brightness_contrast<span class="emacs-ee-shadow"> Modify brightness/contrast.</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-datafile*/gimp-proc-db.ee (ee-datafile)--L1--C0--Top------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+</ul>

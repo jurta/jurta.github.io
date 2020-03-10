@@ -1,0 +1,134 @@
+---
+title: ee-apachelog
+---
+<h1><a name="apachelog" id="apachelog">ee-textfile-apachelog - organize information from Apache log files</a></h1>
+
+<h2><a name="description" id="description">Data Description</a></h2>
+<p>This mode parses Apache server log files and based on collected
+information builds the different views. Call the command `ee-textfile-apachelog'
+from buffer with Apache server log file.</p>
+<!--break-->
+<h2><a name="views" id="views">Useful Views</a></h2>
+
+<h3><a name="host" id="host">By Host</a></h3>
+<p>This view categories Apache server log entries by Remote-Host field.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by Remote-Host</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts in the alphabetical order</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints Apache server log entry</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the corresponding Apache server log entry in the parent buffer</td></tr>
+</table>
+
+<h3><a name="reversed" id="reversed">By Reversed Hostname</a></h3>
+<p>This view categories Apache server log entries by reversed parts of Remote-Host field.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by reversed parts of Remote-Host field</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts in the alphabetical order</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints Apache server log entry</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the corresponding Apache server log entry in the parent buffer</td></tr>
+</table>
+
+<h3><a name="request" id="request">By Request</a></h3>
+<p>This view categories Apache server log entries by request URL.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by request URL</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints Apache server log entry</td></tr>
+<tr><td class="head">post-generate</td>
+    <td class="tail">hides subcategories</td></tr>
+</table>
+
+<h3><a name="referer" id="referer">By Referer</a></h3>
+<p>This view categories Apache server log entries by Referer field.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by Referer</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts in the alphabetical order</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints date and file name</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the corresponding Apache server log entry in the parent buffer</td></tr>
+<tr><td class="head">post-generate</td>
+    <td class="tail">hides subcategories</td></tr>
+</table>
+
+<h3><a name="user-agent" id="user-agent">By User-Agent</a></h3>
+<p>This view categories Apache server log entries by User-Agent field.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by User-Agent</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts in the alphabetical order</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints date and author name</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the corresponding Apache server log entry in the parent buffer</td></tr>
+</table>
+
+<h3><a name="date" id="date">By Date</a></h3>
+<p>This view categories Apache server log entries by year, month and day.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">splits ISO date by "-"</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts alphabetically in the reverse order</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints Apache server log entry</td></tr>
+<tr><td class="head">post-generate</td>
+    <td class="tail">hides subcategories</td></tr>
+</table>
+
+<h3><a name="size" id="size">By Size</a></h3>
+<p>This view categories Apache server log entries by size of bytes sent.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by Bytes Sent field</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts numerically in the reverse order</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints Apache server log entry</td></tr>
+<tr><td class="head">post-generate</td>
+    <td class="tail">hides subcategories</td></tr>
+</table>
+
+<h3><a name="status" id="status">By Status</a></h3>
+<p>This view categories Apache server log entries by status code.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by Status Code field</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts alphabetically</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints Apache server log entry</td></tr>
+<tr><td class="head">post-generate</td>
+    <td class="tail">hides subcategories</td></tr>
+</table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+</ul>
+
+<h2><a name="changelog" id="changelog">ChangeLog</a></h2>
+<ul>
+<li>2003-08-09 - Added views &quot;by Reversed Hostname&quot;, &quot;by Request&quot;, &quot;by Referer&quot;,
+    &quot;by User Agent&quot;, &quot;by Date&quot;, &quot;by Size&quot;, &quot;by Status&quot;</li>
+</ul>

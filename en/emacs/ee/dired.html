@@ -1,0 +1,72 @@
+---
+title: ee-dired
+---
+<h1><a name="ee-dired" id="ee-dired">ee-dired - categorized directory listings</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>This extension creates the ee buffer containing the listing of a directory
+and its subdirectories.  Every directory name is the category,
+and directory files are placed under this category.  Files are printed
+in the format similar to format of original dired buffers.</p>
+
+<p>Note that currently ee-dired is NOT replacement for original dired mode.
+Ee-dired is useful for inspecting directory trees and locating files
+under different categories.</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="directory" id="directory">By Directory</a></h3>
+<p>This view emulates the default display of the function 'dired'.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">splits directory paths into category tree</td></tr>
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts files under every category alphabetically by file name</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints file information similar to dired</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">visits the selected file in the separate buffer</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- home (5)</span>
+<span class="emacs-ee-category"> - juri (5)</span>
+    -rwxr-xr-x 1000    0   119408 2003-02-15 17:29 .emacs
+<span class="emacs-ee-category">  - emacs (4)</span>
+<span class="emacs-ee-category">   - ee (4)</span>
+    -rwxr-xr-x 1000    0     8357 2003-02-15 19:29 ee-dired.el
+    -rwxr-xr-x 1000    0     6347 2003-02-15 18:35 <span class="emacs-ee-omitted">ee-dired.el~</span>
+    -rwxr-xr-x 1000    0    92569 2003-02-15 19:29 ee.el
+    -rwxr-xr-x 1000    0    92569 2003-02-15 17:59 <span class="emacs-ee-omitted">ee.el~</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-dired*  (ee-dired)--L1--C0--All---------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="alphabetical" id="alphabetical">Alphabetical</a></h3>
+<p>This view collects files from all subdirectories and sorts them alphabetically.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts all files alphabetically by file name</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints file information similar to dired</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">visits the selected file in the separate buffer</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+    -rwxr-xr-x 1000    0   119408 2003-02-15 17:29 .emacs
+    -rwxr-xr-x 1000    0     8357 2003-02-15 19:29 ee-dired.el
+    -rwxr-xr-x 1000    0     6347 2003-02-15 18:35 ee-dired.el~
+    -rwxr-xr-x 1000    0    92569 2003-02-15 19:29 ee.el
+    -rwxr-xr-x 1000    0    92569 2003-02-15 17:59 ee.el~
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-dired*  (ee-dired)--L1--C0--All---------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views: by size, by time, etc.</li>
+<li>Make hook for ee-view-expansion-show to read subdirectories and update view buffer</li>
+</ul>

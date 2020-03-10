@@ -1,0 +1,48 @@
+---
+title: ee-fields
+---
+<h1><a name="ee-fields" id="ee-fields">ee-fields - display and edit fields of the current record</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>This extension displays names and values of all fields of the current record
+(i.e. record, where point was located before calling the ee-fields).
+Typing &lt;RET&gt; on a field will present the selected field's value for editing,
+and after entering the new value it will update the current record.</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="name" id="name">By Name</a></h3>
+<p>This view displays fields names and values.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-sorter</td>
+    <td class="tail">fields are sorted by their original sorting order in the record</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints the field's name and value</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">opens the value for editing in the minibuffer or separate buffer</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+            type: buffer
+          buffer: #&lt;buffer ee-fields.el&gt;
+     buffer-name: &quot;ee-fields.el&quot;
+      major-mode: emacs-lisp-mode
+       mode-name: &quot;Emacs-Lisp&quot;
+       file-name: &quot;/home/juri/emacs/ee/ee-fields.el&quot;
+       directory: &quot;/home/juri/emacs/ee/&quot;
+            size: 6219
+       read-only: nil
+        modified: nil
+         modtime: (15969 . 21270)
+    display-time: (15969 21170 242954)
+   display-count: 3
+            mark: nil
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-fields*/*ee-buffers*    (ee-fields)--L1--C0--Top-----
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+</ul>

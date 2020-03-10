@@ -1,0 +1,36 @@
+---
+title: ee-windows
+---
+<h1><a name="ee-windows" id="ee-windows">ee-windows - display and switch Emacs window configurations</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>The command `ee-windows-add' adds the current window configuration
+to the global list of window configurations.  Then the command `ee-windows'
+can be called to display and switch the added window configurations.</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="name" id="name">By Name</a></h3>
+<p>This view presents a list of saved window configurations, where
+every window configuration is displayed by the comma-separated list of
+buffer names of the buffers which were displayed on the current frame
+before the saving of the window configuration.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-printer</td>
+    <td class="tail">comma-separated list of window buffer names</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the saved window configuration</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+  ee-windows.el, ee.el
+D ee.texi, *info*, *grep*, *scratch*
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-windows*    (ee-windows)--L1--C0--All----------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+</ul>

@@ -1,0 +1,76 @@
+---
+title: ee-history
+---
+<h1><a name="ee-history" id="ee-history">ee-history - display lists from Emacs history variables</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>Currently this extension displays lists from the following Emacs history variables:</p>
+<ul>
+<li>command-history (invoked by ee-history-command)</li>
+<li>extended-command-history (invoked by ee-history-extended-command)</li>
+<li>shell-command-history (invoked by ee-history-shell-command)</li>
+</ul>
+
+<p>Selecting the items from history lists invokes the function
+call-interactively or shell-command on the parent buffer
+(i.e. the buffer where ee-history was called).
+History items selected by key 'd' can be deleted from history list
+by key 'x'.</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="recency" id="recency">By Recency</a></h3>
+<p>This view displays lists from Emacs history variables
+in the same order as they were called by user
+and placed into history variables.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-sorter</td>
+    <td class="tail">unsorted, i.e. sorted as they are comes from Emacs internals</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints the history items</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">calls the selected command interactively on the parent buffer</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+  ee
+  ee-history-extended-command
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-history/extended-command* (ee-history)--L1--C0--Top-------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<p></p>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+  (ee)
+  (ee-history-command)
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-history/command* (ee-history)--L1--C0--Top----------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="name" id="name">By Name</a></h3>
+<p>This view sorts lists from Emacs history variables
+by the item names alphabetically.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts by the item names alphabetically</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints the history items</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">calls the selected command interactively on the parent buffer</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-marked">D</span> cat /proc/meminfo
+  df
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-history/shell-command* (ee-history)--L1--C0--Top----------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+<li>Add more history variables (compile-history, read-expression-history, etc.)</li>
+</ul>

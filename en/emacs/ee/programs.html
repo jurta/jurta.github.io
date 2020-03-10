@@ -1,0 +1,90 @@
+---
+title: ee-programs
+---
+<h1><a name="ee-programs" id="ee-programs">ee-programs - categorized program menu</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>This extension builds a categorized menu of programs collected from
+operating system menu.  Currently it supports Debian GNU/Linux menu
+system and M$Window$ Start-menu programs tree.</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="category" id="category">By Category</a></h3>
+<p>Programs in this view are categorized under the same categories as
+they have in the system menu.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">creates the same category tree as in system menu</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">calls the system command associated with menu item</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+<span class="emacs-ee-category">- Apps (59)</span>
+<span class="emacs-ee-category"> - Editors (1)</span>
+    Emacs 21
+<span class="emacs-ee-category"> - Graphics (1)</span>
+    The GIMP
+<span class="emacs-ee-category"> - Programming (6)</span>
+    Common Lisp
+    GNU Prolog interactive shell
+    Guile Scheme 1.4
+    Hugs
+    Ocaml
+    SWI-Prolog
+<span class="emacs-ee-category"> - Sound (2)</span>
+    Snd
+    transcriber
+<span class="emacs-ee-category"> + System (19)</span>
+<span class="emacs-ee-category"> + Tools (23)</span>
+<span class="emacs-ee-category"> + Viewers (7)</span>
+<span class="emacs-ee-category">+ HOWTO (387)</span>
+<span class="emacs-ee-category">+ Help (2)</span>
+<span class="emacs-ee-category">- Packagemanagment (1)</span>
+   Dselect
+<span class="emacs-ee-category">+ Screen (2)</span>
+<span class="emacs-ee-category">+ System (1)</span>
+<span class="emacs-ee-category">- WindowManagers (1)</span>
+   Sawfish
+<span class="emacs-ee-category">+ XShells (2)</span>
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-programs*  (ee-programs)--L1--C0--All------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="alphabetical" id="alphabetical">Alphabetical</a></h3>
+<p>Programs in this view are sorted by name alphabetically.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts program names alphabetically</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">calls the system command associated with menu item</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+  Common Lisp
+  Dselect
+  Emacs 21
+  GNU Prolog interactive shell
+  Guile Scheme 1.4
+  Hugs
+  Ocaml
+  SWI-Prolog
+  Sawfish
+  Snd
+  The GIMP
+  transcriber
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-programs*  (ee-programs)--L1--C0--Top------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+<li>Rename to ee-startmenu or ee-start-menu, but better to make common ee-programs for both GNU/Linux and Windows. On Linux define what system is used, and use Debian or RedHat or KDE program lists</li>
+<li>Make alias for ee-debian-menu for Debian Program menu</li>
+<li>Make alias for ee-start-menu for Window$ Start-menu</li>
+<li>Make alias for ee-shortcuts for Window$ Start-menu, i.e. ee-shortcuts.el --- Micro$oft Window$ Start-menu replacement</li>
+</ul>

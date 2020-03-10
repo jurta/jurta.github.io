@@ -1,0 +1,38 @@
+- title: О
+  url: /ru/about
+- title: ЮР
+  url: /ru/juri/
+  menu:
+    - title: Я, РОБОТ
+      url: /ru/juri/robot
+- title: ОЕЯ
+  url: /ru/nlp/
+  menu:
+    - title: Русский язык
+      url: /ru/nlp/rus/
+      expanded: true
+      menu:
+        - title: Парадигмы
+          url: /ru/nlp/rus/zaliz
+- title: Про
+  url: /ru/prog/
+  menu:
+    - title: Бейбл Мобайл
+      url: /ru/blogs/juri/beibl-mobail
+    - title: Настройки
+      url: /ru/prog/noblink
+- title: Емакс
+  url: /ru/emacs/
+  menu:
+    - title: ее
+      url: /ru/emacs/ee
+- title: Путешествия
+  url: /ru/travel/
+  menu:
+    - title: Мир животных
+      url: /ru/animals
+    - title: Эстония
+      url: /ru/travel/estonia/
+      menu:
+        - title: Гамлет
+          url: /ru/travel/estonia/hamlet

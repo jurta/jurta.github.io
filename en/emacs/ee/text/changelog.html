@@ -1,0 +1,65 @@
+---
+title: ee-changelog
+---
+<h1><a name="changelog" id="changelog">ee-textfile-changelog - organize information from ChangeLog files</a></h1>
+
+<h2><a name="description" id="description">Data Description</a></h2>
+<p>This mode parses ChangeLog files and based on collected information
+builds different views.  Call the command `ee-textfile-changelog'
+from buffer with ChangeLog file.</p>
+<!--break-->
+<h2><a name="views" id="views">Useful Views</a></h2>
+
+<h3><a name="date" id="date">By Date</a></h3>
+<p>This view categories ChangeLog entries by year, month and day.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">splits ISO date by "-"</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts alphabetically in the reverse order</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints author name and file name</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the corresponding ChangeLog entry in the parent buffer</td></tr>
+<tr><td class="head">post-generate</td>
+    <td class="tail">hides subcategories</td></tr>
+</table>
+
+<h3><a name="author" id="author">By Author Name</a></h3>
+<p>This view categories ChangeLog entries by author name, year and month.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by author name and first two parts of
+    ISO date splitted by "-" (i.e. year and month)</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts in the alphabetical order</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints date and file name</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the corresponding ChangeLog entry in the parent buffer</td></tr>
+<tr><td class="head">post-generate</td>
+    <td class="tail">hides subcategories</td></tr>
+</table>
+
+<h3><a name="file" id="file">By File Name</a></h3>
+<p>This view categories ChangeLog entries by file name and year.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes by file name and first part of
+    ISO date splitted by "-" (i.e. year)</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts in the alphabetical order</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints date and author name</td></tr>
+<tr><td class="head">r-select</td>
+    <td class="tail">switches to the corresponding ChangeLog entry in the parent buffer</td></tr>
+</table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+<li>Add function names, conditionals, acknowledgments and texts of change desciptions</li>
+</ul>

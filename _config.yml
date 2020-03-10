@@ -9,6 +9,7 @@ repository: https://github.com/jurta/jurta.github.io
 
 permalink: /:title # without :output_ext .html
 
+# "ME + ET = MEET"
 # collections:
 #   meets:
 #     output: true
@@ -23,21 +24,33 @@ defaults:
       path: "en"
     values:
       lang: "en"
+      menu: "menuen"
+      menu_title: "Site Map"
+  - scope:
+      path: "en/emacs"
+    values:
+      menu_top: "/en/emacs/"
   - scope:
       path: "ru"
     values:
       lang: "ru"
+      menu: "menuru"
+      menu_title: "Карта сайта"
   - scope:
       path: "ru/tanja"
     values:
-      menu: "tanja"
-  - scope:
-      path: "ru/tanja/meet"
-    values:
-      layout: "meet"
+      menu: "menuta"
+      menu_title: "ТА"
+  # - scope:
+  #     path: "ru/tanja/meet"
+  #   values:
+  #     layout: "meet"
 
 plugins:
   - jekyll-redirect-from
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+
+# sass:
+#   style: compressed

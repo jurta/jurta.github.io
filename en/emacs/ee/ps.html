@@ -1,0 +1,125 @@
+---
+title: ee-ps
+---
+<h1><a name="ee-ps" id="ee-ps">ee-ps - display CPU processes</a></h1>
+
+<h2><a name="description" id="description">Description</a></h2>
+<p>This extension calls the 'ps' utility and extract from its output the
+information about processes.  Processes can be sorted by different
+fields and placed under different categories.  Typing &lt;d&gt; on
+separate process or on the group of processes will mark process(es)
+for deletion, and typing &lt;x&gt; will kill marked processes.  The
+functionality of this extension is very similar to the utility 'top' and
+can be used as its replacement.</p>
+<!--break-->
+<h2><a name="views" id="views">Default views</a></h2>
+
+<h3><a name="pid" id="pid">By PID</a></h3>
+<p>Processes in this view are sorted by their PID.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts processes by PID</td></tr>
+<tr><td class="head">r-title-printer</td>
+    <td class="tail">prints title similar to output of 'ps'</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints processes similar to output of 'ps'</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+ USER       PID %CPU %MEM   VSZ   RSS TTY      STAT START   TIME COMMAND
+ root         1  0.0  0.4  1400   508 ?        S    Feb15   0:04 init
+ root         2  0.0  0.0     0     0 ?        SW   Feb15   0:00 [keventd]
+ root         5  0.0  0.0     0     0 ?        SW   Feb15   0:00 [kswapd]
+ root         7  0.0  0.0     0     0 ?        SW   Feb15   0:00 [kupdated]
+ root       145  0.0  0.5  1479   624 ?        S    Feb15   0:00 /sbin/syslogd
+ nobody     188  0.0 10.0 46612 11932 ?        S    Feb15   0:00 dictd 1.5.5: 0/0
+ root       189  0.0  0.4  1428   540 ?        S    Feb15   0:00 /usr/sbin/inetd
+<span class="emacs-ee-marked">Ddaemon     207  0.0  0.4  1416   589 ?        S    Feb15   0:00 /usr/sbin/atd</span>
+ root       211  0.0  0.5  1684   692 ?        S    Feb15   0:00 /usr/sbin/cron
+ juri       223  0.0  0.8  2116   992 tty2     S    Feb15   0:00 /bin/sh
+ root       232  0.2  7.9 16644  9384 ?        S    Feb15   0:25 X
+ juri       255  0.0  0.5  2152   648 tty2     S    Feb15   0:00 unclutter
+ juri       256  0.0  2.4  5045  2908 tty2     S    Feb15   0:00 sawfish
+ juri       257  1.6 16.1 21478 19189 tty2     S    Feb15  23:55 emacs
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-ps*  (ee-ps)--L1--C0--All---------------------------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="cpu" id="cpu">By %CPU</a></h3>
+<p>Processes in this view are sorted by their CPU percentage.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts processes by %CPU</td></tr>
+<tr><td class="head">r-title-printer</td>
+    <td class="tail">prints title similar to output of 'ps'</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints processes similar to output of 'ps'</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+ USER       PID %CPU %MEM   VSZ   RSS TTY      STAT START   TIME COMMAND
+ juri       257  1.6 16.1 21478 19189 tty2     S    Feb15  23:55 emacs
+ root       232  0.2  7.9 16644  9384 ?        S    Feb15   0:25 X
+ juri       256  0.0  2.4  5045  2908 tty2     S    Feb15   0:00 sawfish
+ juri       255  0.0  0.5  2152   648 tty2     S    Feb15   0:00 unclutter
+ juri       223  0.0  0.8  2116   992 tty2     S    Feb15   0:00 /bin/sh
+ root       211  0.0  0.5  1684   692 ?        S    Feb15   0:00 /usr/sbin/cron
+<span class="emacs-ee-marked">Ddaemon     207  0.0  0.4  1416   589 ?        S    Feb15   0:00 /usr/sbin/atd</span>
+ root       189  0.0  0.4  1428   540 ?        S    Feb15   0:00 /usr/sbin/inetd
+ nobody     188  0.0 10.0 46612 11932 ?        S    Feb15   0:00 dictd 1.5.5: 0/0
+ root       145  0.0  0.5  1479   624 ?        S    Feb15   0:00 /sbin/syslogd
+ root         7  0.0  0.0     0     0 ?        SW   Feb15   0:00 [kupdated]
+ root         5  0.0  0.0     0     0 ?        SW   Feb15   0:00 [kswapd]
+ root         2  0.0  0.0     0     0 ?        SW   Feb15   0:00 [keventd]
+ root         1  0.0  0.4  1400   508 ?        S    Feb15   0:04 init
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-ps*  (ee-ps)--L1--C0--All---------------------------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h3><a name="user" id="user">By USER</a></h3>
+<p>Processes in this view are categorized under user name and sorted
+by their PID.</p>
+
+<table class="list" cellpadding="1" cellspacing="1">
+<tr><td class="head">c-path-finder</td>
+    <td class="tail">categorizes under user name</td></tr>
+<tr><td class="head">c-sorter</td>
+    <td class="tail">sorts categories (user names) alphabetically</td></tr>
+<tr><td class="head">r-sorter</td>
+    <td class="tail">sorts processes by PID</td></tr>
+<tr><td class="head">r-title-printer</td>
+    <td class="tail">prints title similar to output of 'ps'</td></tr>
+<tr><td class="head">r-printer</td>
+    <td class="tail">prints processes similar to output of 'ps'</td></tr>
+</table>
+
+<table class="emacs-frame" border="3" cellpadding="0" cellspacing="0"><tr><td><pre class="emacs-window">
+ USER       PID %CPU %MEM   VSZ   RSS TTY      STAT START   TIME COMMAND
+<span class="emacs-ee-category">- daemon (1)</span>
+ daemon     207  0.0  0.4  1416   589 ?        S    Feb15   0:00 /usr/sbin/atd
+<span class="emacs-ee-category">- juri (4)</span>
+ juri       223  0.0  0.8  2116   992 tty2     S    Feb15   0:00 /bin/sh
+ juri       255  0.0  0.5  2152   648 tty2     S    Feb15   0:00 unclutter
+ juri       256  0.0  2.4  5045  2908 tty2     S    Feb15   0:00 sawfish
+ juri       257  1.6 16.1 21478 19189 tty2     S    Feb15  23:55 emacs
+<span class="emacs-ee-category">- nobody (1)</span>
+ nobody     188  0.0 10.0 46612 11932 ?        S    Feb15   0:00 dictd 1.5.5: 0/0
+<span class="emacs-ee-category">- root (8)</span>
+ root         1  0.0  0.4  1400   508 ?        S    Feb15   0:04 init
+ root         2  0.0  0.0     0     0 ?        SW   Feb15   0:00 [keventd]
+ root         5  0.0  0.0     0     0 ?        SW   Feb15   0:00 [kswapd]
+ root         7  0.0  0.0     0     0 ?        SW   Feb15   0:00 [kupdated]
+ root       145  0.0  0.5  1479   624 ?        S    Feb15   0:00 /sbin/syslogd
+ root       189  0.0  0.4  1428   540 ?        S    Feb15   0:00 /usr/sbin/inetd
+ root       211  0.0  0.5  1684   692 ?        S    Feb15   0:00 /usr/sbin/cron
+ root       232  0.2  7.9 16644  9384 ?        S    Feb15   0:25 X
+</pre></td></tr><tr><td><pre class="emacs-mode-line">
+--:%%  *ee-ps*  (ee-ps)--L1--C0--All---------------------------------------------
+</pre></td></tr><tr><td>&nbsp;</td></tr></table>
+
+<h2><a name="todo" id="todo">TODO</a></h2>
+<ul>
+<li>Add more views</li>
+</ul>

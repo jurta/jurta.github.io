@@ -1,2 +1,47 @@
+<link rel="stylesheet" href="/files/css/leaflet.css" />
+<script src="/files/js/leaflet.js"></script>
+
+<style>
+#map {
+  width: 640px;
+  height: 640px;
+}
+</style>
+
 <div id="map">
+Coordinates of lines for map of travels:
+{% for item in page.geojson %}
+{% for coord in item.geometry.coordinates %}
+{{ coord[1] }} {{ coord[0] }}
+{%- endfor -%}
+{%- endfor -%}
 </div>
+
+<script type="text/javascript">
+{% if page.geojson %}
+var map = L.map('map');
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+var lines = {{page.geojson | jsonify}};
+var lines_map = L.geoJSON(lines, {
+    style: function(feature) {
+      return {
+        color: feature.properties.color,
+        weight: 10,
+        opacity: 0.55
+      };
+    }
+}).addTo(map);
+
+map.fitBounds(lines_map.getBounds())
+
+{% endif %}
+</script>
+
+<script type="application/ld+json">
+{"@context":{"geojson":"https://purl.org/geojson/vocab#","Feature":"geojson:Feature","LineString":"geojson:LineString"},"@type":"geojson","geojson":{{page.geojson | jsonify}}}
+</script>
+

@@ -19,8 +19,8 @@ This is what I wrote about Drupal at that time:
 But over time Drupal became a burden.  With every new release of a minor
 version (about every month) with fixes of security vulnerabilities it
 required upgrading the site.  Often automatic upgrades failed for various
-reasons.  After a few upgrades this process became too boring, and my
-excitement about Drupal went away.  Also I tried to upgrade the major
+reasons.  After a few upgrades this process became too boring and disappointing,
+and my excitement about Drupal vanished.  Also I tried to upgrade the major
 version from Drupal 6 to Drupal 7, but the whole process took so much time,
 so that eventually I asked myself “Why should I do this?” and abandoned the
 attempt.  All these problems is what is called _technical debt_ - implied

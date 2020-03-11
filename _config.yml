@@ -8,6 +8,8 @@ logo: /files/jurta_logo.png
 # url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  jurta
 repository: https://github.com/jurta/jurta.github.io
+disqus:
+  shortname: jurtagithub
 
 permalink: /:title # without :output_ext .html
 

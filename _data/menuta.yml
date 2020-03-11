@@ -21,7 +21,7 @@
 - title: 15
   url: /ru/tanja/15
 - title: 1987
-  url: /tanja/calendar/1987/
+  url: /ru/tanja/calendar/1987
   expanded: true
   menu:
     - title: 1987-08-31
@@ -31,7 +31,7 @@
     - title: 1987-10-01
       url: /ru/tanja/meet/1987-10-01
 - title: 1988
-  url: /tanja/calendar/1988/
+  url: /ru/tanja/calendar/1988
   expanded: true
   menu:
     - title: 1988-08-29
@@ -41,7 +41,7 @@
     - title: 1988-12-01
       url: /ru/tanja/meet/1988-12-01
 - title: 1989
-  url: /tanja/calendar/1989/
+  url: /ru/tanja/calendar/1989
   expanded: true
   menu:
     - title: 1989-01-01
@@ -51,7 +51,7 @@
     - title: 1989-04-06
       url: /ru/tanja/meet/1989-04-06
 - title: 1990
-  url: /tanja/calendar/1990/
+  url: /ru/tanja/calendar/1990
   expanded: true
   menu:
     - title: 1990-09-18
@@ -65,7 +65,7 @@
     - title: 1990-12-18
       url: /ru/tanja/meet/1990-12-18
 - title: 1991
-  url: /tanja/calendar/1991/
+  url: /ru/tanja/calendar/1991
   expanded: true
   menu:
     - title: 1991-01-25
@@ -167,7 +167,7 @@
     - title: 1991-12-20
       url: /ru/tanja/meet/1991-12-20
 - title: 1992
-  url: /tanja/calendar/1992/
+  url: /ru/tanja/calendar/1992
   expanded: true
   menu:
     - title: 1992-01-10
@@ -195,7 +195,7 @@
     - title: 1992-05-11
       url: /ru/tanja/meet/1992-05-11
 - title: 1999
-  url: /tanja/calendar/1999/
+  url: /ru/tanja/calendar/1999
   expanded: true
   menu:
     - title: 1999-05-13
@@ -241,7 +241,7 @@
     - title: 1999-06-09
       url: /ru/tanja/meet/1999-06-09
 - title: 2000
-  url: /tanja/calendar/2000/
+  url: /ru/tanja/calendar/2000
   expanded: true
   menu:
     - title: 2000-07-14
@@ -255,7 +255,7 @@
     - title: 2000-07-29
       url: /ru/tanja/meet/2000-07-29
 - title: 2001
-  url: /tanja/calendar/2001/
+  url: /ru/tanja/calendar/2001
   expanded: true
   menu:
     - title: 2001-06-26
@@ -273,7 +273,7 @@
     - title: 2001-09-21
       url: /ru/tanja/meet/2001-09-21
 - title: 2002
-  url: /tanja/calendar/2002/
+  url: /ru/tanja/calendar/2002
   expanded: true
   menu:
     - title: 2002-02-15
@@ -285,7 +285,7 @@
     - title: 2002-08-03
       url: /ru/tanja/meet/2002-08-03
 - title: 2003
-  url: /tanja/calendar/2003/
+  url: /ru/tanja/calendar/2003
   expanded: true
   menu:
     - title: 2003-01-01
@@ -317,7 +317,7 @@
     - title: 2003-08-03
       url: /ru/tanja/meet/2003-08-03
 - title: 2004
-  url: /tanja/calendar/2004/
+  url: /ru/tanja/calendar/2004
   expanded: true
   menu:
     - title: 2004-07-19
@@ -331,7 +331,7 @@
     - title: 2004-07-30
       url: /ru/tanja/meet/2004-07-30
 - title: 2005
-  url: /tanja/calendar/2005/
+  url: /ru/tanja/calendar/2005
   expanded: true
   menu:
     - title: 2005-04-23
@@ -343,7 +343,7 @@
     - title: 2005-07-30
       url: /ru/tanja/meet/2005-07-30
 - title: 2006
-  url: /tanja/calendar/2006/
+  url: /ru/tanja/calendar/2006
   expanded: true
   menu:
     - title: 2006-01-01
@@ -419,7 +419,7 @@
     - title: 2006-12-19
       url: /ru/tanja/meet/2006-12-19
 - title: 2007
-  url: /tanja/calendar/2007/
+  url: /ru/tanja/calendar/2007
   expanded: true
   menu:
     - title: 2007-03-19
@@ -445,7 +445,7 @@
     - title: 2007-12-17
       url: /ru/tanja/meet/2007-12-17
 - title: 2008
-  url: /tanja/calendar/2008/
+  url: /ru/tanja/calendar/2008
   expanded: true
   menu:
     - title: 2008-01-30
@@ -457,7 +457,7 @@
     - title: 2008-08-06
       url: /ru/tanja/meet/2008-08-06
 - title: 2009
-  url: /tanja/calendar/2009/
+  url: /ru/tanja/calendar/2009
   expanded: true
   menu:
     - title: 2009-04-10

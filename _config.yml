@@ -1,7 +1,9 @@
 title: JURTA
+author: Juri Linkov <juri@jurta.org>
 email: juri@jurta.org
 description: >-
   JURTA is the home of JURI and TA
+logo: /files/jurta_logo.png
 # baseurl: "" # the subpath of your site, e.g. /blog
 # url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  jurta

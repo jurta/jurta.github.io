@@ -1,6 +1,8 @@
 ---
 translations:
   ru: /ru/blogs/juri/beibl-mobail
+keywords: babel mobile
+description: Babel Mobile helps to overcome language barriers.
 title: Babel Mobile
 ---
 I have an idea how to use mobile phones to overcome language barriers between people.

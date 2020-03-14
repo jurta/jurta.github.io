@@ -1,23 +1,18 @@
 title: JURTA
-author: Juri Linkov <juri@jurta.org>
+author: Juri Linkov
 email: juri@jurta.org
 description: >-
   JURTA is the home of JURI and TA
 logo: /files/jurta_logo.png
 # baseurl: "" # the subpath of your site, e.g. /blog
 # url: "" # the base hostname & protocol for your site, e.g. http://example.com
+google_analytics: UA-3440956-1
 github_username:  jurta
 repository: https://github.com/jurta/jurta.github.io
 disqus:
   shortname: jurtagithub
 
 permalink: /:title # without :output_ext .html
-
-# "ME + ET = MEET"
-# collections:
-#   meets:
-#     output: true
-#     permalink: /meets/:path/
 
 defaults:
   - scope:
@@ -45,10 +40,6 @@ defaults:
     values:
       menu: "menuta"
       menu_title: "ТА"
-  # - scope:
-  #     path: "ru/tanja/meet"
-  #   values:
-  #     layout: "meet"
 
 plugins:
   - jekyll-redirect-from

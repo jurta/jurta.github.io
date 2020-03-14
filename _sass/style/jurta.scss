@@ -444,19 +444,19 @@ ul.secondary li {
 
 li.expanded {
   list-style-type: circle;
-  list-style-image: url(/files/images/minus.png);
+  list-style-image: url(/files/css/images/minus.png);
   padding: 0.2em 0.5em 0 0; /* LTR */
   margin: 0;
 }
 li.collapsed {
   list-style-type: disc;
-  list-style-image: url(/files/images/plus.png); /* LTR */
+  list-style-image: url(/files/css/images/plus.png); /* LTR */
   padding: 0.2em 0.5em 0 0; /* LTR */
   margin: 0;
 }
 li.leaf {
   list-style-type: square;
-  list-style-image: url(/files/images/bullet.png);
+  list-style-image: url(/files/css/images/bullet.png);
   padding: 0.2em 0.5em 0 0; /* LTR */
   margin: 0;
 }
@@ -504,10 +504,10 @@ ul.jquerymenu li span.parent {
 }
 
 ul.jquerymenu li.parent span.closed {
-  background-image: url(/files/images/plus.png);
+  background-image: url(/files/css/images/plus.png);
 }
 ul.jquerymenu li.parent span.open {
-  background-image: url(/files/images/minus.png);
+  background-image: url(/files/css/images/minus.png);
 }
 
 /* Override ../../modules/tableofcontents/tableofcontents.css */

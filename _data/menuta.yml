@@ -1,3 +1,4 @@
+# SiteMap menu for Tanja part of this site (rus).
 - title: Таня
   url: /ru/tanja
 - title: Стихи
@@ -20,6 +21,7 @@
   url: /ru/tanja/eta
 - title: 15
   url: /ru/tanja/15
+# "ME + ET = MEET"
 - title: 1987
   url: /ru/tanja/calendar/1987
   expanded: true

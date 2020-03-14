@@ -5,6 +5,8 @@ keywords: babel mobile
 description: Babel Mobile helps to overcome language barriers.
 title: Babel Mobile
 ---
+<div class="meta"><span class="submitted">7. December 2008 - 19:29 — juri</span></div>
+
 I have an idea how to use mobile phones to overcome language barriers between people.
 
 The problem of misunderstanding between people that speak different languages has an increased significance in our globalization time, yet there is no acceptable solution to make multilingual verbal communications easier. However, given the recent technological achievements it seems possible to help people communicating in their native tongue. My idea is to implement a client-server architecture using a mobile phone as the client device, and a translation engine on the server side. When a subscriber has a need to communicate with the other person in a different language, then he/she makes a call to the special service number, selects the translation direction by using an IVR menu or dictating it, and starts speaking into the microphone. After finishing a sentence, the second person can hear the translation from the phone speaker, or the first person can try to tell the translation to the second person. Alternatively, the second person can hear the translation from own phone if the first person enters the phone number and lets the server make a call to the second person to deliver the translation directly to the phone of the second person. In the simplest case this can serve as a handy phrasebook, and gradually improving the translation quality will make it more and more useful.

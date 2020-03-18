@@ -40,6 +40,7 @@ defaults:
     values:
       menu: "menuta"
       menu_title: "ТА"
+      sitemap: false
 
 plugins:
   - jekyll-redirect-from

@@ -19,7 +19,8 @@ This is what I wrote about Drupal at that time:
 But over time Drupal became a burden.  With every new release of a minor
 version (about every month) with fixes of security vulnerabilities it
 required upgrading the site.  Often automatic upgrades failed for various
-reasons.  After a few upgrades this process became too boring and disappointing,
+reasons that required manual intervention to fix the problems.
+After a few upgrades this process became too boring and disappointing,
 and my excitement about Drupal vanished.  Also I tried to upgrade the major
 version from Drupal 6 to Drupal 7, but the whole process took so much time,
 so that eventually I asked myself “Why should I do this?” and abandoned the
@@ -65,6 +66,6 @@ and use a static site generator again, this time not my own
 (that was quite limited in functionality), but a well-maintained
 generator with a lot of available features.
 
-The clear benefit of the static site generator is the easiness with which
+The clear benefit of the static site generators is the easiness with which
 I can push content to the repository and forget about the nightmare of
 handling databases, caching, upgrades, etc.

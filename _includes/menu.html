@@ -1,6 +1,6 @@
 <ul{% if include.level == 0 %} class="menu jquerymenu"{% endif %}>
   {% for item in include.menu %}
-  {%- capture classes -%}{% if item.menu %}parent {% if item.expanded or item.url == page.menu_top %}open{% else %}closed{% endif %}{% endif %}{% if item.url == page.url %} active{% endif %}{%- endcapture -%}
+  {%- capture classes -%}{% if item.menu %}parent {% if item.expanded or page.url contains item.url %}open{% else %}closed{% endif %}{% endif %}{% if item.url == page.url %} active{% endif %}{%- endcapture -%}
   <li class="{{classes}}">
     {%- if item.menu -%}
     <span class="{{classes}}"></span>

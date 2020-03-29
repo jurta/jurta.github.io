@@ -26,10 +26,6 @@ defaults:
       menu: "menuen"
       menu_title: "Site Map"
   - scope:
-      path: "en/emacs"
-    values:
-      menu_top: "/en/emacs/"
-  - scope:
       path: "ru"
     values:
       lang: "ru"

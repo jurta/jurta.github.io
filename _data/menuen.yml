@@ -11,10 +11,12 @@
   menu:
     - title: Babel Mobile
       url: /en/blogs/juri/babel-mobile
-    - title: Drupal
-      url: /en/prog/drupal
     - title: Firefox
       url: /en/prog/firefox
+    - title: Drupal
+      url: /en/prog/drupal
+    - title: Jekyll
+      url: /en/prog/jekyll
     - title: No blinking
       url: /en/prog/noblink
 - title: Emacs

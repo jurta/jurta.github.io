@@ -1,0 +1,180 @@
+
+/* PLEASE DON'T SHOW STUPID ANNOYING ADS!!! */
+#ad-leaderboard {display: none;}
+#ad-5linkunit {display: none;}
+.adv, .ljad {display: none;}
+
+/* from Refined paper */
+body {
+  margin: 0;
+  padding: 0;
+  background: #cdc2b2 none;
+  color: #000000;
+}
+
+/* A 		{ color: #CC6633; text-decoration: none; } */
+/* A:link		{ color: #CC6633; text-decoration: none; } */
+/* A:visited	{ color: #CC6633; text-decoration: none; } */
+/* A:active	{ color: #FF9966;  } */
+/* A:hover		{ color: #FF9966;  } */
+
+/* td.body { padding:20px;} */
+/* td.title { padding:20px; font-family: verdana, sans-serif; font-size: 16px; color: #666666; font-weight:bold; letter-spacing:.1em; } */
+/* td.links { padding:8px; font-family: verdana, sans-serif; font-size: 10px; color: #336699; line-height:16px;} */
+
+/* font.descrip { font-family: verdana, sans-serif; font-size: 10px; color: #999966; text-transform:uppercase; font-weight:bold; letter-spacing:.2em; padding:5px;} */
+
+/* font.date { font-family: georgia, sans-serif; font-size: 12px; background-color: #c2c2c2; line-height:16px;} */
+/* font.author { font-family: verdana, sans-serif; font-size: 10px; background-color: #c2c2c2; line-height:16px; text-transform:uppercase;} */
+/* font.time { font-family: verdana, sans-serif; font-size: 10px; background-color: #c2c2c2; line-height:16px; text-transform:uppercase;} */
+/* font { font-family: verdana, sans-serif; font-size: 10px; color: #666666; line-height:16px;} */
+/* font.subhead { font-family: verdana, sans-serif; font-size: 11px; color: #333333; font-weight:bold; padding:8px; letter-spacing:  .1em} */
+
+/* p,td,tr,table,hr,br,ul,ol,li { font-family: georgia, verdana, arial; font-size:12px; color:#000000; line-height:18px; text-align:justify; } */
+/* p.links { font-family: verdana, arial; font-size:10px; color:#666666; line-height:12px; } */
+
+/* from Default LJ style */
+
+/* body { */
+/*   background: #cdc2b2 none; */
+/*   color: #000000; */
+/*   margin: 50px; */
+/* } */
+a:link {
+  color: #0000FF;
+  background: transparent;
+}
+a:visited {
+  color: #800080;
+  background: transparent;
+}
+a:active {
+  color: #FF0000;
+  background: transparent;
+}
+img {
+  vertical-align: absmiddle;
+}
+table {
+  width: 100%;
+}
+pre {
+  text-align: left;
+}
+#topbar {
+  background: #C0C0C0 none;
+  color: #000000;
+}
+#topbar h1 {
+  margin-top: 5px;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 1.5em;
+}
+#topbar h2 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 1.25em;
+}
+#navbar {
+  background: #E0E0E0 none;
+  color: #000000;
+  width: 25%;
+}
+#navbar ul {
+  list-style: none;
+  margin: 10px;
+}
+#navbar ul li {
+  margin: 0;
+}
+#navbar ul li:before {
+content: "> "
+  font-weight: normal;
+}
+#navbar ul li.active {
+  font-weight: bold;
+}
+#navbar a:link, #navbar a:active, #navbar a:visited {
+  background: #E0E0E0 none;
+  color: #000000;
+  text-decoration: none;
+}
+#navbar a:hover {
+  text-decoration: underline;
+}
+#mainstuff {
+  width: 75%;
+  background: #FFFFFF none;
+  color: #000000;
+}
+#userpic {
+  text-align: center;
+  margin: 10px;
+}
+#userpic img {
+  border: 2px solid #C0C0C0;
+  background: #C0C0C0 none;
+  color: #000000;
+}
+#entries {
+  margin: 10px;
+}
+#range {
+  margin-bottom: 0.5em;
+}
+.day {
+  border-top: 1px dashed #000000;
+  clear: both;
+}
+.day h3 {
+  border-bottom: 1px dashed #000000;
+  padding: 2px;
+  margin: 0;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+address {
+  text-align: center;
+  font-style: normal;
+  font-size: 0.95em;
+}
+
+/* entries */
+.entrytext {
+  padding: 2px;
+  text-align: justify;
+}
+.entry {
+  clear: both;
+}
+.entrytext p, .entrytext ul, .entrytext ol, .entrytext table {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.entryheading {
+  font-weight: bold;
+}
+.timestamp, .subject, .altposter {
+  font-weight: bold;
+  color: #000000;
+  background: #FFFFFF;
+}
+.altposter a {
+  color: #000000;
+  background: #FFFFFF;
+  text-decoration: underline;
+}
+.altposter img {
+  border: 2px #C0C0C0 solid;
+  background: #C0C0C0 none;
+  color: #000000;
+}
+.talklinks {
+  font-size: 0.75em;
+  text-align: right;
+  margin-bottom: 2px;
+  clear: right;
+}

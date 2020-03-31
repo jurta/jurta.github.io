@@ -1,5 +1,5 @@
 <h1 class="site-name">
   <a href="{%- if page.lang == 'ru' -%}{{ '/ru' | relative_url }}{%- else -%}{{ '/' | relative_url }}{%- endif -%}" title="{{ site.title | escape }}">
-    {% if page.lang == 'ru' %}ЮРТА{% else %}{{ site.title | escape }}{% endif %}
+    {% if page.url contains "ru/tanja" %}<img src="/files/jurta.ru.png" />{% elsif page.lang == 'ru' %}ЮРТА{% else %}{{ site.title | escape }}{% endif %}
   </a>
 </h1>

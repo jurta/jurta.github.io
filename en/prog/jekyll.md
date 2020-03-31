@@ -4,7 +4,10 @@ description: Jekyll is a static site generator for personal, project, and organi
 title: Jekyll
 ---
 Initially, my site was already in plain text files converted to HTML with
-my own home-grown static site generator (basically just a set of scripts).
+my own home-grown static site generator - basically just a set of scripts,
+e.g. [regenerate.pl](/files/prog/jekyll/regenerate.pl)
+(and some image viewer scripts [igaview.pl](/files/prog/jekyll/igaview.pl),
+[jurta.js](/files/prog/jekyll/jurta.js), [jurta_iga.js](/files/prog/jekyll/jurta_iga.js).
 
 But in 2008 I migrated the site to Drupal 6, because I enjoyed using Drupal.
 This is what I wrote about [Drupal](/en/prog/drupal) at that time:

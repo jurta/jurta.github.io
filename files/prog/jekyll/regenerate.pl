@@ -195,7 +195,7 @@ sub html_file_get_info {
         $text =~ s((?<=<!-- sidebarleft -->).*(?=<!-- /sidebarleft -->))()isg;
         $text =~ s((?<=<!-- sidebarright -->).*(?=<!-- /sidebarright -->))()isg;
         my ($li,$links) = (0);
-        while ($text =~ m(href="(\.\.?/)*([^"]+)")g) { $links->{$2} = $li++; }
+        while ($text =~ m(href="(\.\.?/)*([^"]+)")g) { $links->{$2} = $li++; } # " Hi,Emacs!
 
         $ctree->{$filelang} = file2ctree($catpath, $filerel, $filereldir, $title, $h1,
                                          $ctree->{$filelang},$links);
@@ -391,6 +391,18 @@ sub html_file_update {
     !m(<!-- sidebarright -->)i &&
       s((?=\s*</body>))("\n<!-- sidebarright -->".sidebar_right($_,$filerel,$fcharset)."<!-- /sidebarright -->")ie
     ||s((?<=<!-- sidebarright -->).*(?=<!-- /sidebarright -->))(sidebar_right($_,$filerel,$fcharset))ies;
+
+    !m(google-analytics\.com/ga\.js) &&
+     s((?=\s*</body>))(
+<script type="text/javascript">
+var gaJsHost = \(\("https:" == document.location.protocol\) ? "https://ssl." : "http://www."\);
+document.write\(unescape\("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"\)\);
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker\("UA-3440956-1"\);
+pageTracker._initData\(\);
+pageTracker._trackPageview\(\);
+</script>)i;
   }
 
   # untaint filename and then open it
@@ -413,7 +425,7 @@ sub create_gallery {
 
   $images =~ s(\n+)()g;
   $images =~ s((<img src="[^"]*" />)(<img src="[^"]*" />)?(<img src="[^"]*" />)?(<img src="[^"]*" />)?)(<tr>\n<td align="left" valign="top" width="25%">$1</td>\n<td align="left" valign="top" width="25%">$2</td>\n<td align="left" valign="top" width="25%">$3</td>\n<td align="left" valign="top" width="25%">$4</td>\n</tr>\n)imsg;
-  $images =~ s((<img src="[^"]*" />))(create_image($&))iemsg;
+  $images =~ s((<img src="[^"]*" />))(create_image($&))iemsg; # " Hi,Emacs!
 
 #   $images =~ s(^\n+)(); $images =~ s(\n+$)();
 #   my @images = split('\n', $images);
@@ -600,18 +612,15 @@ $index2
    </tr>
    <tr>
     <td align="center" valign="top"><!-- TODO: class="corner-sw" -->
-     <form method="get" action="http://www.google.com/search">
-      <span align="center">
-       <input type="hidden" name="ie" value="$fcharset" />
-       <input type="hidden" name="oe" value="$fcharset" />
-       <label for="searchText">$trs->{$file_lang}->{'search'}</label><br />
-       <input type="text" name="q" size="9" maxlength="255" id="searchText" /><br />
-       <input type="submit" value="Google" />
-       <input type="hidden" name="btnG" value="Google Search" />
-       <input type="hidden" name="domains" value="www.jurta.org" />
-       <input type="hidden" name="sitesearch" value="www.jurta.org" />
-      </span>
-     </form>
+<!-- Google CSE Search Box Begins  -->
+<form action="http://www.jurta.org/search.en.html" id="searchbox_007814313286053995309:tcvsfe_sh2u">
+  <input type="hidden" name="cx" value="007814313286053995309:tcvsfe_sh2u" />
+  <input type="hidden" name="cof" value="FORID:9" />
+  <input type="text" name="q" size="15" />
+  <input type="submit" name="sa" value="Search" />
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_007814313286053995309%3Atcvsfe_sh2u&lang=en"></script>
+<!-- Google CSE Search Box Ends -->
     </td>
     <td class="footer" colspan="3" valign="top">
 <table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td valign="top">

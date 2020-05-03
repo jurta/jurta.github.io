@@ -12,7 +12,7 @@
 <tr>
 {% endif %}<td align="left" valign="top" width="25%">  <table>
    <tr><td><a href="{{ img.url }}"><img src="{{ img.thumb }}" alt="{{ img.title }}" title="{{ img.title }}" border="0" /></a></td></tr>
-   <tr><td>{{ img.title }}</td></tr>
+   <tr><td>{{ img.title }}{%- if img.gps -%}&nbsp;<a href="{{ img.gps }}" target="_blank">+</a>{%- endif -%}</td></tr>
   </table>
 </td>
 {%- if forloop.last == true -%}

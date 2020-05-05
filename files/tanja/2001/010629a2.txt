@@ -1,0 +1,29 @@
+
+since this warning while pushing to github:
+
+remote: warning: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+remote: warning: See http://git.io/iEPt8g for more information.
+remote: warning: File files/tanja/2001/010629a2.wav is 63.03 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+
+where 010629a2.wav had size 66,093,100
+
+010629a2.wav was split to 010629a2_1.wav and 010629a2_2.wav
+with command:
+
+sox 010629a2.wav 010629a2_.wav trim 0 780 : newfile : restart
+
+and old file remove with `git rm`
+
+
+then purge old file from repository as described in
+
+https://help.github.com/en/github/managing-large-files/removing-files-from-a-repositorys-history
+https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository
+
+git clone --mirror git@jurta.github.com:jurta/jurta.github.io.git
+java -jar /home/juri/Downloads/bfg-1.13.0.jar --strip-blobs-bigger-than 50M jurta.github.io.git
+java -jar /home/juri/Downloads/bfg-1.13.0.jar --delete-files 010629a2.wav
+git reflog expire --expire=now --all && git gc --prune=now --aggressive
+git push
+
+

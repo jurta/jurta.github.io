@@ -19,11 +19,140 @@ then purge old file from repository as described in
 
 https://help.github.com/en/github/managing-large-files/removing-files-from-a-repositorys-history
 https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository
+https://rtyley.github.io/bfg-repo-cleaner/
 
 git clone --mirror git@jurta.github.com:jurta/jurta.github.io.git
 java -jar /home/juri/Downloads/bfg-1.13.0.jar --strip-blobs-bigger-than 50M jurta.github.io.git
 java -jar /home/juri/Downloads/bfg-1.13.0.jar --delete-files 010629a2.wav
 git reflog expire --expire=now --all && git gc --prune=now --aggressive
-git push
+git push origin master -f
+
+
+* Output
+
+java -jar /home/juri/Downloads/bfg-1.13.0.jar --delete-files 010629a2.wav
+
+Using repo : /home/work/www/jurta.org/jekyll/jurta.github.io/.git
+
+Found 1430 objects to protect
+Found 3 commit-pointing refs : HEAD, refs/heads/master, refs/remotes/origin/master
+
+Protected commits
+-----------------
+
+These are your protected commits, and so their contents will NOT be altered:
+
+ * commit 62114fed (protected by 'HEAD')
+
+Cleaning
+--------
+
+Found 58 commits
+Cleaning commits:       100% (58/58)
+Cleaning commits completed in 642 ms.
+
+Updating 2 Refs
+---------------
+
+	Ref                          Before     After   
+	------------------------------------------------
+	refs/heads/master          | 62114fed | 32fae1ec
+	refs/remotes/origin/master | 2d1ff087 | c4c17a96
+
+Updating references:    100% (2/2)
+...Ref update completed in 157 ms.
+
+Commit Tree-Dirt History
+------------------------
+
+	Earliest                                            Latest
+	|                                                        |
+	........................................................Dm
+
+	D = dirty commits (file tree fixed)
+	m = modified commits (commit message or parents changed)
+	. = clean commits (no changes to file tree)
+
+	                        Before     After   
+	-------------------------------------------
+	First modified commit | 2d1ff087 | c4c17a96
+	Last dirty commit     | 2d1ff087 | c4c17a96
+
+Deleted files
+-------------
+
+	Filename       Git id            
+	---------------------------------
+	010629a2.wav | 4a124837 (63.0 MB)
+
+
+In total, 6 object ids were changed. Full details are logged here:
+
+	/home/work/www/jurta.org/jekyll/jurta.github.io.bfg-report/2020-05-06/01-51-14
+
+BFG run is complete! When ready, run: git reflog expire --expire=now --all && git gc --prune=now --aggressive
+
+
+--
+You can rewrite history in Git - don't let Trump do it for real!
+Trump's administration has lied consistently, to make people give up on ever
+being told the truth. Don't give up: https://www.theguardian.com/us-news/trump-administration
+--
+
+
+* /home/work/www/jurta.org/jekyll/jurta.github.io.bfg-report/2020-05-06/01-51-14/cache-stats.txt
+
+(apply,CacheStats{hitCount=181, missCount=115, loadSuccessCount=115, loadExceptionCount=0, totalLoadTime=1172406687, evictionCount=0})
+(tree,CacheStats{hitCount=665, missCount=375, loadSuccessCount=356, loadExceptionCount=0, totalLoadTime=2095545598, evictionCount=0})
+(commit,CacheStats{hitCount=57, missCount=58, loadSuccessCount=58, loadExceptionCount=0, totalLoadTime=468737877, evictionCount=0})
+(tag,CacheStats{hitCount=0, missCount=0, loadSuccessCount=0, loadExceptionCount=0, totalLoadTime=0, evictionCount=0})
+
+
+* /home/work/www/jurta.org/jekyll/jurta.github.io.bfg-report/2020-05-06/01-51-14/deleted-files.txt
+
+4a124837731de9a41f37b26a6da636b9500751a0 66093100 010629a2.wav
+
+
+* /home/work/www/jurta.org/jekyll/jurta.github.io.bfg-report/2020-05-06/01-51-14/object-id-map.old-new.txt
+
+29933200628b2f2d731a370cbb679568b970e82f ba7b92a44ab857420726c52530f4084c6855adb7
+2d1ff087efaf97c43973ceede0fad043adbe2a0b c4c17a9652506c48ff60f3929a65413cfc1e5d41
+62114fed67e7fe4b6faab35404c211c8e5e85896 32fae1ec2b8d8f6485d2329595e9b943ae581b10
+641928190c4bfac9b4878ae04e65b115d9f580f2 b4146661009591e9557b7a66775acb42a0105ae7
+87e5fde57946cc2ea90bc2fa7f0d24457c8500c5 5fd6d37df89b8ad1fb6162f2ce59d10aa60640d6
+cad777442cf761d43effd8551c96a9606c79b1e8 bf6eae4f6340dc259fbabf89a9c497a6618166f2
+
+
+* Output
+
+git reflog expire --expire=now --all && git gc --prune=now --aggressive
+
+Counting objects: 2334, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2281/2281), done.
+Writing objects: 100% (2334/2334), done.
+Total 2334 (delta 676), reused 0 (delta 0)
+
+
+* git push origin master -f
+
+Compressing objects: 100% (1605/1605), done.
+Writing objects: 100% (2334/2334), 317.29 MiB | 1.10 MiB/s, done.
+Total 2334 (delta 676), reused 2334 (delta 676)
+remote: Resolving deltas: 100% (676/676), done.
+To jurta.github.com:jurta/jurta.github.io.git
+ + 2d1ff08...32fae1e master -> master (forced update)
+
+
+repo size changes
+
+before
+329M	.git
+
+after adding two split files, and removing old big file
+384M	.git
+
+after `git gc`
+318M	.git
 
 

@@ -376,6 +376,8 @@
       url: /ru/tanja/meet/2006-06-05
     - title: 2006-06-06
       url: /ru/tanja/meet/2006-06-06
+    - title: 2006-06-20
+      url: /ru/tanja/meet/2006-06-20
     - title: 2006-06-26
       url: /ru/tanja/meet/2006-06-26
     - title: 2006-07-03
@@ -424,6 +426,8 @@
   url: /ru/tanja/calendar/2007
   expanded: true
   menu:
+    - title: 2007-03-08
+      url: /ru/tanja/meet/2007-03-08
     - title: 2007-03-19
       url: /ru/tanja/meet/2007-03-19
     - title: 2007-03-20

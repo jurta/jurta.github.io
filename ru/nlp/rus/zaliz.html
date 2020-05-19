@@ -7,26 +7,26 @@ description: Обработка грамматического словаря р
 title: Построение полных парадигм слов русского языка на базе грамматического словаря
 ---
 <p>
-<b>[2020] ПЛОХАЯ НОВОСТЬ</b>:
+<b>[2020] ХОРОШАЯ НОВОСТЬ</b>: Все существующие файлы (программы и результаты)
+перенесены на github по адресу:
+<a href="https://github.com/jurta/nlp-rus-zaliz">https://github.com/jurta/nlp-rus-zaliz</a>
+
+Главный результат в двух YML-файлах с полной информацией и формами словоизменения:
+<a href="https://github.com/jurta/nlp-rus-zaliz/blob/master/zaliz_1.yml">zaliz_1.yml</a> и
+<a href="https://github.com/jurta/nlp-rus-zaliz/blob/master/zaliz_2.yml">zaliz_2.yml</a>.
+</p>
+
+<p>
 Я очень извиняюсь, что в течение предыдущих лет не мог найти достаточно времени,
-чтобы продолжать проверять словарь и исправлять найденные неточности.
-Это работа без конца!  Я очень жалею, что взялся за этот проект.
-Это напрасно потраченное время!  Ошибка была в неправильном направлении:
-нужно было не развивать сложнейшую программу для генерирования словоформ по индексам,
+чтобы продолжать проверять словарь и исправлять найденные неточности.  Это работа без конца!
+Лучше было бы не развивать сложнейшую программу для генерирования словоформ по индексам,
 а наоборот: из известных и проверенных словоформ (составленных вручную, как в Викисловарe)
 при помощи кластерного анализа и других методов машинного обучения
 группировать похожие словоформы в отдельные классы
 и присваивать им соответствующий индекс.  Это было бы намного проще!
-</p>
-
-<p>
-<b>[2020] ХОРОШАЯ НОВОСТЬ</b>: Все существующие файлы (программы и результаты)
-перенесены на github по адресу:
-<a href="https://github.com/jurta/nlp-rus-zaliz">https://github.com/jurta/nlp-rus-zaliz</a>
-Дальше развивать проект не планируется.
-Всем советую помогать развивать <a href="https://ru.wiktionary.org/">Викисловарь</a>:
+Поэтому всем советую помогать развивать <a href="https://ru.wiktionary.org/">Викисловарь</a>:
 уточнять существующие словоформы и добавлять новые слова.
-Это единственное перспективное направление, чтобы получить наиболее полный, точный
+Это перспективное направление, чтобы получить наиболее полный, точный
 и всем доступный словарь.
 </p>
 
@@ -790,12 +790,14 @@ RU::Morfo::Zaliz::Inflect - Russian inflection from dictionary of A.A.Zaliznyak
 
 <tr><td class="head">Исходный файл с исправлениями</td>
     <td class="tail"><a href="https://github.com/jurta/nlp-rus-zaliz/blob/master/zaliz.txt">zaliz.txt</a></td></tr>
-<tr><td class="head">Файл результата</td>
+<tr><td class="head">Распарсенный файл с атрибутами</td>
     <td class="tail"><a href="https://github.com/jurta/nlp-rus-zaliz/blob/master/zaliz.adb">zaliz.adb</a></td></tr>
-<tr><td class="head">Файл слов и ссылкок на парадигмы</td>
+<tr><td class="head">Файл слов и ссылок на парадигмы</td>
     <td class="tail"><a href="https://github.com/jurta/nlp-rus-zaliz/blob/master/zaliz2.adb">zaliz2.adb</a></td></tr>
 <tr><td class="head">Файл суффиксов парадигм</td>
     <td class="tail"><a href="https://github.com/jurta/nlp-rus-zaliz/blob/master/zaliz2.suf">zaliz2.suf</a></td></tr>
+<tr><td class="head">Файл ударений парадигм</td>
+    <td class="tail"><a href="https://github.com/jurta/nlp-rus-zaliz/blob/master/zaliz2.acc">zaliz2.acc</a></td></tr>
 <tr><td class="head">Файл ударений парадигм</td>
     <td class="tail"><a href="https://github.com/jurta/nlp-rus-zaliz/blob/master/zaliz2.acc">zaliz2.acc</a></td></tr>
 <tr><td class="head">Исходный код программы</td>
@@ -806,10 +808,14 @@ RU::Morfo::Zaliz::Inflect - Russian inflection from dictionary of A.A.Zaliznyak
 <a href="https://github.com/jurta/nlp-rus-zaliz/blob/master/ADB_File.pm">ADB_File.pm</a>
 <a href="https://github.com/jurta/nlp-rus-zaliz/blob/master/txt2adb.pl">txt2adb.pl</a>
 </td></tr>
-<tr><td class="head">Файл результатов</td>
+<tr><td class="head">Файл с раскрытыми формами словоизменения</td>
     <!--td class="tail"><a href="/files/nlp/rus/zaliz/zaliz.wfa.sort.u.lang-ru.all">zaliz.wfa.sort.u.lang-ru.all</a></td-->
     <td class="tail"><a href="https://github.com/jurta/nlp-rus-zaliz/blob/master/zaliz.full.all_1">zaliz.full.all_1</a>
                      <a href="https://github.com/jurta/nlp-rus-zaliz/blob/master/zaliz.full.all_2">zaliz.full.all_2</a></td></tr>
+<tr><td class="head"><b>Главный результат:</b> YML-файл с полной информацией и формами словоизменения</td>
+    <!--td class="tail"><a href="/files/nlp/rus/zaliz/zaliz.wfa.sort.u.lang-ru.all">zaliz.wfa.sort.u.lang-ru.all</a></td-->
+    <td class="tail"><a href="https://github.com/jurta/nlp-rus-zaliz/blob/master/zaliz_1.yml">zaliz_1.yml</a>
+                     <a href="https://github.com/jurta/nlp-rus-zaliz/blob/master/zaliz_2.yml">zaliz_2.yml</a></td></tr>
 <!--tr><td class="head">Программы</td>
     <td class="tail"><a href="/files/nlp/rus/zaliz/zaliz-0.0.1.tar.gz">zaliz-0.0.1.tar.gz</a></td></tr>
 <tr><td class="head">Файлы данных и результаты (tar.gz, 35MB)</td>

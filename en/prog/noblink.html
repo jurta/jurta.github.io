@@ -726,11 +726,18 @@ CursorBlinkRate=-1
 
 <h2>Mac OS X</h2>
 
-<p>Set values in the terminal:
+<p>In Mac OS X (at least on 10.13.5), fire up a shell (e.g., via Applications-&gt;Utilities-&gt;Terminal) and run:
 
 <pre>
 defaults write -g NSTextInsertionPointBlinkPeriodOn -float 99999999
 defaults write -g NSTextInsertionPointBlinkPeriodOff -float 99999999
+</pre>
+</p>
+
+<p>On MacOS X 10.15, at least XCode (11.4) requires the outdated no blink setting:
+
+<pre>
+defaults write -g NSTextInsertionPointBlinkPeriod -float 3600000
 </pre>
 </p>
 

@@ -13,6 +13,7 @@ body {
   padding: 0;
   color: #000000;
   background-color: #cdc2b2;
+  overflow-wrap: break-word;
 }
 #body {
   width: 100%;
@@ -36,6 +37,7 @@ h3, h4, h5, h6 {
 p {
   margin-top: 0.5em;
   margin-bottom: 0.9em;
+  text-align: justify;
 }
 /* .content p {
   text-align: justify;
@@ -47,6 +49,7 @@ pre {
   background-color: #dddddd;
   padding: 0.75em 1.5em;
   border: 1px solid #e2e2e2;
+  overflow-x: scroll;
 }
 table {
   /* make <td> sizes relative to body size! */
@@ -380,12 +383,12 @@ div.admin-panel h3 {
   background-color: #c2c2c2;
 }
 
-img.float-left  {
+.float-left  {
   float: left;
   margin: 0 12px 12px 0;
 }
 
-img.float-right  {
+.float-right  {
   float: right;
   margin: 0 0 12px 12px;
 }

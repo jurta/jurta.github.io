@@ -49,21 +49,54 @@ pre {
   background-color: #dddddd;
   padding: 0.75em 1.5em;
   border: 1px solid #e2e2e2;
+  max-width: 670px;
   overflow-x: scroll;
 }
+
 .table {
   display: table;
   width: 100%;
   /* make <td> sizes relative to body size! */
   font-size: 1em;
 }
-
 .table .tr {
   display: table-row;
 }
-
 .table .td {
   display: table-cell;
+}
+
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .table, .table .tr, .table .td {
+    display: block;
+  }
+
+  .burger {
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url(/files/css/images/burger.svg);
+    background-size: 100%;
+  }
+
+  .header-filler, .sidebar-filler, .footer-filler {
+    display: none !important;
+  }
+
+  .sidebar-left-hide {
+    display: none !important;
+  }
 }
 
 .form-item label {

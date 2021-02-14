@@ -8,6 +8,7 @@
 <script type="text/javascript" src="/files/js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="/files/js/jquerymenu.js"></script>
 <script type="text/javascript" src="/files/js/jquery.toc.js"></script>
+<script type="text/javascript" src="/files/js/jurta.js"></script>
 {% if page.keywords %}<meta name="keywords" content="{{page.keywords}}" />
 {% endif %}{% seo %}
 {%- feed_meta -%}
@@ -16,6 +17,7 @@
 {%- endif -%}
 </head>
 <body>
+<button class="burger"></button>
 <div class="table" id="body">
   <div class="tr">
     <div class="td" id="header-left">
@@ -31,7 +33,7 @@
     </div>
   </div>
   <div class="tr">
-    <div class="td" id="sidebar-left">
+    <div class="td sidebar-left-hide" id="sidebar-left">
       {%- include sidebar-left.html -%}
     </div>
     <div class="td sidebar-filler">&nbsp;</div>

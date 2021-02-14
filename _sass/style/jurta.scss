@@ -51,10 +51,21 @@ pre {
   border: 1px solid #e2e2e2;
   overflow-x: scroll;
 }
-table {
+.table {
+  display: table;
+  width: 100%;
   /* make <td> sizes relative to body size! */
   font-size: 1em;
 }
+
+.table .tr {
+  display: table-row;
+}
+
+.table .td {
+  display: table-cell;
+}
+
 .form-item label {
   font-size: 1em;
   color: #222;

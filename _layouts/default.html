@@ -16,48 +16,48 @@
 {%- endif -%}
 </head>
 <body>
-<table border="0" cellpadding="0" cellspacing="0" id="body">
-  <tr>
-    <td id="header-left">
+<div class="table" id="body">
+  <div class="tr">
+    <div class="td" id="header-left">
       {%- include header-left.html -%}
-    </td>
-    <td class="header-filler">&nbsp;</td>
-    <td id="header">
+    </div>
+    <div class="td header-filler">&nbsp;</div>
+    <div class="td" id="header">
       {%- include header.html -%}
-    </td>
-    <td class="header-filler">&nbsp;</td>
-    <td id="header-right">
+    </div>
+    <div class="td header-filler">&nbsp;</div>
+    <div class="td" id="header-right">
       {%- include header-right.html -%}
-    </td>
-  </tr>
-  <tr>
-    <td id="sidebar-left">
+    </div>
+  </div>
+  <div class="tr">
+    <div class="td" id="sidebar-left">
       {%- include sidebar-left.html -%}
-    </td>
-    <td class="sidebar-filler">&nbsp;</td>
-    <td valign="top">
+    </div>
+    <div class="td sidebar-filler">&nbsp;</div>
+    <div class="td" valign="top">
       <div id="main">
         {{ content }}
       </div>
-    </td>
-    <td class="sidebar-filler">&nbsp;</td>
-    <td id="sidebar-right">
+    </div>
+    <div class="td sidebar-filler">&nbsp;</div>
+    <div class="td" id="sidebar-right">
       {%- include sidebar-right.html -%}
-    </td>
-  </tr>
-  <tr>
-    <td id="footer-left">
+    </div>
+  </div>
+  <div class="tr">
+    <div class="td" id="footer-left">
       {%- include footer-left.html -%}
-    </td>
-    <td class="footer-filler">&nbsp;</td>
-    <td id="footer">
+    </div>
+    <div class="td footer-filler">&nbsp;</div>
+    <div class="td" id="footer">
       {%- include footer.html -%}
-    </td>
-    <td class="footer-filler">&nbsp;</td>
-    <td id="footer-right">
+    </div>
+    <div class="td footer-filler">&nbsp;</div>
+    <div class="td" id="footer-right">
       {%- include footer-right.html -%}
-    </td>
-  </tr>
-</table>
+    </div>
+  </div>
+</div>
 </body>
 </html>

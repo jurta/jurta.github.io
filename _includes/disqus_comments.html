@@ -1,6 +1,6 @@
 {%- if page.comments == true and jekyll.environment == "production" -%}
 
-  <div id="disqus_thread"></div>
+  <div id="disqus_thread">If you don't see the Disqus comments, you might want to disable Tracking Protection for this site since we don't use tracking other than Disqus comments.</div>
   <script>
     var disqus_config = function () {
       this.page.url = '{{ page.url | absolute_url }}';

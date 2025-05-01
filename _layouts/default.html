@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{{ '/files/css/style.css' | relative_url }}">
-<script type="text/javascript" src="/files/js/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="/files/js/jquerymenu.js"></script>
-<script type="text/javascript" src="/files/js/jquery.toc.js"></script>
-<script type="text/javascript" src="/files/js/jurta.js"></script>
-{% if page.keywords %}<meta name="keywords" content="{{page.keywords}}" />
-{% endif %}{% seo %}
-{%- feed_meta -%}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />{% if page.keywords %}
+<meta name="keywords" content="{{page.keywords}}" />{% endif %}
+{%- seo -%}
+{% feed_meta %}
+<link href="/favicon.png" rel="icon" type="image/png" />
+<link href="{{ '/files/css/style.css' | relative_url }}" rel="stylesheet" />
+<script defer src="/files/js/jquery-3.4.1.min.js"></script>
+<script defer src="/files/js/jquerymenu.js"></script>
+<script defer src="/files/js/jquery.toc.js"></script>
+<script defer src="/files/js/jurta.js"></script>
 {%- if jekyll.environment == 'production' and site.google_analytics -%}
   {%- include google-analytics.html -%}
 {%- endif -%}
